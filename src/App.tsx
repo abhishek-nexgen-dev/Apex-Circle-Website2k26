@@ -17,6 +17,7 @@ import Legal from '@/pages/Legal';
 import CustomCursor from '@/components/ui/CustomCursor';
 import { AnimatePresence, motion } from 'motion/react';
 import Lenis from 'lenis';
+import Developer from './pages/Developer';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -187,6 +188,14 @@ function AppContent() {
               element={
                 <PageWrapper>
                   <Contact />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="/developed/by/abhishek"
+              element={
+                <PageWrapper>
+                  <Developer />
                 </PageWrapper>
               }
             />

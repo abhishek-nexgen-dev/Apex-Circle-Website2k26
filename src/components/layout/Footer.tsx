@@ -119,12 +119,16 @@ export default function Footer() {
               <Zap className="text-black" size={12} fill="currentColor" />
             </div>
             <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-              © 2026 APEX CIRCLE PROTOCOL. ALL RIGHTS RESERVED.
+              © 2026 APEX CIRCLE 
             </span>
           </div>
-          <div className="text-[10px] font-black uppercase tracking-widest text-slate-700">
-            DESIGNED FOR THE NEXT GENERATION
-          </div>
+          <Link to="/developed/by/abhishek" className="text-[10px] font-black uppercase tracking-widest text-slate-700">
+            Developed with <span className="text-primary animate-pulse">❤️</span> by Abhishek
+            <span className="mx-4">|</span>
+            <a href="https://github.com/NexGenStudioDev/Apex-Circle-Website" className="hover:text-primary transition-colors underline underline-offset-4">
+              GitHub Contribution
+            </a>
+          </Link>
         </div>
       </div>
     </footer>

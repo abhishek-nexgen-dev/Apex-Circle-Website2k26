@@ -18,7 +18,7 @@ const Developer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
             <div className="relative group aspect-square max-w-xl mx-auto lg:mx-0 border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(var(--color-primary-rgb),0.1)] transition-shadow duration-700">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" 
+                src="https://avatars.githubusercontent.com/u/122656682?v=4" 
                 alt="Abhishek - Full Stack Developer"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100"
                 referrerPolicy="no-referrer"
@@ -65,13 +65,7 @@ const Developer = () => {
                 </Magnetic>
               </div>
               
-              <div className="pt-12 border-t border-white/5">
-                <p className="text-slate-600 font-mono text-xs tracking-widest uppercase flex items-center gap-2">
-                  Built with <span className="text-primary animate-pulse">❤️</span> by Abhishek 
-                  <span className="mx-4">|</span>
-                  <a href="#" className="hover:text-primary transition-colors underline underline-offset-4">GitHub Contribution</a>
-                </p>
-              </div>
+             
             </div>
           </div>
         </div>

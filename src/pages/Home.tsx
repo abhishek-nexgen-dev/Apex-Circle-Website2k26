@@ -72,7 +72,7 @@ export default function Home() {
               the next billion users.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
-              <div className="p-8 border border-white/10 bg-white/[0.02]">
+              <div className="p-8 border border-white/10 bg-white/2">
                 <h3 className="text-2xl font-brutal uppercase tracking-tighter mb-4 text-primary">
                   Mission
                 </h3>
@@ -81,7 +81,7 @@ export default function Home() {
                   innovation and community-driven development.
                 </p>
               </div>
-              <div className="p-8 border border-white/10 bg-white/[0.02]">
+              <div className="p-8 border border-white/10 bg-white/2">
                 <h3 className="text-2xl font-brutal uppercase tracking-tighter mb-4 text-primary">
                   Vision
                 </h3>
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-24 md:py-48 px-6 bg-white/[0.02] border-y border-white/5">
+      <section className="py-24 md:py-48 px-6 bg-white/2 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="section-header mb-16 md:mb-32">
             <span className="text-primary font-mono text-sm mb-4 block tracking-widest uppercase">
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 md:py-48 px-6 border-y border-white/5 bg-white/[0.02] relative overflow-hidden">
+      <section className="py-24 md:py-48 px-6 border-y border-white/5 bg-white/2 relative overflow-hidden">
         <div
           className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
           style={{
@@ -296,15 +296,24 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {eventsData.slice(0, 3).map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
+            {eventsData.slice(0, 3).map((event) => {
+              const eventObj = {
+                ...event,
+                type: event.type as import('@/types').EventType,
+                status: event.status as import('@/types').EventStatus,
+              };
+              return (
+                <div key={event.id}>
+                  <EventCard event={eventObj} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-32 px-6 bg-white/[0.02] border-y border-white/5">
+      <section className="py-32 px-6 bg-white/2 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           {/* HEADER */}
           <div className="section-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
@@ -398,7 +407,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 md:p-12 border border-white/10 bg-white/[0.02] hover:border-primary transition-colors"
+                className="p-8 md:p-12 border border-white/10 bg-white/2 hover:border-primary transition-colors"
               >
                 <p className="text-lg md:text-xl text-slate-300 italic mb-8 leading-relaxed">
                   "{item.text}"
@@ -456,7 +465,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-48 px-6 bg-white/[0.02] relative overflow-hidden">
+      <section className="py-48 px-6 bg-white/2 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full -translate-x-1/2" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <span className="text-primary font-mono text-sm mb-8 block tracking-widest uppercase">
