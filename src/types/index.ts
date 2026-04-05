@@ -15,7 +15,7 @@ export interface Event {
 
   description: string;
   image: string;
-
+  Link?: string;
   // ✅ OPTIONAL (for your upgraded UI)
   duration?: string; // "48 Hours"
   tags?: string[]; // ["AI", "Web3"]

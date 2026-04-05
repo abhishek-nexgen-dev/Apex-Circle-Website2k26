@@ -1,16 +1,19 @@
 [
+ 
   {
     "id": "1",
-    "title": "Cloud-Native Architectures Workshop",
-    "date": "24 Oct 2024",
+    "title": "Calcutta Hacks",
+    "date": "27 Dec 2025",
     "time": "2:00 PM EST",
-    "type": "Workshop",
-    "status": "Upcoming",
-    "location": "Virtual Event",
-    "description": "Learn to design and deploy scalable cloud-native applications using microservices, Kubernetes, and modern DevOps practices.",
-    "image": "https://picsum.photos/seed/cloud/800/600",
-    "duration": "3 Hours",
-    "tags": ["Cloud", "DevOps", "Kubernetes"],
+    "type": "Hackathon",
+    "status": "Past Event",
+    "location": "Techno India University",
+    "description": "Calcutta <Hacks/> is India's largest heritage-meets-innovation hackathon, bringing together the finest minds from across the country and beyond.",
+    "image": "src/assets/Image/CalCuttaHacks.jpg",
+    "Link": "https://calcuttahacks.xyz",
+    "duration": "36 Hours",
+    "tags": ["Open Innovation", "Web3", "AI/Ml"],
+    "isFeatured": true,
     "seats": 120
   },
   {
@@ -21,10 +24,11 @@
     "type": "Hackathon",
     "status": "Upcoming",
     "location": "Global Hybrid",
-    "description": "A 48-hour global hackathon where developers build cutting-edge AI solutions, compete, and collaborate with top innovators.",
+    "description": "",
     "image": "https://picsum.photos/seed/hackathon/800/600",
     "duration": "48 Hours",
     "tags": ["AI", "Web3", "Innovation"],
+    "isFeatured": false,
     "seats": 300
   },
   {
@@ -34,6 +38,8 @@
     "time": "6:00 PM EST",
     "type": "Meetup",
     "status": "Upcoming",
+     "isFeatured": false,
+
     "location": "New York City / Discord",
     "description": "Explore the future of human-machine interaction, VR workspaces, and neural interfaces with industry leaders.",
     "image": "https://picsum.photos/seed/cyber/800/600",
@@ -45,6 +51,7 @@
     "id": "4",
     "title": "Open Source Sprint: React Ecosystem",
     "date": "15 Sep 2024",
+     "isFeatured": false,
     "time": "10:00 AM PST",
     "type": "Workshop",
     "status": "Closed",

@@ -11,7 +11,7 @@ interface TeamCardProps {
 
 export default function TeamCard({ member }: TeamCardProps) {
   return (
-    <Link to={`/Team/${member.id}`} className="block"> 
+    <Link to={`#`} className="block"> 
        <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

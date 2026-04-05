@@ -11,7 +11,7 @@ interface EventCardProps {
 export default function EventCard({ event }: EventCardProps) {
   return (
     <Link
-      to={`/hackathons`}
+      to={event.Link || '#'}
       className="group relative bg-white/[0.02] border border-white/10 hover:border-primary transition-all duration-500 overflow-hidden"
     >
       {/* IMAGE */}
@@ -94,7 +94,7 @@ export default function EventCard({ event }: EventCardProps) {
 
           {/* CTA */}
           <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white group-hover:text-primary transition-colors">
-            Register Now <ArrowUpRight size={14} />
+            Explore Now <ArrowUpRight size={14} />
           </button>
         </div>
       </div>

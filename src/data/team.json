@@ -1,73 +1,217 @@
 [
   {
     "id": "1",
-    "name": "Alex Rivera",
-    "role": "Founder & Lead Architect",
+    "name": "Soumodweep Das",
+    "role": "Founder",
     "department": "Leadership",
-    "image": "https://i.pravatar.cc/300?u=alex",
+    "image": "https://calcuttahacks.xyz/assets/Soumodweep-ZJFwPoII.webp",
     "socials": {
+      "linkedin": "https://www.linkedin.com/in/soumodweep-das/",
       "twitter": "#",
-      "linkedin": "#",
       "github": "#"
     }
   },
   {
     "id": "2",
-    "name": "Sarah Chen",
-    "role": "Core Team / CTO",
+    "name": "Souvik Ghosh",
+    "role": "Co-Founder",
     "department": "Leadership",
-    "image": "https://i.pravatar.cc/300?u=sarah",
+    "image": "https://calcuttahacks.xyz/assets/Souvik-DHigIqNt.webp",
     "socials": {
+      "linkedin": "https://www.linkedin.com/in/souvikghosh19/",
       "twitter": "#",
-      "linkedin": "#",
       "github": "#"
     }
   },
   {
     "id": "3",
-    "name": "Marcus Thorne",
-    "role": "AI Researcher",
-    "department": "AI/Tech",
-    "image": "https://i.pravatar.cc/300?u=marcus",
+    "name": "Pritam Das",
+    "role": "Co-Founder",
+    "department": "Leadership",
+    "image": "https://calcuttahacks.xyz/assets/pritham-jf-VHqra.webp",
     "socials": {
+      "linkedin": "https://www.linkedin.com/in/pritam-das-739743289/",
       "twitter": "#",
-      "linkedin": "#",
       "github": "#"
     }
   },
   {
     "id": "4",
-    "name": "Elena Vogt",
-    "role": "Design Lead",
-    "department": "Design",
-    "image": "https://i.pravatar.cc/300?u=elena",
+    "name": "Yuvraj Prasad",
+    "role": "Co-Founder",
+    "department": "Leadership",
+    "image": "https://calcuttahacks.xyz/assets/yuvraj-CyJ9jIEw.webp",
     "socials": {
+      "linkedin": "https://www.linkedin.com/in/yuvrajprasad/",
       "twitter": "#",
-      "linkedin": "#",
       "github": "#"
     }
   },
   {
     "id": "5",
-    "name": "Jordan K.",
-    "role": "Web Developer",
-    "department": "Web Dev",
-    "image": "https://i.pravatar.cc/300?u=jordan",
+    "name": "Abhishek Banerjee",
+    "role": "Chief Advisor",
+    "department": "Leadership",
+    "image": "https://calcuttahacks.xyz/assets/AbhishekBan-l3Snf55a.webp",
     "socials": {
+      "linkedin": "https://www.linkedin.com/in/avishek-mukherjee-1011a2235/",
       "twitter": "#",
-      "linkedin": "#",
       "github": "#"
     }
   },
   {
     "id": "6",
-    "name": "Maya L.",
-    "role": "Community Manager",
-    "department": "Community",
-    "image": "https://i.pravatar.cc/300?u=maya",
+    "name": "Subhasish Chanda",
+    "role": "Co-Organizer",
+    "department": "Leadership",
+    "image": "Subhasish",
     "socials": {
+      "linkedin": "https://www.linkedin.com/in/subhasish-chanda/",
       "twitter": "#",
-      "linkedin": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "7",
+    "name": "Piush Bose",
+    "role": "Co-Organizer",
+    "department": "Leadership",
+    "image": "Piush",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/bosepiush/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "8",
+    "name": "Ritabrata Nayek",
+    "role": "Co-Organizer",
+    "department": "Leadership",
+    "image": "Ritabrata",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/ritabrata-nayek-7263572a4/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "9",
+    "name": "Somnath Mukherjee",
+    "role": "Web Lead",
+    "department": "Web",
+    "image": "Somnath",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/somnath-mukherjee-8b629b288/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "10",
+    "name": "Naila Farooque",
+    "role": "Web Co-Lead",
+    "department": "Web",
+    "image": "https://calcuttahacks.xyz/assets/Naila-DyAHvO2X.webp",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/nailafarooque/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "11",
+    "name": "Agnij Dutta",
+    "role": "PR & Outreach Lead",
+    "department": "PR & Outreach",
+    "image": "Agnij",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/agnij-dutta/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "12",
+    "name": "Vivek Yadav",
+    "role": "PR & Outreach Co-Lead",
+    "department": "PR & Outreach",
+    "image": "VivekYadav",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/yadav-vivek123",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "13",
+    "name": "Shreyashi Debnath",
+    "role": "Management Lead",
+    "department": "Management",
+    "image": "Shreyanshi",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/shreyashi-debnath-aa73942b4/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "14",
+    "name": "Rouson Das",
+    "role": "Management Lead",
+    "department": "Management",
+    "image": "https://calcuttahacks.xyz/assets/Rouson-lxqxgbtz.webp",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/rouson-das-563b52284/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "15",
+    "name": "Shuvrajit Majhi",
+    "role": "Social Media Lead",
+    "department": "Social Media",
+    "image": "https://calcuttahacks.xyz/assets/Shuvrajit-B565mt-h.webp",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/shuvrajit-majhi-7a337b2b8/",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "16",
+    "name": "Pushkar Das",
+    "role": "Social Media Co-Lead",
+    "department": "Social Media",
+    "image": "Pushkar",
+    "socials": {
+      "linkedin": "",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "17",
+    "name": "Abhishek Kumar",
+    "role": "Web Associate",
+    "department": "Web",
+    "image": "https://avatars.githubusercontent.com/u/122656682?v=4",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/abhishek-nexgen-dev",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "18",
+    "name": "Anjali Tomar",
+    "role": "Web Associate",
+    "department": "Web",
+    "image": "https://avatars.githubusercontent.com/u/160884550?v=4",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/anjali-tomar713",
+      "twitter": "#",
       "github": "#"
     }
   }
