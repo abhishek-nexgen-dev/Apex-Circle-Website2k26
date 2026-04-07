@@ -195,7 +195,7 @@ export default function Home() {
       image: AbhishekTestimonial,
       linkedin: 'https://www.linkedin.com/in/abhishek-mahto-nomoex/',
       website: 'https://nomoex.com',
-      company: 'Nomoex & DeCloudX'
+      company: 'Nomoex & MBT Ventures'
     },
     {
       name: 'Roshan Burnawal',
@@ -204,7 +204,7 @@ export default function Home() {
       image: RoshanTestimonial,
       linkedin: 'https://www.linkedin.com/in/roshan-burnawal/',
       website: 'https://thedrop.finance', // Assuming popular/placeholder if not provided
-      company: 'The Drop'
+      company: 'The Drop Organization'
     },
     {
       name: 'Sunit Chaudhari',
