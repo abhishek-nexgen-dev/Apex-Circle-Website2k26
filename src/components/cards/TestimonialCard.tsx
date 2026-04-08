@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
-import { Linkedin, Globe, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Linkedin } from 'lucide-react';
 
 interface TestimonialCardProps {
   testimonial: {
@@ -8,83 +8,66 @@ interface TestimonialCardProps {
     text: string;
     image: string;
     linkedin?: string;
-    website?: string;
     company?: string;
   };
-  active?: boolean;
-  scale?: number;
 }
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div
-      className={`group relative bg-[#0a1233]/60 backdrop-blur-xl border border-white/10 rounded-2xl hover:border-tertiary transition-all duration-700 overflow-hidden hover:-translate-y-2 flex flex-col h-full`}
+    <motion.div
+      whileHover={{ y: -10 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      className="group relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-[#0a1233]/70 to-[#060b22]/90 backdrop-blur-xl shadow-xl hover:shadow-tertiary/20 transition-all duration-500 flex flex-col h-full"
     >
-      {/* Core Glow */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-1000 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-tertiary/20 via-transparent to-transparent pointer-events-none z-0" />
+      {/* 🔥 Glow Layer */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.25),transparent_70%)] pointer-events-none" />
 
-      {/* Image Section */}
-      <div className="aspect-[16/10] overflow-hidden relative">
+      {/* 🖼 Image Section */}
+      <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={testimonial.image}
           alt={testimonial.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ease-out grayscale group-hover:grayscale-0"
           referrerPolicy="no-referrer"
+          className="w-full h-full object-cover transition duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-110"
         />
 
-        {/* Social & Website Icons Overlay (Bottom-Left) */}
-        <div className="absolute bottom-2 left-2 z-20 flex gap-2">
-          {testimonial.linkedin && (
-            <a
-              href={testimonial.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 bg-black/60 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center hover:bg-[#0077b5] hover:text-white hover:scale-110 transition-all group/li"
-            >
-              <Linkedin size={14} />
-            </a>
-          )}
-          {testimonial.website && (
-            <a
-              href={testimonial.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 bg-black/60 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center hover:bg-tertiary hover:text-black hover:scale-110 transition-all group/web"
-            >
-              <Globe size={14} />
-            </a>
-          )}
-        </div>
+        {/* Gradient Overlay (better readability) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-        {/* Glitch Overlay */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-tertiary animate-glitch-line opacity-50" />
-          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-tertiary animate-glitch-line-delayed opacity-50" />
-        </div>
+        {/* ✅ LinkedIn Icon ONLY */}
+        {testimonial.linkedin && (
+          <a
+            href={testimonial.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-3 left-3 z-20 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-[#0077b5] hover:scale-110 transition-all duration-300"
+          >
+            <Linkedin size={16} />
+          </a>
+        )}
       </div>
 
-      {/* Content Section */}
+      {/* 📄 Content */}
       <div className="p-4 relative z-10 flex-1 flex flex-col">
-        <div className="flex flex-col gap-0.5 mb-3">
-          <h3 className="text-xl font-montserrat font-black tracking-tighter uppercase text-flame transition-all duration-500">
-            {testimonial.name}
-          </h3>
-          <div className="flex items-center gap-2 font-montserrat font-black uppercase tracking-[0.1em] text-[8px]">
-            <span className="text-slate-400">{testimonial.role}</span>
-            <span className="text-tertiary/60">@</span>
-            <span className="text-tertiary/90 shadow-sm">
-              {testimonial.company || 'Collective'}
-            </span>
-          </div>
-        </div>
+        {/* Name */}
+        <h3 className="text-lg md:text-xl font-bold tracking-tight uppercase text-white group-hover:text-tertiary transition duration-300">
+          {testimonial.name}
+        </h3>
 
-        <p className="text-slate-400 text-xs italic line-clamp-2 mb-4 flex-grow leading-relaxed">
-          "{testimonial.text}"
+        {/* Role + Company */}
+        <p className="text-[11px] uppercase tracking-wider text-slate-400 mb-3">
+          {testimonial.role}{' '}
+          <span className="text-tertiary/70">@ {testimonial.company || 'Apex Circle'}</span>
         </p>
 
-        {/* Subtle decorative line */}
-        <div className="mt-auto w-full h-[1px] bg-white/5 group-hover:bg-tertiary/30 transition-all duration-700" />
+        {/* Testimonial Text */}
+        <p className="text-slate-300 text-sm italic leading-relaxed line-clamp-3 flex-grow">
+          “{testimonial.text}”
+        </p>
+
+        {/* Bottom Accent Line */}
+        <div className="mt-4 h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-tertiary to-transparent transition-all duration-700" />
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { memo, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -9,7 +9,7 @@ import ProjectCard from '@/components/cards/ProjectCard';
 import TeamCard from '@/components/cards/TeamCard';
 import eventsData from '@/data/events.json';
 import projectsData from '@/data/projects.json';
-import teamData from '@/data/team.json';
+import teamDataRaw from '@/data/team.json';
 import {
   Users,
   Zap,
@@ -40,6 +40,7 @@ import AboutImage from '@/assets/Image/About.jpg';
 import HackathonImage from '@/assets/Image/hackathon.jpg';
 import CommunityImage from '@/assets/Image/community.jpg';
 import WorkshopsImage from '@/assets/Image/workshops.jpg';
+import ImageCarousel from '@/components/ImageCarousel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -227,14 +228,7 @@ const RoadmapInteractive = () => {
 };
 
 export default function Home() {
-  const updatedTeamData = teamData.map((member) => {
-    if (member.name === 'Soumodweep Das') return { ...member, image: SoumodweepPhoto };
-    if (member.name === 'Yuvraj Prasad')
-      return { ...member, image: YuvrajPhoto, imagePosition: 'center 5%' };
-    if (member.name === 'Naila Farooque') return { ...member, image: NailaPhoto };
-    if (member.name === 'Somnath Mukherjee') return { ...member, image: SomnathPhoto };
-    return member;
-  });
+  const teamData = useMemo(() => teamDataRaw, []);
 
   const testimonials = [
     {
@@ -318,7 +312,7 @@ export default function Home() {
       <Hero />
 
       {/* About & Mission Section */}
-      <section className="py-10 md:py-14 px-6">
+      <section className="py-10 md:py-14 px-6 mt-[7vh] mb-[4vh]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div>
             <h2 className="relative text-5xl md:text-7xl font-poppins font-bold tracking-[0.15em] leading-none uppercase mb-6 flex flex-wrap gap-x-6">
@@ -353,7 +347,7 @@ export default function Home() {
                 }}
               />
             </h2>
-            <div className="flex items-start gap-4 mb-10">
+            <div className="flex items-start gap-4 mb-10 ">
               <div className="mt-1 shadow-[0_0_15px_rgba(79,142,247,0.5)] bg-primary/20 p-1 rounded-full">
                 <ChevronRight className="text-primary animate-pulse" size={20} />
               </div>
@@ -448,13 +442,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative w-full rounded-xl overflow-hidden border border-white/5 shadow-2xl bg-black/10">
-            <img
-              src={CalCuttaHacks}
-              alt="About Apex Circle"
-              className="w-full h-auto object-contain"
-              referrerPolicy="no-referrer"
-            />
+          <div className="relative w-full rounded-xl overflow-hidden border border-white/5 shadow-2xl bg-black/10 p-4">
+            <ImageCarousel images={[AboutImage, HackathonImage, CommunityImage, WorkshopsImage]} />
           </div>
         </div>
       </section>
@@ -602,9 +591,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10 p-8 md:p-12 border border-white/5 bg-black/40 backdrop-blur-xl rounded-3xl shadow-[0_0_50px_rgba(249,115,22,0.1)]">
           <div className="stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
             {[
-              { label: 'Active Nodes', value: '2k+', icon: Globe, color: 'text-yellow-400' },
-              { label: 'Protocols', value: '150+', icon: Zap, color: 'text-orange-400' },
-              { label: 'Contributors', value: '200+', icon: Users, color: 'text-red-400' },
+              { label: 'Active Nodes', value: '4k+', icon: Globe, color: 'text-yellow-400' },
+              { label: 'Event Hosted', value: '15+', icon: Zap, color: 'text-orange-400' },
+              { label: 'PartnerShips', value: '50+', icon: Users, color: 'text-red-400' },
               { label: 'Deployments', value: '1k+', icon: Rocket, color: 'text-yellow-500' },
             ].map((stat, i) => (
               <div
@@ -709,10 +698,10 @@ export default function Home() {
           </div>
 
           <div className="relative mt-0 md:mt-0">
-            <TeamCarousel members={updatedTeamData} />
+            <TeamCarousel members={teamData} />
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="my-[5vh] text-center">
             <Link
               to="/team"
               className="inline-flex items-center gap-4 bg-white text-black px-12 py-6 font-black uppercase tracking-widest text-sm hover:bg-primary transition-colors"
@@ -732,12 +721,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="section-header mb-12 md:mb-16 text-center">
             <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tighter uppercase leading-[0.8]">
-              <span className="text-white animate-text-glow-white">Our </span>
+              <span className="text-white animate-text-glow-white">Voices of </span>
               <span
                 className="animate-text-glow-gold px-2"
                 style={{ WebkitTextStroke: '1px rgba(255, 215, 0, 0.4)', color: '#facc15' }}
               >
-                Testimonials
+                Apex Circle
               </span>
             </h2>
           </div>

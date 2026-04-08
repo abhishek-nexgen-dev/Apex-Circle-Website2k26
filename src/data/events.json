@@ -25,7 +25,8 @@
     "description": "Stay tuned for the next season of Calcutta Hacks.",
     "image": "src/assets/Image/About.jpg",
     "duration": "Coming Soon",
-    "tags": [],
+
+    "tags": ["AI/ML", "Web3", "Smart Automation", "Heritage Tech", "Cybersecurity", "Web Dev"],
     "isFeatured": false
   },
   {
@@ -41,7 +42,7 @@
     "description": "Stay tuned for updates.",
     "image": "src/assets/Image/Nomoex.png",
     "duration": "Coming Soon",
-    "tags": []
+    "tags": ["AI/ML", "Web3", "Smart Automation", "Heritage Tech", "Cybersecurity", "Web Dev"]
   },
   {
     "id": "4",
