@@ -77,13 +77,12 @@ function AppContent() {
   return (
     <>
       <AnimatePresence mode="wait">
-        {isLoading && (
-          <Loader key="loader" onComplete={() => setIsLoading(false)} />
-        )}
+        {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
-      <div className={`min-h-screen bg-background text-white selection:bg-primary selection:text-black transition-all duration-1000 ${isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        <CustomCursor />
+      <div
+        className={`min-h-screen bg-background text-white selection:bg-primary selection:text-black transition-all duration-1000 ${isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+      >
         <Navbar />
         <ScrollToTop />
         <main>

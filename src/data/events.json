@@ -1,5 +1,4 @@
 [
- 
   {
     "id": "1",
     "title": "CALCUTTA <HACKS/>",
@@ -48,7 +47,7 @@
     "id": "4",
     "title": "Open Source Sprint: React Ecosystem",
     "date": "15 Sep 2024",
-     "isFeatured": false,
+    "isFeatured": false,
     "time": "10:00 AM PST",
     "type": "Workshop",
     "status": "Closed",

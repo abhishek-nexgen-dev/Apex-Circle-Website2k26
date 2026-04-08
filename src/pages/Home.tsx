@@ -10,7 +10,18 @@ import TeamCard from '@/components/cards/TeamCard';
 import eventsData from '@/data/events.json';
 import projectsData from '@/data/projects.json';
 import teamData from '@/data/team.json';
-import { Users, Zap, Globe, Rocket, ArrowUpRight, ChevronRight, Target, Eye, HelpCircle, CreditCard } from 'lucide-react';
+import {
+  Users,
+  Zap,
+  Globe,
+  Rocket,
+  ArrowUpRight,
+  ChevronRight,
+  Target,
+  Eye,
+  HelpCircle,
+  CreditCard,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Magnetic from '@/components/ui/Magnetic';
 import CalCuttaHacks from '@/assets/Image/CalCuttaHacks.jpg';
@@ -36,12 +47,22 @@ const RoadmapInteractive = () => {
   const [activePhase, setActivePhase] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {
-    gsap.fromTo('.roadmap-header',
-      { scale: 0.5, opacity: 1 },
-      { scale: 1, opacity: 1, duration: 1, ease: 'back.out(1.5)', scrollTrigger: { trigger: sectionRef.current, start: 'top 90%' } }
-    );
-  }, { scope: sectionRef });
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        '.roadmap-header',
+        { scale: 0.5, opacity: 1 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: 'back.out(1.5)',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%' },
+        },
+      );
+    },
+    { scope: sectionRef },
+  );
 
   const roadmapData = [
     {
@@ -49,28 +70,36 @@ const RoadmapInteractive = () => {
       title: 'GENESIS',
       status: 'COMPLETED',
       desc: 'We built the base of Apex Circle, created the core system, and formed the first community.',
-      x: 250, y: 230, align: 'right'
+      x: 250,
+      y: 230,
+      align: 'right',
     },
     {
       phase: '02',
       title: 'EXPANSION',
       status: 'IN PROGRESS',
       desc: 'We are growing the community, connecting developers worldwide, and building real projects together.',
-      x: 750, y: 430, align: 'left'
+      x: 750,
+      y: 430,
+      align: 'left',
     },
     {
       phase: '03',
       title: 'INFRASTRUCTURE',
       status: 'UPCOMING',
       desc: 'We will create tools and systems that help developers build and launch projects easily.',
-      x: 250, y: 630, align: 'right'
+      x: 250,
+      y: 630,
+      align: 'right',
     },
     {
       phase: '04',
       title: 'SINGULARITY',
       status: 'FUTURE',
       desc: 'The system will run in a fully decentralized way where the community makes decisions.',
-      x: 750, y: 830, align: 'left'
+      x: 750,
+      y: 830,
+      align: 'left',
     },
   ];
 
@@ -84,11 +113,11 @@ const RoadmapInteractive = () => {
         </div>
 
         {/* Scaled Interactive Map Container */}
-        <div className="w-full flex justify-center h-[400px] sm:h-[550px] md:h-[750px] lg:h-[900px] xl:h-[1000px] items-start relative z-20 
+        <div
+          className="w-full flex justify-center h-[400px] sm:h-[550px] md:h-[750px] lg:h-[900px] xl:h-[1000px] items-start relative z-20 
           -mb-[20px] sm:-mb-[40px] md:-mb-[70px] lg:-mb-[100px] xl:-mb-[120px]"
         >
           <div className="relative w-[1000px] h-[1000px] shrink-0 transform scale-[0.4] sm:scale-[0.55] md:scale-[0.75] lg:scale-90 xl:scale-100 origin-top font-poppins">
-
             {/* SVG Road Line */}
             <svg viewBox="0 0 1000 1000" className="absolute inset-0 pointer-events-none">
               <path
@@ -111,12 +140,16 @@ const RoadmapInteractive = () => {
             <div
               className="absolute top-0 left-0 w-24 h-24 -ml-12 -mt-12 flex items-center justify-center transition-all duration-[1200ms] ease-in-out z-30 pointer-events-none drop-shadow-[0_0_20px_rgba(234,179,8,0.8)]"
               style={{
-                offsetPath: 'path("M 250 230 C 500 230, 750 230, 750 430 C 500 430, 250 430, 250 630 C 500 630, 750 630, 750 830")',
+                offsetPath:
+                  'path("M 250 230 C 500 230, 750 230, 750 430 C 500 430, 250 430, 250 630 C 500 630, 750 630, 750 830")',
                 offsetDistance: `${activePhase * 33.3333}%`,
               }}
             >
               <div className="relative w-full h-full animate-bounce">
-                <Rocket size={45} className="absolute inset-0 m-auto text-yellow-400 rotate-45 transform" />
+                <Rocket
+                  size={45}
+                  className="absolute inset-0 m-auto text-yellow-400 rotate-45 transform"
+                />
                 <div className="absolute inset-4 border-4 border-dashed border-yellow-400/30 rounded-full animate-[spin_6s_linear_infinite]" />
               </div>
             </div>
@@ -135,21 +168,34 @@ const RoadmapInteractive = () => {
                   onMouseEnter={() => setActivePhase(index)}
                 >
                   {/* Node Dot */}
-                  <div className={`absolute top-0 left-0 -ml-5 -mt-5 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-yellow-400 scale-125 shadow-[0_0_30px_rgba(234,179,8,0.6)]' : 'bg-[#0a1233] border-4 border-white/20 group-hover:border-yellow-400/50'}`}>
-                    <div className={`w-3 h-3 rounded-full transition-colors duration-500 ${isActive ? 'bg-black' : 'bg-transparent'}`} />
+                  <div
+                    className={`absolute top-0 left-0 -ml-5 -mt-5 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-yellow-400 scale-125 shadow-[0_0_30px_rgba(234,179,8,0.6)]' : 'bg-[#0a1233] border-4 border-white/20 group-hover:border-yellow-400/50'}`}
+                  >
+                    <div
+                      className={`w-3 h-3 rounded-full transition-colors duration-500 ${isActive ? 'bg-black' : 'bg-transparent'}`}
+                    />
                   </div>
 
                   {/* Card Content Placeholder Area For Hover Hitbox Expansion */}
-                  <div className={`absolute top-0 -translate-y-1/2 h-[200px] w-[350px] ${item.align === 'left' ? 'right-0' : 'left-0'}`} />
+                  <div
+                    className={`absolute top-0 -translate-y-1/2 h-[200px] w-[350px] ${item.align === 'left' ? 'right-0' : 'left-0'}`}
+                  />
 
                   {/* Card Content */}
                   <div
-                    className={`absolute top-0 -mt-[140px] w-[320px] transition-all duration-700 pointer-events-none ${item.align === 'left' ? 'right-[40px] origin-right' : 'left-[40px] origin-left'
-                      } ${isActive ? 'opacity-100 scale-100' : 'opacity-30 scale-95 group-hover:opacity-60'}`}
+                    className={`absolute top-0 -mt-[140px] w-[320px] transition-all duration-700 pointer-events-none ${
+                      item.align === 'left'
+                        ? 'right-[40px] origin-right'
+                        : 'left-[40px] origin-left'
+                    } ${isActive ? 'opacity-100 scale-100' : 'opacity-30 scale-95 group-hover:opacity-60'}`}
                   >
-                    <div className={`p-5 border rounded-2xl backdrop-blur-xl transition-colors duration-500 ${isActive ? 'bg-[#0a1233]/90 border-yellow-400 shadow-[0_0_40px_rgba(234,179,8,0.2)]' : 'bg-black/80 border-white/10'}`}>
+                    <div
+                      className={`p-5 border rounded-2xl backdrop-blur-xl transition-colors duration-500 ${isActive ? 'bg-[#0a1233]/90 border-yellow-400 shadow-[0_0_40px_rgba(234,179,8,0.2)]' : 'bg-black/80 border-white/10'}`}
+                    >
                       <div className="flex items-center gap-3 mb-4">
-                        <span className={`text-4xl font-poppins font-black ${isActive ? 'text-yellow-400' : 'text-white/20'}`}>
+                        <span
+                          className={`text-4xl font-poppins font-black ${isActive ? 'text-yellow-400' : 'text-white/20'}`}
+                        >
                           {item.phase}
                         </span>
                         <div>
@@ -163,7 +209,9 @@ const RoadmapInteractive = () => {
                           </span>
                         </div>
                       </div>
-                      <p className={`text-sm leading-relaxed font-medium ${isActive ? 'text-slate-300' : 'text-slate-500'}`}>
+                      <p
+                        className={`text-sm leading-relaxed font-medium ${isActive ? 'text-slate-300' : 'text-slate-500'}`}
+                      >
                         {item.desc}
                       </p>
                     </div>
@@ -180,10 +228,11 @@ const RoadmapInteractive = () => {
 
 export default function Home() {
   const updatedTeamData = teamData.map((member) => {
-    if (member.name === "Soumodweep Das") return { ...member, image: SoumodweepPhoto };
-    if (member.name === "Yuvraj Prasad") return { ...member, image: YuvrajPhoto, imagePosition: "center 5%" };
-    if (member.name === "Naila Farooque") return { ...member, image: NailaPhoto };
-    if (member.name === "Somnath Mukherjee") return { ...member, image: SomnathPhoto };
+    if (member.name === 'Soumodweep Das') return { ...member, image: SoumodweepPhoto };
+    if (member.name === 'Yuvraj Prasad')
+      return { ...member, image: YuvrajPhoto, imagePosition: 'center 5%' };
+    if (member.name === 'Naila Farooque') return { ...member, image: NailaPhoto };
+    if (member.name === 'Somnath Mukherjee') return { ...member, image: SomnathPhoto };
     return member;
   });
 
@@ -195,7 +244,7 @@ export default function Home() {
       image: AbhishekTestimonial,
       linkedin: 'https://www.linkedin.com/in/abhishek-mahto-nomoex/',
       website: 'https://nomoex.com',
-      company: 'Nomoex & MBT Ventures'
+      company: 'Nomoex & MBT Ventures',
     },
     {
       name: 'Roshan Burnawal',
@@ -204,7 +253,7 @@ export default function Home() {
       image: RoshanTestimonial,
       linkedin: 'https://www.linkedin.com/in/roshan-burnawal/',
       website: 'https://thedrop.finance', // Assuming popular/placeholder if not provided
-      company: 'The Drop Organization'
+      company: 'The Drop Organization',
     },
     {
       name: 'Sunit Chaudhari',
@@ -213,7 +262,7 @@ export default function Home() {
       image: SunitTestimonial,
       linkedin: 'https://www.linkedin.com/in/sunitchaudhari/',
       website: 'https://pcsglobal.in',
-      company: 'PCS Global Pvt Ltd'
+      company: 'PCS Global Pvt Ltd',
     },
     {
       name: 'Ankit Kumar Verma',
@@ -222,7 +271,7 @@ export default function Home() {
       image: AnkitTestimonial,
       linkedin: 'https://linkedin.com/in/ankitkumarverma',
       website: 'https://gdg.community.dev/gdg-prayagraj/',
-      company: 'GDG Prayagraj'
+      company: 'GDG Prayagraj',
     },
     {
       name: 'Jameson Wu',
@@ -231,17 +280,17 @@ export default function Home() {
       image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=500&fit=crop',
       linkedin: 'https://linkedin.com/in/jamesonwu',
       website: 'https://secure.io',
-      company: 'ZK_Security'
+      company: 'ZK_Security',
     },
     {
       name: 'Elena Vance',
       role: 'UI Designer',
-      text: "Merging brutalist aesthetics with high-performance UX is our signature. Apex Circle lets us break the standard patterns.",
+      text: 'Merging brutalist aesthetics with high-performance UX is our signature. Apex Circle lets us break the standard patterns.',
       image: 'https://images.unsplash.com/photo-1517841905240-472988bad1fa?w=400&h=500&fit=crop',
       linkedin: 'https://linkedin.com/in/elenavance',
       website: 'https://design.xyz',
-      company: 'Brutalist_UX'
-    }
+      company: 'Brutalist_UX',
+    },
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -297,7 +346,8 @@ export default function Home() {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: 'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.15) 50%, transparent 80%)',
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.15) 50%, transparent 80%)',
                   backgroundSize: '250% 100%',
                   animation: 'glossySweep 4s ease-in-out infinite',
                 }}
@@ -308,7 +358,8 @@ export default function Home() {
                 <ChevronRight className="text-primary animate-pulse" size={20} />
               </div>
               <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed">
-                Apex Circle unites builders, developers, and innovators to create real-world solutions through hackathons, workshops, and collaborative projects.
+                Apex Circle unites builders, developers, and innovators to create real-world
+                solutions through hackathons, workshops, and collaborative projects.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
@@ -340,11 +391,14 @@ export default function Home() {
                     <Target className="text-primary" size={24} />
                   </div>
                   <h3 className="text-3xl font-montserrat font-black uppercase tracking-tighter transition-all duration-500">
-                    <span className="border-b-4 border-yellow-400 shadow-[0_4px_10px_rgba(250,204,21,0.3)] pr-4">Mission</span>
+                    <span className="border-b-4 border-yellow-400 shadow-[0_4px_10px_rgba(250,204,21,0.3)] pr-4">
+                      Mission
+                    </span>
                   </h3>
                 </div>
                 <p className="text-slate-400 text-base leading-relaxed font-medium group-hover:text-slate-100 transition-colors relative z-10">
-                  Our mission is to empower individuals to build real-world solutions, learn new skills, and grow through a strong and supportive tech community.
+                  Our mission is to empower individuals to build real-world solutions, learn new
+                  skills, and grow through a strong and supportive tech community.
                 </p>
 
                 {/* Inner mechanical glow */}
@@ -379,11 +433,14 @@ export default function Home() {
                     <Eye className="text-primary" size={24} />
                   </div>
                   <h3 className="text-3xl font-montserrat font-black uppercase tracking-tighter transition-all duration-500">
-                    <span className="border-b-4 border-yellow-400 shadow-[0_4px_10px_rgba(250,204,21,0.3)] pr-4">Vision</span>
+                    <span className="border-b-4 border-yellow-400 shadow-[0_4px_10px_rgba(250,204,21,0.3)] pr-4">
+                      Vision
+                    </span>
                   </h3>
                 </div>
                 <p className="text-slate-400 text-base leading-relaxed font-medium group-hover:text-slate-100 transition-colors relative z-10">
-                  Our vision is to create a world where everyone has control over their own data and can use technology freely and safely.
+                  Our vision is to create a world where everyone has control over their own data and
+                  can use technology freely and safely.
                 </p>
 
                 {/* Inner mechanical glow */}
@@ -409,7 +466,6 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="section-header mb-12 md:mb-16">
-
             <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
               <span className="text-white">What We </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
@@ -418,7 +474,8 @@ export default function Home() {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: 'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
                   backgroundSize: '250% 100%',
                   animation: 'glossySweep 3s ease-in-out infinite',
                 }}
@@ -563,9 +620,10 @@ export default function Home() {
                 <div
                   className="text-6xl md:text-8xl lg:text-9xl font-poppins font-black tracking-tighter leading-none group-hover:scale-110 transition-transform duration-500 origin-left text-transparent bg-clip-text"
                   style={{
-                    backgroundImage: 'linear-gradient(0deg, #9a3412 0%, #ea580c 40%, #f97316 65%, #fde047 85%, #fff 100%)',
+                    backgroundImage:
+                      'linear-gradient(0deg, #9a3412 0%, #ea580c 40%, #f97316 65%, #fde047 85%, #fff 100%)',
                     backgroundSize: '100% 200%',
-                    animation: `fire-in-text ${2 + i * 0.4}s infinite ease-in-out`
+                    animation: `fire-in-text ${2 + i * 0.4}s infinite ease-in-out`,
                   }}
                 >
                   {stat.value}
@@ -600,7 +658,10 @@ export default function Home() {
           <div className="section-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
-                OUR <span className="text-yellow-400 drop-shadow-[0_0_25px_rgba(234,179,8,0.7)] animate-pulse">EVENTS</span>
+                OUR{' '}
+                <span className="text-yellow-400 drop-shadow-[0_0_25px_rgba(234,179,8,0.7)] animate-pulse">
+                  EVENTS
+                </span>
               </h2>
             </div>
             <Link
@@ -629,17 +690,19 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Team Section */}
       <section className="py-6 md:py-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="section-header text-center mb-10 px-4">
             <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tighter leading-none uppercase relative inline-block">
               <span className="relative z-10 text-white animate-text-glow-white">OUR </span>
-              <span className="relative z-10 animate-text-glow-gold" style={{ WebkitTextStroke: '1px rgba(255, 215, 0, 0.5)', color: '#FFD700' }}>
+              <span
+                className="relative z-10 animate-text-glow-gold"
+                style={{ WebkitTextStroke: '1px rgba(255, 215, 0, 0.5)', color: '#FFD700' }}
+              >
                 CREW
               </span>
-              
+
               {/* Decorative Background Glows */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[130%] bg-primary/5 blur-[100px] rounded-full pointer-events-none -z-10" />
             </h2>
@@ -670,7 +733,10 @@ export default function Home() {
           <div className="section-header mb-12 md:mb-16 text-center">
             <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tighter uppercase leading-[0.8]">
               <span className="text-white animate-text-glow-white">Our </span>
-              <span className="animate-text-glow-gold px-2" style={{ WebkitTextStroke: '1px rgba(255, 215, 0, 0.4)', color: '#facc15' }}>
+              <span
+                className="animate-text-glow-gold px-2"
+                style={{ WebkitTextStroke: '1px rgba(255, 215, 0, 0.4)', color: '#facc15' }}
+              >
                 Testimonials
               </span>
             </h2>
@@ -694,23 +760,25 @@ export default function Home() {
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="section-header mb-16 text-center">
             <h2 className="text-6xl md:text-8xl font-poppins font-black tracking-tighter uppercase leading-[0.8] mb-4">
-              <span className="text-[#facc15] drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">Protocol </span>
+              <span className="text-[#facc15] drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">
+                Protocol{' '}
+              </span>
               <span className="text-white">FAQ</span>
             </h2>
           </div>
 
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             variants={{
               hidden: { opacity: 0 },
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.15
-                }
-              }
+                  staggerChildren: 0.15,
+                },
+              },
             }}
             className="space-y-6"
           >
@@ -718,29 +786,29 @@ export default function Home() {
               {
                 q: 'How do I join the protocol?',
                 a: 'You can apply through our Community page. We review applications based on technical expertise and alignment with our core values.',
-                icon: HelpCircle
+                icon: HelpCircle,
               },
               {
                 q: 'Are hackathons remote or in-person?',
                 a: 'Most of our hackathons are hybrid, with physical hubs in major tech centers and a robust virtual infrastructure for remote participants.',
-                icon: Globe
+                icon: Globe,
               },
               {
                 q: 'What is the membership fee?',
                 a: 'Apex Circle is a merit-based collective. There are no fees for individual members who contribute to the protocol.',
-                icon: CreditCard
+                icon: CreditCard,
               },
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 variants={{
                   hidden: { opacity: 0, y: 30, scale: 0.95 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0, 
+                  visible: {
+                    opacity: 1,
+                    y: 0,
                     scale: 1,
-                    transition: { duration: 0.5, ease: "easeOut" }
-                  }
+                    transition: { duration: 0.5, ease: 'easeOut' },
+                  },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:border-primary/40 hover:bg-white/[0.07] transition-all group font-poppins"
               >
@@ -756,9 +824,7 @@ export default function Home() {
                         size={20}
                       />
                     </h3>
-                    <p className="text-slate-400 leading-relaxed font-medium">
-                      {item.a}
-                    </p>
+                    <p className="text-slate-400 leading-relaxed font-medium">{item.a}</p>
                   </div>
                 </div>
               </motion.div>
@@ -766,7 +832,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
     </div>
   );
 }

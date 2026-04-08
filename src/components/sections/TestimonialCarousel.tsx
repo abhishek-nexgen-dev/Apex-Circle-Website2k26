@@ -45,43 +45,40 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
           {testimonials.map((testimonial, index) => {
             const isCenter = index === currentIndex;
             const isVisible = visibleIndices.includes(index);
-            
+
             if (!isVisible) return null;
 
             // Determine position: left, center, or right
             let position = 0; // center
-            if (index === (currentIndex - 1 + testimonials.length) % testimonials.length) position = -1; // left
+            if (index === (currentIndex - 1 + testimonials.length) % testimonials.length)
+              position = -1; // left
             if (index === (currentIndex + 1) % testimonials.length) position = 1; // right
 
             return (
               <motion.div
                 key={testimonial.name}
-                initial={{ 
-                  opacity: 0, 
-                  scale: 0.8, 
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
                   x: position * 300,
-                  zIndex: 0 
+                  zIndex: 0,
                 }}
-                animate={{ 
+                animate={{
                   opacity: isCenter ? 1 : 0.4,
                   scale: isCenter ? 1.05 : 0.85,
                   x: position * 300,
                   zIndex: isCenter ? 20 : 10,
-                  transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
+                  transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] },
                 }}
-                exit={{ 
-                  opacity: 0, 
-                  scale: 0.7, 
-                  x: (position === 0 ? 1 : position) * 500, // exit center either direction 
-                  zIndex: 0 
+                exit={{
+                  opacity: 0,
+                  scale: 0.7,
+                  x: (position === 0 ? 1 : position) * 500, // exit center either direction
+                  zIndex: 0,
                 }}
                 className="absolute w-[240px] md:w-[320px]"
               >
-                <TestimonialCard 
-                  testimonial={testimonial} 
-                  active={isCenter} 
-                  scale={0.85}
-                />
+                <TestimonialCard testimonial={testimonial} active={isCenter} scale={0.85} />
               </motion.div>
             );
           })}
@@ -113,7 +110,9 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-1.5 transition-all duration-500 rounded-full ${
-              index === currentIndex ? 'w-12 bg-tertiary shadow-[0_0_10px_rgba(56,189,248,0.5)]' : 'w-3 bg-white/20'
+              index === currentIndex
+                ? 'w-12 bg-tertiary shadow-[0_0_10px_rgba(56,189,248,0.5)]'
+                : 'w-3 bg-white/20'
             }`}
           />
         ))}

@@ -36,7 +36,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
           {members.map((member, index) => {
             const isCenter = index === currentIndex;
             const isVisible = visibleIndices.includes(index);
-            
+
             if (!isVisible) return null;
 
             // Determine position: left, center, or right
@@ -47,32 +47,28 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
             return (
               <motion.div
                 key={member.id}
-                initial={{ 
-                  opacity: 0, 
-                  scale: 0.8, 
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
                   x: position * 300,
-                  zIndex: 0 
+                  zIndex: 0,
                 }}
-                animate={{ 
+                animate={{
                   opacity: isCenter ? 1 : 0.4,
                   scale: isCenter ? 1.05 : 0.85,
                   x: position * 300,
                   zIndex: isCenter ? 20 : 10,
-                  transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
+                  transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] },
                 }}
-                exit={{ 
-                  opacity: 0, 
-                  scale: 0.7, 
+                exit={{
+                  opacity: 0,
+                  scale: 0.7,
                   x: position * 400,
-                  zIndex: 0 
+                  zIndex: 0,
                 }}
                 className="absolute w-[240px] md:w-[300px]"
               >
-                <TeamCard 
-                  member={member} 
-                  active={isCenter} 
-                  scale={0.85}
-                />
+                <TeamCard member={member} active={isCenter} scale={0.85} />
               </motion.div>
             );
           })}
@@ -104,7 +100,9 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-1.5 transition-all duration-500 rounded-full ${
-              index === currentIndex ? 'w-12 bg-tertiary shadow-[0_0_10px_rgba(56,189,248,0.5)]' : 'w-3 bg-white/20'
+              index === currentIndex
+                ? 'w-12 bg-tertiary shadow-[0_0_10px_rgba(56,189,248,0.5)]'
+                : 'w-3 bg-white/20'
             }`}
           />
         ))}

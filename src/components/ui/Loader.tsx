@@ -33,24 +33,24 @@ export default function Loader({ onComplete }: LoaderProps) {
       {!complete && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ 
+          exit={{
             opacity: 0,
             scale: 1.5,
             filter: 'brightness(5) blur(40px)',
-            transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] }
+            transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
           }}
           className="fixed inset-0 z-[9999] bg-[#030014] flex items-center justify-center overflow-hidden"
         >
           {/* Animated Solar Backdrop */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 pointer-events-none"
-            animate={{ 
+            animate={{
               background: [
                 `radial-gradient(circle at center, rgba(250, 204, 21, 0.05) 0%, transparent 50%)`,
-                `radial-gradient(circle at center, rgba(234, 88, 12, 0.1) 0%, transparent 70%)`
-              ]
+                `radial-gradient(circle at center, rgba(234, 88, 12, 0.1) 0%, transparent 70%)`,
+              ],
             }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "mirror" }}
+            transition={{ duration: 2, repeat: Infinity, repeatType: 'mirror' }}
           />
 
           {/* Holographic Grid Background */}
@@ -80,17 +80,17 @@ export default function Loader({ onComplete }: LoaderProps) {
                 fill="transparent"
                 strokeDasharray="100 100"
                 initial={{ strokeDashoffset: 100 }}
-                animate={{ 
+                animate={{
                   strokeDashoffset: 100 - percent,
                   filter: [
-                    "drop-shadow(0 0 10px rgba(250,204,21,0.6))",
-                    "drop-shadow(0 0 25px rgba(234,88,12,0.9))",
-                    "drop-shadow(0 0 10px rgba(250,204,21,0.6))"
-                  ]
+                    'drop-shadow(0 0 10px rgba(250,204,21,0.6))',
+                    'drop-shadow(0 0 25px rgba(234,88,12,0.9))',
+                    'drop-shadow(0 0 10px rgba(250,204,21,0.6))',
+                  ],
                 }}
-                transition={{ 
-                  strokeDashoffset: { duration: 0.2, ease: "linear" },
-                  filter: { duration: 1.5, repeat: Infinity }
+                transition={{
+                  strokeDashoffset: { duration: 0.2, ease: 'linear' },
+                  filter: { duration: 1.5, repeat: Infinity },
                 }}
               />
               <defs>
@@ -103,23 +103,23 @@ export default function Loader({ onComplete }: LoaderProps) {
 
             {/* Percentage Counter (Gold/White Glow) */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <motion.div 
+              <motion.div
                 className="text-7xl md:text-9xl font-poppins font-black text-white tracking-tighter tabular-nums flex items-baseline gap-1"
-                animate={{ 
+                animate={{
                   textShadow: [
-                    "0 0 20px rgba(250,204,21,0.4)",
-                    "0 0 40px rgba(250,204,21,0.8)",
-                    "0 0 20px rgba(250,204,21,0.4)"
-                  ]
+                    '0 0 20px rgba(250,204,21,0.4)',
+                    '0 0 40px rgba(250,204,21,0.8)',
+                    '0 0 20px rgba(250,204,21,0.4)',
+                  ],
                 }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
                 {Math.round(percent)}
                 <span className="text-3xl md:text-4xl text-[#facc15] font-black">%</span>
               </motion.div>
-              
+
               {/* Animated "HERE WE GO" text */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="font-poppins text-[12px] md:text-sm text-[#facc15] font-bold tracking-[0.6em] uppercase mt-4"

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 mb-24 md:mb-32">
           <div>
             <h2 className="text-5xl sm:text-7xl md:text-8xl font-poppins font-black tracking-tighter leading-[0.8] uppercase mb-8 md:mb-12">
-              <span className="text-white animate-text-glow-white">Stay</span> <br /> 
+              <span className="text-white animate-text-glow-white">Stay</span> <br />
               <span className="text-primary animate-text-glow">Connected</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-500 max-w-md mb-8 md:mb-12 font-montserrat font-medium">
