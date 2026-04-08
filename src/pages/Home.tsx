@@ -701,7 +701,7 @@ export default function Home() {
             <TeamCarousel members={teamData} />
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="my-[5vh] text-center">
             <Link
               to="/team"
               className="inline-flex items-center gap-4 bg-white text-black px-12 py-6 font-black uppercase tracking-widest text-sm hover:bg-primary transition-colors"
