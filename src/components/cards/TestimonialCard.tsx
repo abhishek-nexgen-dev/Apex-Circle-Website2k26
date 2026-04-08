@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { motion } from 'framer-motion';
+import { Linkedin } from 'lucide-react';
 
 interface TestimonialCardProps {
   testimonial: {
@@ -16,7 +16,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <motion.div
       whileHover={{ y: -10 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
       className="group relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-[#0a1233]/70 to-[#060b22]/90 backdrop-blur-xl shadow-xl hover:shadow-tertiary/20 transition-all duration-500 flex flex-col h-full"
     >
       {/* 🔥 Glow Layer */}
@@ -56,10 +56,8 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
 
         {/* Role + Company */}
         <p className="text-[11px] uppercase tracking-wider text-slate-400 mb-3">
-          {testimonial.role}{" "}
-          <span className="text-tertiary/70">
-            @ {testimonial.company || "Apex Circle"}
-          </span>
+          {testimonial.role}{' '}
+          <span className="text-tertiary/70">@ {testimonial.company || 'Apex Circle'}</span>
         </p>
 
         {/* Testimonial Text */}

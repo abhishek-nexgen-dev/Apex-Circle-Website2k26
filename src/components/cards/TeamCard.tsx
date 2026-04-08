@@ -57,11 +57,15 @@ export default function TeamCard({ member, active = true, scale = 1 }: TeamCardP
             <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <div className="flex gap-3">
                 {member.socials.linkedin && (
-                  <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors">
+                  <a
+                    href={member.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors"
+                  >
                     <Linkedin size={16} />
                   </a>
                 )}
-              
               </div>
             </div>
           </div>

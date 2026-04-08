@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Hexagon, Zap, Send } from 'lucide-react';
-import { IoIosGitNetwork } from "react-icons/io";
+import { IoIosGitNetwork } from 'react-icons/io';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -127,8 +127,8 @@ export default function Navbar() {
             className="flex items-center gap-2 text-[14px] xl:text-[16px] font-poppins font-black uppercase tracking-[0.2em] text-white hover:text-primary transition-all whitespace-nowrap group bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(79,142,247,0.3)]"
           >
             <span>Connect</span>
-           
-            <IoIosGitNetwork 
+
+            <IoIosGitNetwork
               size={14}
               className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
             />
@@ -192,7 +192,7 @@ export default function Navbar() {
                   to="/contact"
                   className="bg-primary text-black font-poppins font-black uppercase tracking-widest text-[16px] py-5 rounded-none text-center block hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_0_20px_rgba(79,142,247,0.3)]"
                 >
-                  Initialize Connection 
+                  Initialize Connection
                 </Link>
               </motion.div>
             </div>
