@@ -18,6 +18,7 @@
 
   --animate-marquee: marquee 30s linear infinite;
   --animate-marquee-reverse: marquee-reverse 30s linear infinite;
+  --animate-marquee-slow: marquee-reverse 60s linear infinite;
   --animate-spin-slow: spin 8s linear infinite;
   --animate-glitch-line: glitch-line 2s linear infinite;
   --animate-glitch-line-delayed: glitch-line 2s linear infinite 1s;
@@ -413,6 +414,16 @@
     );
     background-size: 100% 200%;
     animation: fire-in-text 3s infinite ease-in-out;
+  }
+
+  .caution-stripes {
+    background: repeating-linear-gradient(
+      -45deg,
+      #000 0px,
+      #000 5px,
+      #facc15 5px,
+      #facc15 10px
+    );
   }
 }
 
