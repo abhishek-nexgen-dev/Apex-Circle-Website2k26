@@ -233,6 +233,7 @@ const RoadmapInteractive = () => {
 export default function Home() {
   const teamData = useMemo(() => teamDataRaw, []);
 
+  
   const testimonials = [
     {
       name: 'Abhishek Mahto',
