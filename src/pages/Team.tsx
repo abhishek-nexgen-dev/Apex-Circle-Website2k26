@@ -288,12 +288,10 @@ export default function Team() {
           {/* 🔥 HEADER */}
           <div className="text-center mb-20 md:mb-28">
             <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase relative">
-              
               <span className="text-white">Mentors &</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600">
                 Advisors
               </span>
-
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -303,8 +301,6 @@ export default function Team() {
                   animation: 'glossySweep 3s ease-in-out infinite',
                 }}
               />
-
-
             </h2>
 
             <p className="mt-6 text-slate-400 max-w-xl mx-auto text-sm md:text-base uppercase tracking-wide">
@@ -355,7 +351,7 @@ export default function Team() {
               </h3>
 
               <span className="text-xs text-slate-500 uppercase tracking-widest">
-               Helping You Grow
+                Helping You Grow
               </span>
             </div>
 
