@@ -7,7 +7,7 @@
     "handle": "🧭 Strategy & Vision",
     "emoji": "🧭",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Soumodweep-ZJFwPoII.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775623070/soumodweep_wszhne.png",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/soumodweep-das/",
       "twitter": "#",
@@ -52,7 +52,7 @@
     "handle": "🎯 Aesthetics & Experience",
     "emoji": "🎯",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/yuvraj-CyJ9jIEw.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775623939/yuv_njuwxk.jpg",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/yuvrajprasad/",
       "twitter": "#",
@@ -67,7 +67,7 @@
     "handle": "Development & Infrastructure",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Somnath-BFnST6cr.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775623441/Gemini_Generated_Image_e1h2i4e1h2i4e1h2_szwo5n.png",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/somnath-mukherjee-8b629b288/",
       "twitter": "#",
@@ -82,7 +82,7 @@
     "handle": "Frontend Integration & Support",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Naila-DyAHvO2X.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775623902/naila_vthfo7.jpg",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/nailafarooque/",
       "twitter": "#",
@@ -135,21 +135,6 @@
     }
   },
   {
-    "id": "15",
-    "name": "Rouson Das",
-    "role": "Management Lead",
-    "department": "Management",
-    "handle": "Planning & Coordination",
-    "emoji": "",
-    "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Rouson-lxqxgbtz.webp",
-    "socials": {
-      "linkedin": "https://www.linkedin.com/in/rouson-das-563b52284/",
-      "twitter": "#",
-      "github": "#"
-    }
-  },
-  {
     "id": "16",
     "name": "Shuvrajit Majhi",
     "role": "Social Media Lead",
@@ -165,15 +150,19 @@
     }
   },
   {
-    "id": "17",
-    "name": "Pushkar Das",
-    "role": "Social Media Co-Lead",
-    "department": "Social Media",
-    "handle": "Content & Engagement",
+    "id": "15",
+    "name": "Rouson Das",
+    "role": "Management Lead",
+    "department": "Management",
+    "handle": "Planning & Coordination",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "Pushkar",
-    "socials": { "linkedin": "", "twitter": "#", "github": "#" }
+    "image": "https://calcuttahacks.xyz/assets/Rouson-lxqxgbtz.webp",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/rouson-das-563b52284/",
+      "twitter": "#",
+      "github": "#"
+    }
   },
   {
     "id": "18",
