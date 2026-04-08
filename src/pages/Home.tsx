@@ -42,7 +42,6 @@ import CommunityImage from '@/assets/Image/community.jpg';
 import WorkshopsImage from '@/assets/Image/workshops.jpg';
 import ImageCarousel from '@/components/ImageCarousel';
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const RoadmapInteractive = () => {
@@ -229,11 +228,7 @@ const RoadmapInteractive = () => {
 };
 
 export default function Home() {
-
-
   const teamData = useMemo(() => teamDataRaw, []);
-
-
 
   const testimonials = [
     {
