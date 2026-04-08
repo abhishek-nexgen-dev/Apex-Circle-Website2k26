@@ -440,7 +440,7 @@ export default function Team() {
         </section>
 
         {/* Contributors Wall - Upgraded */}
-        <section className="mb-32 md:mb-56 py-32 md:py-48 border-b border-white/5 bg-white/[0.01] relative overflow-hidden">
+        <section className="mb-32 md:mb-56 py-32 md:py-48 border-b border-white/5 bg-black/35 relative rounded-xl overflow-hidden">
           <div
             className="absolute inset-0 opacity-5 pointer-events-none"
             style={{
