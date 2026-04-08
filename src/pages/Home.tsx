@@ -77,9 +77,9 @@ const RoadmapInteractive = () => {
   return (
     <section ref={sectionRef} className="py-6 md:py-16 px-6 bg-surface relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="section-header roadmap-header mb-4 md:mb-8 text-center origin-center">
-          <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.8] uppercase">
-            Our <span className="text-slate-500">Roadmap</span>
+        <div className="section-header roadmap-header mb-12 text-left">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
+            OUR <span className="text-[#facc15] drop-shadow-[0_0_25px_rgba(250,204,21,0.7)] animate-pulse">ROADMAP</span>
           </h2>
         </div>
 
@@ -576,18 +576,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Manifesto Marquee */}
-      <div className="w-full border-b border-white/5 bg-primary py-4 overflow-hidden  ">
-        <div className="flex gap-12 items-center whitespace-nowrap animate-marquee-reverse">
-          {[...Array(10)].map((_, i) => (
-            <span
-              key={i}
-              className="text-black text-xs font-black uppercase tracking-[0.5em] flex items-center gap-12"
-            >
-              BUILD IN PUBLIC <Zap size={12} /> LEARN IN COMMUNITY <Zap size={12} /> SHIP FAST{' '}
-              <Zap size={12} /> SCALE TOGETHER <Zap size={12} /> APEX CIRCLE
-            </span>
-          ))}
+      {/* Manifesto Marquee (Caution Tape Design) */}
+      <div className="w-full relative py-8 md:py-12 overflow-hidden">
+        <div className="absolute inset-0 bg-transparent flex items-center justify-center">
+          <div className="w-[120%] bg-[#facc15] relative overflow-hidden border-y border-black rotate-[2deg] scale-[1.05] shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-20">
+            {/* Top Stripes Border */}
+            <div className="h-1 md:h-1.5 w-full caution-stripes border-b border-black/5" />
+            
+            <div className="py-1 md:py-1.5 overflow-hidden flex items-center relative">
+              <div className="flex gap-8 items-center whitespace-nowrap animate-marquee-slow">
+                {[...Array(10)].map((_, i) => (
+                  <span
+                    key={i}
+                    className="text-black text-base md:text-xl font-poppins font-black uppercase tracking-tighter flex items-center gap-8 select-none"
+                  >
+                    BUILD IN PUBLIC 
+                    <Zap size={14} className="fill-black text-black" /> 
+                    LEARN IN COMMUNITY 
+                    <Zap size={14} className="fill-black text-black" /> 
+                    SHIP FAST 
+                    <Zap size={14} className="fill-black text-black" /> 
+                    SCALE TOGETHER 
+                    <Zap size={14} className="fill-black text-black" /> 
+                    APEX CIRCLE
+                  </span>
+                ))}
+              </div>
+              
+              <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            </div>
+
+            {/* Bottom Stripes Border */}
+            <div className="h-1 md:h-1.5 w-full caution-stripes border-t border-black/5" />
+          </div>
         </div>
       </div>
 
