@@ -13,7 +13,7 @@ interface TeamCardProps {
 
 export default function TeamCard({ member, active = true, scale = 1 }: TeamCardProps) {
   return (
-    <Link to={`#`} className="block">
+    <div className="block">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -56,15 +56,16 @@ export default function TeamCard({ member, active = true, scale = 1 }: TeamCardP
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <div className="flex gap-3">
-                {[Twitter, Github, Linkedin].map((Icon, i) => (
+                {member.socials.linkedin && (
                   <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center hover:bg-tertiary hover:text-black hover:scale-110 transition-all"
+                    href={member.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors"
                   >
-                    <Icon size={16} />
+                    <Linkedin size={16} />
                   </a>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -94,6 +95,6 @@ export default function TeamCard({ member, active = true, scale = 1 }: TeamCardP
           </button>
         </div>
       </motion.div>
-    </Link>
+    </div>
   );
 }

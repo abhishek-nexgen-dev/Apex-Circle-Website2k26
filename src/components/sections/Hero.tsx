@@ -23,6 +23,7 @@ import tdoLogo from '@/company/tdo.png';
 import tiLogo from '@/company/ti.png';
 import traeLogo from '@/company/trae.jpeg';
 import unibLogo from '@/company/unib.jpeg';
+import { RiUserCommunityLine } from 'react-icons/ri';
 
 import Magnetic from '@/components/ui/Magnetic';
 
@@ -139,11 +140,11 @@ export default function Hero() {
             animationDelay: '0s',
           }}
         >
-          <Sparkles className="text-[#4F8EF7]" size={14} />
+          <RiUserCommunityLine className="text-[#4F8EF7]" size={25} />
           <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.18em] uppercase text-slate-200">
             India&apos;s Leading Tech Community
           </span>
-          <Sparkles className="text-[#7C6FE0]" size={14} />
+          <RiUserCommunityLine className="text-[#7C6FE0]" size={25} />
         </div>
 
         {/* Letter-drop hero title — original "LIMITS" */}

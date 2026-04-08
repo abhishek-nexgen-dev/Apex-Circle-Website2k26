@@ -94,7 +94,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
       </div>
 
       {/* Indicators */}
-      <div className="flex justify-center gap-3 mt-6">
+      {/* <div className="flex justify-center gap-3 mt-[5.8vh]">
         {members.map((_, index) => (
           <button
             key={index}
@@ -106,7 +106,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
             }`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
