@@ -9,6 +9,7 @@ interface TestimonialCardProps {
     image: string;
     linkedin?: string;
     company?: string;
+    imagePosition?: string;
   };
 }
 
