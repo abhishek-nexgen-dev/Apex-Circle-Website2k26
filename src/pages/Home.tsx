@@ -107,8 +107,8 @@ const RoadmapInteractive = () => {
   return (
     <section ref={sectionRef} className="py-6 md:py-16 px-6 bg-surface relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="section-header roadmap-header mb-12 text-left">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
+        <div className="section-header roadmap-header mb-8 text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
             OUR{' '}
             <span className="text-[#facc15] drop-shadow-[0_0_25px_rgba(250,204,21,0.7)] animate-pulse">
               ROADMAP
@@ -121,7 +121,7 @@ const RoadmapInteractive = () => {
           className="w-full flex justify-center h-[400px] sm:h-[550px] md:h-[750px] lg:h-[900px] xl:h-[1000px] items-start relative z-20 
           -mb-[20px] sm:-mb-[40px] md:-mb-[70px] lg:-mb-[100px] xl:-mb-[120px]"
         >
-          <div className="relative w-[1000px] h-[1000px] shrink-0 transform scale-[0.4] sm:scale-[0.55] md:scale-[0.75] lg:scale-90 xl:scale-100 origin-top font-poppins">
+          <div className="relative w-[1000px] h-[1000px] shrink-0 transform scale-[0.32] sm:scale-[0.55] md:scale-[0.75] lg:scale-90 xl:scale-100 origin-top font-poppins">
             {/* SVG Road Line */}
             <svg viewBox="0 0 1000 1000" className="absolute inset-0 pointer-events-none">
               <path
@@ -319,7 +319,7 @@ export default function Home() {
       <section className="py-10 md:py-14 px-6 mt-[7vh] mb-[4vh]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div>
-            <h2 className="relative text-5xl md:text-7xl font-poppins font-bold tracking-[0.15em] leading-none uppercase mb-6 flex flex-wrap gap-x-6">
+            <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-poppins font-bold tracking-[0.1em] md:tracking-[0.15em] leading-tight md:leading-none uppercase mb-6 flex flex-wrap gap-x-4 md:gap-x-6">
               {['APEX', 'CIRCLE'].map((word, wordIdx) => (
                 <span key={wordIdx} className="inline-flex">
                   {word.split('').map((char, charIdx) => {
@@ -459,7 +459,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="section-header mb-12 md:mb-16">
-            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
+            <h2 className="relative text-4xl sm:text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
               <span className="text-white">What We </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
                 Do?
@@ -611,7 +611,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div
-                  className="text-6xl md:text-8xl lg:text-9xl font-poppins font-black tracking-tighter leading-none group-hover:scale-110 transition-transform duration-500 origin-left text-transparent bg-clip-text"
+                  className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-poppins font-black tracking-tighter leading-none group-hover:scale-110 transition-transform duration-500 origin-left text-transparent bg-clip-text"
                   style={{
                     backgroundImage:
                       'linear-gradient(0deg, #9a3412 0%, #ea580c 40%, #f97316 65%, #fde047 85%, #fff 100%)',
@@ -671,7 +671,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="section-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
                 OUR{' '}
                 <span className="text-yellow-400 drop-shadow-[0_0_25px_rgba(234,179,8,0.7)] animate-pulse">
                   EVENTS
@@ -708,7 +708,7 @@ export default function Home() {
       <section className="py-6 md:py-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="section-header text-center mb-10 px-4">
-            <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tighter leading-none uppercase relative inline-block">
+            <h2 className="text-4xl sm:text-5xl md:text-8xl font-poppins font-black tracking-tighter leading-none uppercase relative inline-block">
               <span className="relative z-10 text-white animate-text-glow-white">OUR </span>
               <span
                 className="relative z-10 animate-text-glow-gold"
@@ -745,7 +745,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="section-header mb-12 md:mb-16 text-center">
-            <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tighter uppercase leading-[0.8]">
+            <h2 className="text-4xl sm:text-5xl md:text-8xl font-poppins font-black tracking-tighter uppercase leading-[0.8]">
               <span className="text-white animate-text-glow-white">Voices of </span>
               <span
                 className="animate-text-glow-gold px-2"
