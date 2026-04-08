@@ -102,11 +102,11 @@ const advisors = [
 const mentors = [
   {
     id: 'mentor-1',
-    name: 'John Doe',
-    role: 'Senior Software Engineer',
-    company: 'Google',
-    bio: 'Mentors developers in backend systems and scalability.',
-    image: '/assets/team/john.jpg',
+    name: 'Soumojit Shome',
+    role: 'Full‑Stack Engineer',
+    company: '',
+    bio: 'Co-Founder & System Engineer at LastMinuteEngineering',
+    image: 'https://calcuttahacks.xyz/assets/soumojit-BRvJOMq0.webp',
     linkedin: 'https://example.com/john',
     type: 'Mentor',
     expertise: ['Backend', 'System Design'],
@@ -231,16 +231,26 @@ export default function Team() {
         {/* NEW SECTION: Our Culture */}
         <section className="mb-32 md:mb-56">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-tertiary font-mono text-sm mb-6 block tracking-widest uppercase">
-                // Core_Values
+ 
+              
+              <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
+              <span className="text-white">Our </span>  <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+                Culture
               </span>
-              <h2 className="text-5xl md:text-8xl font-brutal tracking-tighter uppercase leading-none">
-                Our <br /> <span className="text-slate-500">Culture</span>
-              </h2>
-            </div>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '250% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
+            </h2>
+           
             <p className="text-slate-500 font-mono text-xs uppercase tracking-widest max-w-xs text-right">
-              We operate on the principles of radical transparency and meritocratic growth.
+              Our culture is about learning, building, and growing together with consistency and purpose.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
