@@ -40,6 +40,7 @@ import AboutImage from '@/assets/Image/About.jpg';
 import HackathonImage from '@/assets/Image/hackathon.jpg';
 import CommunityImage from '@/assets/Image/community.jpg';
 import WorkshopsImage from '@/assets/Image/workshops.jpg';
+import ImageCarousel from '@/components/ImageCarousel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -318,7 +319,7 @@ export default function Home() {
       <Hero />
 
       {/* About & Mission Section */}
-      <section className="py-10 md:py-14 px-6">
+      <section className="py-10 md:py-14 px-6 mt-[7vh] mb-[4vh]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div>
             <h2 className="relative text-5xl md:text-7xl font-poppins font-bold tracking-[0.15em] leading-none uppercase mb-6 flex flex-wrap gap-x-6">
@@ -353,7 +354,7 @@ export default function Home() {
                 }}
               />
             </h2>
-            <div className="flex items-start gap-4 mb-10">
+            <div className="flex items-start gap-4 mb-10 ">
               <div className="mt-1 shadow-[0_0_15px_rgba(79,142,247,0.5)] bg-primary/20 p-1 rounded-full">
                 <ChevronRight className="text-primary animate-pulse" size={20} />
               </div>
@@ -448,13 +449,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative w-full rounded-xl overflow-hidden border border-white/5 shadow-2xl bg-black/10">
-            <img
-              src={CalCuttaHacks}
-              alt="About Apex Circle"
-              className="w-full h-auto object-contain"
-              referrerPolicy="no-referrer"
-            />
+          <div className="relative w-full rounded-xl overflow-hidden border border-white/5 shadow-2xl bg-black/10 p-4">
+            <ImageCarousel images={[AboutImage, HackathonImage, CommunityImage, WorkshopsImage]} />
           </div>
         </div>
       </section>
@@ -602,7 +598,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10 p-8 md:p-12 border border-white/5 bg-black/40 backdrop-blur-xl rounded-3xl shadow-[0_0_50px_rgba(249,115,22,0.1)]">
           <div className="stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
             {[
-              { label: 'Active Nodes', value: '2k+', icon: Globe, color: 'text-yellow-400' },
+              { label: 'Active Nodes', value: '30+', icon: Globe, color: 'text-yellow-400' },
               { label: 'Protocols', value: '150+', icon: Zap, color: 'text-orange-400' },
               { label: 'Contributors', value: '200+', icon: Users, color: 'text-red-400' },
               { label: 'Deployments', value: '1k+', icon: Rocket, color: 'text-yellow-500' },

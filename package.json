@@ -10,7 +10,8 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@google/genai": "^1.48.0",
@@ -35,6 +36,7 @@
     "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
     "autoprefixer": "^10.4.27",
+    "husky": "^9.1.7",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
