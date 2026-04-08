@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion } from 'motion/react';
 import { Target, Eye, Heart, ArrowRight } from 'lucide-react';
+import { Users, Rocket, Trophy, Handshake } from 'lucide-react';
 import calcuttaHacksImage from '@/assets/Image/CalCuttaHacks.jpg';
 
 const partners = [
@@ -54,6 +55,13 @@ const partners = [
   },
 ];
 
+const stats = [
+  { label: 'Community', value: '10K+', icon: Users },
+  { label: 'Projects', value: '500+', icon: Rocket },
+  { label: 'Hackathons', value: '25+', icon: Trophy },
+  { label: 'Partners', value: '100+', icon: Handshake },
+];
+
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
 
@@ -72,62 +80,31 @@ export default function About() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <header className="mb-12 md:mb-20 text-center md:text-left">
-          {(() => {
-            const words = [
-              { text: 'APEX', color: 'text-white' },
-              { text: 'PROTOCOL', color: 'gradient-word' },
-            ];
-            let globalIdx = 0;
-            const stagger = 0.12;
-            const dropDuration = 1.4;
-            const badgeDelay = 0.5;
-            const totalLetters = 12; // APEX(4) + PROTOCOL(8)
-            const glossyStart = badgeDelay + 0.05 + (totalLetters - 1) * stagger + dropDuration;
-            return (
-              <h1 className="relative text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-brutal leading-[0.8] tracking-tighter uppercase mb-12 drop-shadow-2xl flex flex-col md:flex-row gap-4 md:gap-10 justify-center md:justify-start">
-                {words.map((word) => (
-                  <span key={word.text} className="inline-flex">
-                    {word.text.split('').map((letter) => {
-                      const idx = globalIdx++;
-                      const delay = `${0.05 + idx * stagger}s`;
-                      return (
-                        <span
-                          key={idx}
-                          className={
-                            word.color === 'gradient-word'
-                              ? 'inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#4F8EF7] via-[#7C6FE0] to-[#38BDF8]'
-                              : 'inline-block text-white'
-                          }
-                          style={{
-                            animation: `letterDrop ${dropDuration}s cubic-bezier(0.22,1,0.36,1) both`,
-                            animationDelay: `${badgeDelay + parseFloat(delay)}s`,
-                          }}
-                        >
-                          {letter}
-                        </span>
-                      );
-                    })}
-                  </span>
-                ))}
-                {/* Shimmer sweep */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      'linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%)',
-                    backgroundSize: '250% 100%',
-                    animation: `glossySweep 2.4s ease-in-out ${glossyStart.toFixed(2)}s infinite`,
-                  }}
-                />
-              </h1>
-            );
-          })()}
-          <p className="text-xl md:text-3xl text-slate-400 max-w-4xl leading-relaxed mx-auto md:ml-0 font-medium">
-            Apex Circle is a decentralized ecosystem designed to accelerate human potential through
-            technology, collaboration, and radical transparency.
-          </p>
+        <header className="text-center mb-16 md:mb-24 mt-[5vh] flex items-center justify-center flex-col gap-6 md:gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12 relative">
+              APEX <br /> <span className="text-slate-500">BUILDERS</span>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '250% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
+            </h1>
+
+            <p className="text-slate-400 text-center  text-lg md:text-2xl max-w-2xl font-medium leading-relaxed uppercase tracking-tight">
+              APEX CIRCLE IS A COLLECTIVE OF LEADERS, DEVELOPERS, DESIGNERS, AND OPERATORS WORKING
+              TOGETHER ACROSS TECHNOLOGY, CREATIVITY, AND COMMUNITY TO BUILD, GROW, AND CREATE REAL
+              IMPACT.
+            </p>
+          </motion.div>
         </header>
 
         {/* Redesigned Mission/Vision Boxes */}
@@ -186,11 +163,23 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 items-center mb-16 md:mb-24">
-          <div>
-            <h2 className="text-5xl md:text-8xl font-brutal tracking-tighter uppercase mb-12 flex items-center gap-4">
-              The <span className="text-primary italic">Genesis</span>
-              <div className="h-[2px] flex-1 bg-gradient-to-r from-primary to-transparent opacity-30" />
+          <div className="">
+            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block my-[8vh]">
+              <span className="text-white">Our</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+                Journey
+              </span>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '250% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
             </h2>
+
             <div className="space-y-10 md:space-y-16">
               {[
                 {
@@ -246,23 +235,35 @@ export default function About() {
         </div>
 
         {/* Impact Section */}
-        <section className="mb-16 md:mb-32 py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-            {[
-              { label: 'Community Members', value: '10k+' },
-              { label: 'Projects Deployed', value: '500+' },
-              { label: 'Global Hackathons', value: '25+' },
-              { label: 'Protocol Partners', value: '100+' },
-            ].map((stat, i) => (
-              <div key={i} className="group">
-                <div className="text-4xl sm:text-5xl md:text-8xl font-brutal tracking-tighter mb-4 group-hover:text-primary transition-colors">
-                  {stat.value}
+        <section className="mb-16 md:mb-32 py-16 md:py-24 border-y border-white/10 bg-gradient-to-b from-black/60 to-black/30 rounded-3xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 px-4 md:px-8">
+            {stats.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={i}
+                  className="group relative flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,140,0,0.15)]"
+                >
+                  {/* Icon */}
+                  <div className="mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={28} />
+                  </div>
+
+                  {/* Value */}
+                  <div className="text-3xl sm:text-4xl md:text-6xl font-brutal tracking-tight mb-2 group-hover:text-primary transition-colors">
+                    {stat.value}
+                  </div>
+
+                  {/* Label */}
+                  <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                    {stat.label}
+                  </div>
+
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-r from-orange-500/10 via-transparent to-yellow-500/10 blur-xl" />
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
