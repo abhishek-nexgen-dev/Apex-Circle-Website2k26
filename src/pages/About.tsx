@@ -4,6 +4,7 @@ import { Target, Eye, Heart, ArrowRight } from 'lucide-react';
 import { Users, Rocket, Trophy, Handshake } from 'lucide-react';
 import calcuttaHacksImage from '@/assets/Image/CalCuttaHacks.jpg';
 
+
 const partners = [
   {
     name: 'Google',
@@ -61,6 +62,9 @@ const stats = [
   { label: 'Hackathons', value: '25+', icon: Trophy },
   { label: 'Partners', value: '100+', icon: Handshake },
 ];
+
+
+
 
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
@@ -270,8 +274,20 @@ export default function About() {
         {/* Partners Section */}
         <section className="mb-16 md:mb-32">
           <div className="text-center mb-16 md:mb-24">
-            <h2 className="text-3xl md:text-6xl font-brutal tracking-tighter uppercase">
-              Our <span className="text-slate-500">Partners</span>
+            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block my-[8vh]">
+              <span className="text-white">Our</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+                Partners
+              </span>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '250% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
             </h2>
           </div>
 
@@ -279,12 +295,12 @@ export default function About() {
             {partners.map((partner, i) => (
               <div
                 key={i}
-                className="group h-16 border  border-white/10 flex items-center justify-center bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500"
+                className="group h-16 border  border-white/10 flex items-center justify-center bg-blue-900/10 hover:bg-white/[0.15] transition-all duration-500 rounded-lg"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-8 md:h-10  object-contain opacity-70 group-hover:opacity-100 transition-all duration-500"
+                  className="h-8 md:h-10  object-contain opacity-70 group-hover:opacity-100 transition-all duration-500 grayscale group-hover:grayscale-0"
                 />
               </div>
             ))}
