@@ -270,19 +270,19 @@ export default function Hero() {
       <div className="relative w-full border-y border-white/10 bg-white/[0.02] backdrop-blur-md overflow-hidden mt-auto">
         {/* Gradient fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0  w-24 bg-gradient-to-l from-black to-transparent z-10" />
 
         <div className="marquee-content animate-marquee-reverse flex gap-6 py-4">
           <div className="marquee-track flex items-center gap-6">
             {[...brands, ...brands].map((brand, idx) => (
               <div
                 key={`${brand.name}-${idx}`}
-                className="flex items-center justify-center min-w-[180px] h-[80px] px-6 rounded-2xl bg-gradient-to-br from-[#0a1233] to-[#111a44] shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
+                className="flex items-center justify-center min-w-45 h-[80px] px-6 rounded-2xl bg-gradient-to-br from-[#0a1233] to-[#111a44] shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
               >
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="h-10 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                  className="h-[80%] w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
                 />
               </div>
             ))}
