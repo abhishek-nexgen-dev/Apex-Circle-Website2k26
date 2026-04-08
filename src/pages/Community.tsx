@@ -68,8 +68,17 @@ export default function Community() {
           <span className="text-primary font-mono text-sm mb-8 block tracking-widest uppercase">
             // Join_The_Circle
           </span>
-          <h1 className="text-5xl sm:text-7xl md:text-[10rem] lg:text-[12rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-8 md:mb-12">
+          <h1 className="text-5xl relative sm:text-7xl md:text-[10rem] lg:text-[12rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-8 md:mb-12">
             The <br /> <span className="text-primary">Community</span>
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                backgroundSize: '250% 100%',
+                animation: 'glossySweep 3s ease-in-out infinite',
+              }}
+            />
           </h1>
           <p className="text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed">
             Apex Circle is a decentralized collective of architects, engineers, and visionaries. Our
@@ -86,12 +95,11 @@ export default function Community() {
             {paths.map((path, i) => (
               <div
                 key={i}
-                className="group p-8 md:p-12 border border-white/10 bg-white/[0.02] hover:border-primary transition-all duration-500"
+                className="group p-8 md:p-12 border border-white/10 bg-[#060c37] hover:border-yellow-500 transition-all duration-500"
               >
                 <path.icon
                   className="text-primary mb-6 md:mb-8 group-hover:scale-110 transition-transform"
                   size={28}
-                  md:size={32}
                 />
                 <h3 className="text-3xl md:text-4xl font-brutal uppercase tracking-tighter mb-4">
                   {path.title}
@@ -114,22 +122,32 @@ export default function Community() {
       <section className="mb-24 md:mb-48 py-24 md:py-32 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
           <div>
-            <span className="text-primary font-mono text-sm mb-6 md:mb-8 block tracking-widest uppercase">
-              // Protocol_Benefits
-            </span>
-            <h2 className="text-4xl md:text-7xl font-brutal tracking-tighter leading-none uppercase mb-8 md:mb-12">
-              Why <span className="text-slate-500">Join</span> Us?
+            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block my-[8vh]">
+              <span className="text-white"> WHY</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+                Join Apex Circle?
+              </span>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '250% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
             </h2>
+
             <div className="space-y-6 md:space-y-8">
               {[
-                'Access to exclusive protocol documentation and research.',
-                'Networking with elite engineers and industry leaders.',
-                'Priority access to hackathons and community events.',
-                'Opportunities for internships and full-time roles.',
-                'Direct impact on the future of decentralized systems.',
+                'Learn and grow with a strong community',
+                'Build real projects, not just practice',
+                'Connect with developers and creators',
+                'Join exciting hackathons and events',
+                'Get opportunities for internships and jobs',
               ].map((benefit, i) => (
                 <div key={i} className="flex items-start gap-4">
-                  <CheckCircle2 className="text-primary shrink-0 mt-1" size={18} md:size={20} />
+                  <CheckCircle2 className="text-primary shrink-0 mt-1" size={18} />
                   <p className="text-lg md:text-xl text-slate-300 font-medium">{benefit}</p>
                 </div>
               ))}
@@ -137,9 +155,9 @@ export default function Community() {
           </div>
           <div className="relative aspect-square overflow-hidden border border-white/10">
             <img
-              src="https://picsum.photos/seed/community/800/800"
+              src="https://feweek.co.uk/wp-content/uploads/2021/11/community-fe-feat.jpg"
               alt="Community"
-              className="w-full h-full object-cover grayscale"
+              className="w-full h-full object-cover rounded-lg shadow shadow-2xl shadow-amber-500/20"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
