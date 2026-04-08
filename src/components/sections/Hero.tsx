@@ -23,7 +23,7 @@ import tdoLogo from '@/company/tdo.png';
 import tiLogo from '@/company/ti.png';
 import traeLogo from '@/company/trae.jpeg';
 import unibLogo from '@/company/unib.jpeg';
-import { RiUserCommunityLine } from "react-icons/ri";
+import { RiUserCommunityLine } from 'react-icons/ri';
 
 import Magnetic from '@/components/ui/Magnetic';
 
@@ -145,7 +145,6 @@ export default function Hero() {
             India&apos;s Leading Tech Community
           </span>
           <RiUserCommunityLine className="text-[#7C6FE0]" size={25} />
-          
         </div>
 
         {/* Letter-drop hero title — original "LIMITS" */}

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { memo, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -9,7 +9,7 @@ import ProjectCard from '@/components/cards/ProjectCard';
 import TeamCard from '@/components/cards/TeamCard';
 import eventsData from '@/data/events.json';
 import projectsData from '@/data/projects.json';
-import teamData from '@/data/team.json';
+import teamDataRaw from '@/data/team.json';
 import {
   Users,
   Zap,
@@ -41,6 +41,7 @@ import HackathonImage from '@/assets/Image/hackathon.jpg';
 import CommunityImage from '@/assets/Image/community.jpg';
 import WorkshopsImage from '@/assets/Image/workshops.jpg';
 import ImageCarousel from '@/components/ImageCarousel';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -228,14 +229,11 @@ const RoadmapInteractive = () => {
 };
 
 export default function Home() {
-  const updatedTeamData = teamData.map((member) => {
-    if (member.name === 'Soumodweep Das') return { ...member, image: SoumodweepPhoto };
-    if (member.name === 'Yuvraj Prasad')
-      return { ...member, image: YuvrajPhoto, imagePosition: 'center 5%' };
-    if (member.name === 'Naila Farooque') return { ...member, image: NailaPhoto };
-    if (member.name === 'Somnath Mukherjee') return { ...member, image: SomnathPhoto };
-    return member;
-  });
+
+
+  const teamData = useMemo(() => teamDataRaw, []);
+
+
 
   const testimonials = [
     {
@@ -598,9 +596,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10 p-8 md:p-12 border border-white/5 bg-black/40 backdrop-blur-xl rounded-3xl shadow-[0_0_50px_rgba(249,115,22,0.1)]">
           <div className="stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
             {[
-              { label: 'Active Nodes', value: '30+', icon: Globe, color: 'text-yellow-400' },
-              { label: 'Protocols', value: '150+', icon: Zap, color: 'text-orange-400' },
-              { label: 'Contributors', value: '200+', icon: Users, color: 'text-red-400' },
+              { label: 'Active Nodes', value: '4k+', icon: Globe, color: 'text-yellow-400' },
+              { label: 'Event Hosted', value: '15+', icon: Zap, color: 'text-orange-400' },
+              { label: 'PartnerShips', value: '50+', icon: Users, color: 'text-red-400' },
               { label: 'Deployments', value: '1k+', icon: Rocket, color: 'text-yellow-500' },
             ].map((stat, i) => (
               <div
@@ -705,7 +703,7 @@ export default function Home() {
           </div>
 
           <div className="relative mt-0 md:mt-0">
-            <TeamCarousel members={updatedTeamData} />
+            <TeamCarousel members={teamData} />
           </div>
 
           <div className="mt-8 text-center">

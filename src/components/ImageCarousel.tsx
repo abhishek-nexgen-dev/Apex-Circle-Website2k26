@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ImageCarouselProps {
   images: string[];
@@ -18,8 +18,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl">
-      
-      {/* Image Container */} 
+      {/* Image Container */}
       <div className="relative h-[300px] md:h-[500px] ease-in-out duration-400">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
@@ -70,7 +69,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           <div
             key={i}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === index ? "w-6 bg-white" : "w-2 bg-white/40"
+              i === index ? 'w-6 bg-white' : 'w-2 bg-white/40'
             }`}
           />
         ))}
