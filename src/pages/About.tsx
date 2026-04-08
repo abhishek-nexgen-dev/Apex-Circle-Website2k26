@@ -4,7 +4,6 @@ import { Target, Eye, Heart, ArrowRight } from 'lucide-react';
 import { Users, Rocket, Trophy, Handshake } from 'lucide-react';
 import calcuttaHacksImage from '@/assets/Image/CalCuttaHacks.jpg';
 
-
 const partners = [
   {
     name: 'Google',
@@ -62,9 +61,6 @@ const stats = [
   { label: 'Hackathons', value: '25+', icon: Trophy },
   { label: 'Partners', value: '100+', icon: Handshake },
 ];
-
-
-
 
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
