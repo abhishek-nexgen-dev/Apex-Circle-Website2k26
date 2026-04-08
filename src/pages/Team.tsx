@@ -108,7 +108,7 @@ const mentors = [
     handle: 'Co-Founder & System Engineer at LastMinuteEngineering',
     emoji: '🧑‍💻',
     color: '#1E293B',
-    image: "https://calcuttahacks.xyz/assets/soumojit-BRvJOMq0.webp",
+    image: 'https://calcuttahacks.xyz/assets/soumojit-BRvJOMq0.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/in/soumojit-shome/',
       twitter: '#',
@@ -418,7 +418,7 @@ export default function Team() {
                     department: 'Mentors',
                     id: `mentor-${i}`,
                     socials: {
-                      linkedin: person.socials.linkedin
+                      linkedin: person.socials.linkedin,
                     },
                   }}
                 />
