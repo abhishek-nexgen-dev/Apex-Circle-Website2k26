@@ -231,10 +231,8 @@ export default function Team() {
         {/* NEW SECTION: Our Culture */}
         <section className="mb-32 md:mb-56">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
- 
-              
-              <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
-              <span className="text-white">Our </span>  <br />
+            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
+              <span className="text-white">Our </span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
                 Culture
               </span>
@@ -248,9 +246,10 @@ export default function Team() {
                 }}
               />
             </h2>
-           
+
             <p className="text-slate-500 font-mono text-xs uppercase tracking-widest max-w-xs text-right">
-              Our culture is about learning, building, and growing together with consistency and purpose.
+              Our culture is about learning, building, and growing together with consistency and
+              purpose.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
@@ -341,7 +340,7 @@ export default function Team() {
                   member={{
                     name: person.name,
                     role: `${person.role} @ ${person.company}`,
-                    image: `https://picsum.photos/seed/advisor${i}/300/300`,
+                    image: `${person.image}`,
                     department: 'Advisors',
                     id: `advisor-${i}`,
                     socials: {
