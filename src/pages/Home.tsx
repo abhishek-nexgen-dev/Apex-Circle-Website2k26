@@ -721,12 +721,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="section-header mb-12 md:mb-16 text-center">
             <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tighter uppercase leading-[0.8]">
-              <span className="text-white animate-text-glow-white">Our </span>
+              <span className="text-white animate-text-glow-white">Voices of </span>
               <span
                 className="animate-text-glow-gold px-2"
                 style={{ WebkitTextStroke: '1px rgba(255, 215, 0, 0.4)', color: '#facc15' }}
               >
-                Testimonials
+                Apex Circle
               </span>
             </h2>
           </div>
