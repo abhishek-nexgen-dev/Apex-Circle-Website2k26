@@ -71,7 +71,8 @@ const advisors = [
     name: 'Amit Barnawal',
     role: 'Commercial Manager',
     company: 'The Drop Organization',
-    image: 'https://res.cloudinary.com/dz3cfmi5k/image/upload/c_fill,g_face,w_600,h_375,q_auto,f_auto/v1775635854/amit_wgfn1e.jpg',
+    image:
+      'https://res.cloudinary.com/dz3cfmi5k/image/upload/c_fill,g_face,w_600,h_375,q_auto,f_auto/v1775635854/amit_wgfn1e.jpg',
     linkedin: 'https://linkedin.com/in/amitbarnawal',
     type: 'Advisor',
   },
