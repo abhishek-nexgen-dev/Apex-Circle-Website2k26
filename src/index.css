@@ -417,13 +417,7 @@
   }
 
   .caution-stripes {
-    background: repeating-linear-gradient(
-      -45deg,
-      #000 0px,
-      #000 5px,
-      #facc15 5px,
-      #facc15 10px
-    );
+    background: repeating-linear-gradient(-45deg, #000 0px, #000 5px, #facc15 5px, #facc15 10px);
   }
 }
 
