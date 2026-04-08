@@ -738,7 +738,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-10 md:py-14 px-6 bg-black relative overflow-hidden">
+      <section className="py-10 md:py-14 px-6 bg-black/50 relative overflow-hidden">
         {/* Background Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
