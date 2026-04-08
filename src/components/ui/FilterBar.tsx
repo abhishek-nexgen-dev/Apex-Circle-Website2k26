@@ -27,10 +27,10 @@ export default function FilterBar({
           key={category}
           onClick={() => setActiveCategory(category)}
           className={cn(
-            'px-8 py-3 text-[10px] font-black uppercase tracking-widest transition-all',
+            'px-8 py-3 text-[10px] font-black rounded-md uppercase tracking-widest transition-all',
             activeCategory === category
               ? accentClasses[accentColor]
-              : 'bg-white/5 text-slate-500 hover:text-white hover:bg-white/10',
+              : 'bg-blue-950/90  text-slate-500 hover:text-white hover:bg-white/10',
           )}
         >
           {category}

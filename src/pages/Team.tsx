@@ -24,6 +24,174 @@ import Magnetic from '@/components/ui/Magnetic';
 
 const departments = ['All', 'Leadership', 'Web', 'Design', 'Social Media', 'PR & Outreach'];
 
+const advisors = [
+  {
+    id: 'advisor-1',
+    name: 'Dr. Alice Smith',
+    role: 'Blockchain Researcher',
+    company: 'MIT',
+    bio: 'Expert in decentralized systems and Web3 infrastructure.',
+    image: '/assets/team/alice.jpg',
+    linkedin: 'https://example.com/alice',
+    type: 'Advisor',
+    expertise: ['Web3', 'Blockchain', 'Research'],
+    isFeatured: true,
+  },
+  {
+    id: 'advisor-2',
+    name: 'Rajesh Kumar',
+    role: 'Tech Lead',
+    company: 'Microsoft',
+    bio: 'Guides scalable architecture and enterprise systems.',
+    image: '/assets/team/rajesh.jpg',
+    linkedin: 'https://example.com/rajesh',
+    type: 'Advisor',
+    expertise: ['System Design', 'Cloud', 'Backend'],
+    isFeatured: false,
+  },
+  {
+    id: 'advisor-3',
+    name: 'Ananya Verma',
+    role: 'Product Strategist',
+    company: 'Amazon',
+    bio: 'Helps shape product vision and user-focused solutions.',
+    image: '/assets/team/ananya.jpg',
+    linkedin: 'https://example.com/ananya',
+    type: 'Advisor',
+    expertise: ['Product', 'UX', 'Strategy'],
+    isFeatured: false,
+  },
+  {
+    id: 'advisor-4',
+    name: 'Michael Chen',
+    role: 'AI Research Scientist',
+    company: 'OpenAI',
+    bio: 'Advises on AI systems and future tech innovation.',
+    image: '/assets/team/michael.jpg',
+    linkedin: 'https://example.com/michael',
+    type: 'Advisor',
+    expertise: ['AI/ML', 'Deep Learning'],
+    isFeatured: false,
+  },
+  {
+    id: 'advisor-5',
+    name: 'Priya Sharma',
+    role: 'Startup Advisor',
+    company: 'Sequoia Capital',
+    bio: 'Mentors startups on growth, funding, and scaling.',
+    image: '/assets/team/priya.jpg',
+    linkedin: 'https://example.com/priya',
+    type: 'Advisor',
+    expertise: ['Startup', 'Funding', 'Growth'],
+    isFeatured: false,
+  },
+  {
+    id: 'advisor-6',
+    name: 'David Lee',
+    role: 'Cybersecurity Expert',
+    company: 'Cisco',
+    bio: 'Specialist in security architecture and ethical hacking.',
+    image: '/assets/team/david.jpg',
+    linkedin: 'https://example.com/david',
+    type: 'Advisor',
+    expertise: ['Cybersecurity', 'Networking'],
+    isFeatured: false,
+  },
+];
+
+const mentors = [
+  {
+    id: 'mentor-1',
+    name: 'Soumojit Shome',
+    role: 'Full-Stack Engineer',
+    department: 'Mentors',
+    handle: 'Co-Founder & System Engineer at LastMinuteEngineering',
+    emoji: '🧑‍💻',
+    color: '#1E293B',
+    image: 'https://calcuttahacks.xyz/assets/soumojit-BRvJOMq0.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/soumojit-shome/',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    id: 'mentor-2',
+    name: 'Amit Barnwal',
+    role: 'Commercial Manager',
+    department: 'Mentors',
+    handle: 'Business Operations & Management',
+    emoji: '🤖',
+    color: '#334155',
+    image: 'https://calcuttahacks.xyz/assets/amit-BwNDYuMh.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/amit-barnwal-193402220/',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    id: 'mentor-3',
+    name: 'Roshan Burnwal',
+    role: 'Security Architect',
+    department: 'Mentors',
+    handle: 'Founder & CEO @ The DROP Organization',
+    emoji: '🛡️',
+    color: '#0F172A',
+    image: 'https://calcuttahacks.xyz/assets/roshan-Dose4tbo.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/roshan-burnwal-ceo-of-drop/',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    id: 'mentor-4',
+    name: 'Abhirup Banerjee',
+    role: 'Blockchain Developer',
+    department: 'Mentors',
+    handle: 'Co-Founder @ AXICOV',
+    emoji: '🎨',
+    color: '#1E40AF',
+    image: 'https://calcuttahacks.xyz/assets/abhirup-CXF8r77F.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/abhirup-banerjee-651537223/',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    id: 'mentor-5',
+    name: 'Sachindra Singh',
+    role: 'SWE @ EngageOS',
+    department: 'Mentors',
+    handle: '14x Hackathon Winner 🏆 | Ex - AlchemystAI',
+    emoji: '🚀',
+    color: '#7C3AED',
+    image: 'https://calcuttahacks.xyz/assets/sachindra-CYKilz1D.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/singhsach/',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    id: 'mentor-6',
+    name: 'Apabrita Sarkar',
+    role: 'AI & Cloud Intern',
+    department: 'Mentors',
+    handle: 'Smart India Hackathon’24 Finalist',
+    emoji: '☁️',
+    color: '#059669',
+    image: 'https://calcuttahacks.xyz/assets/apabrita-C1Xg4wWQ.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/apabritasarkar/',
+      twitter: '#',
+      github: '#',
+    },
+  },
+];
+
 export default function Team() {
   const [activeDept, setActiveDept] = useState('All');
 
@@ -46,11 +214,13 @@ export default function Team() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12">
-              OUR <br /> <span className="text-slate-500">CREW</span>
+              APEX <br /> <span className="text-slate-500">BUILDERS</span>
             </h1>
+
             <p className="text-slate-400 text-lg md:text-2xl max-w-2xl font-medium leading-relaxed uppercase tracking-tight">
-              A decentralized collective of visionaries, engineers, and designers building the next
-              generation of digital protocols.
+              APEX CIRCLE IS A COLLECTIVE OF LEADERS, DEVELOPERS, DESIGNERS, AND OPERATORS WORKING
+              TOGETHER ACROSS TECHNOLOGY, CREATIVITY, AND COMMUNITY TO BUILD, GROW, AND CREATE REAL
+              IMPACT.
             </p>
           </motion.div>
 
@@ -72,7 +242,7 @@ export default function Team() {
         </div>
 
         {/* NEW SECTION: Community Stats */}
-        <section className="mb-32 md:mb-56 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-20 border-y border-white/5">
+        <section className="mb-32 bg-black/40 rounded-lg md:mb-56 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-20 border-y border-white/5">
           {[
             { label: 'Active Members', value: '12K+', icon: Users2 },
             { label: 'Projects Built', value: '450+', icon: Cpu },
@@ -87,10 +257,10 @@ export default function Team() {
               transition={{ delay: i * 0.1 }}
               className="text-center group"
             >
-              <div className="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-tertiary/20 transition-colors">
-                <stat.icon className="text-tertiary" size={20} />
+              <div className="w-12 h-12 bg-tertiary/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-tertiary/20 transition-colors ">
+                <stat.icon className="text-white" size={20} />
               </div>
-              <div className="text-4xl md:text-6xl font-brutal tracking-tighter uppercase mb-2">
+              <div className="text-4xl md:text-6xl font-brutal tracking-tighter uppercase mb-2 text-white group-hover:text-orange-400 transition-colors">
                 {stat.value}
               </div>
               <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">
@@ -103,19 +273,28 @@ export default function Team() {
         {/* NEW SECTION: Our Culture */}
         <section className="mb-32 md:mb-56">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-tertiary font-mono text-sm mb-6 block tracking-widest uppercase">
-                // Core_Values
+            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
+              <span className="text-white">Our </span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+                Culture
               </span>
-              <h2 className="text-5xl md:text-8xl font-brutal tracking-tighter uppercase leading-none">
-                Our <br /> <span className="text-slate-500">Culture</span>
-              </h2>
-            </div>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '250% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
+            </h2>
+
             <p className="text-slate-500 font-mono text-xs uppercase tracking-widest max-w-xs text-right">
-              We operate on the principles of radical transparency and meritocratic growth.
+              Our culture is about learning, building, and growing together with consistency and
+              purpose.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {[
               {
                 title: 'Open Source',
@@ -139,7 +318,7 @@ export default function Team() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-10 border border-white/10 bg-white/[0.02] hover:border-tertiary/50 transition-all group"
+                className="p-10 border border-white/10 bg-[#060c37] hover:border-yellow-500 rounded-lg transition-all group"
               >
                 <value.icon
                   className="text-tertiary mb-8 group-hover:scale-110 transition-transform"
@@ -156,53 +335,95 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Mentors & Advisors - Upgraded */}
         <section className="mb-32 md:mb-56">
-          <div className="text-center mb-20 md:mb-32">
-            <span className="text-tertiary font-mono text-sm mb-6 block tracking-widest uppercase">
-              // Strategic_Guidance
-            </span>
-            <h2 className="text-5xl md:text-9xl font-brutal tracking-tighter uppercase leading-none">
-              Mentors & <br /> <span className="text-slate-500">Advisors</span>
+          {/* 🔥 HEADER */}
+          <div className="text-center mb-20 md:mb-28">
+            <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase relative">
+              <span className="text-white">Mentors &</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600">
+                Advisors
+              </span>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '300% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
             </h2>
+
+            <p className="mt-6 text-slate-400 max-w-xl mx-auto text-sm md:text-base uppercase tracking-wide">
+              Leaders, experts, and operators guiding Apex Circle’s vision and growth.
+            </p>
+
+            {/* Divider Glow */}
+            <div className="w-24 h-[2px] bg-gradient-to-r from-yellow-400 to-transparent mx-auto mt-8 opacity-60" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-10">
-            {[
-              { name: 'Vitalik B.', role: 'Protocol Advisor', company: 'Ethereum Foundation' },
-              { name: 'Balaji S.', role: 'Network State', company: 'The Network State' },
-              { name: 'Naval R.', role: 'Strategic Growth', company: 'AngelList' },
-              { name: 'Chris D.', role: 'Venture Partner', company: 'a16z' },
-              { name: 'Gavin W.', role: 'Web3 Architect', company: 'Polkadot' },
-              { name: 'Anatoly Y.', role: 'Performance', company: 'Solana Labs' },
-            ].map((mentor, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="group p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:border-tertiary hover:shadow-[0_0_30px_rgba(var(--tertiary-rgb),0.1)] transition-all text-center relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white/10 rounded-full mx-auto mb-8 grayscale group-hover:grayscale-0 transition-all border border-white/5 group-hover:border-tertiary/50 overflow-hidden relative z-10">
-                  <img
-                    src={`https://picsum.photos/seed/mentor${i + 10}/200/200`}
-                    alt={mentor.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <h4 className="text-sm md:text-base font-brutal uppercase tracking-tighter mb-2 relative z-10 group-hover:text-tertiary transition-colors">
-                  {mentor.name}
-                </h4>
-                <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 relative z-10 mb-1">
-                  {mentor.role}
-                </p>
-                <p className="text-[8px] font-mono uppercase tracking-widest text-tertiary/60 relative z-10">
-                  {mentor.company}
-                </p>
-              </motion.div>
-            ))}
+
+          {/* 🧠 ADVISORS SECTION */}
+          <div className="mb-24 md:mb-32">
+            <div className="flex items-center justify-between mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wide">
+                Advisors
+              </h3>
+
+              <span className="text-xs text-slate-500 uppercase tracking-widest">
+                Guiding Our Growth
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12">
+              {advisors.map((person, i) => (
+                <TeamCard
+                  key={`advisor-${i}`}
+                  index={i}
+                  member={{
+                    name: person.name,
+                    role: `${person.role} @ ${person.company}`,
+                    image: `${person.image}`,
+                    department: 'Advisors',
+                    id: `advisor-${i}`,
+                    socials: {
+                      linkedin: person.linkedin,
+                    },
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* 🚀 MENTORS SECTION */}
+          <div>
+            <div className="flex items-center justify-between mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wide">
+                Mentors
+              </h3>
+
+              <span className="text-xs text-slate-500 uppercase tracking-widest">
+                Helping You Grow
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12">
+              {mentors.map((person, i) => (
+                <TeamCard
+                  key={`mentor-${i}`}
+                  index={i}
+                  member={{
+                    name: person.name,
+                    role: `${person.role} @ ${person?.department}`,
+                    image: `${person.image}`,
+                    department: 'Mentors',
+                    id: `mentor-${i}`,
+                    socials: {
+                      linkedin: person.socials.linkedin,
+                    },
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </section>
 

@@ -56,8 +56,8 @@ export interface TeamMember {
   image: string;
   imagePosition?: string; // e.g. "center top"
   socials: {
-    twitter: string;
-    github: string;
+    twitter?: string;
+    github?: string;
     linkedin: string;
   };
 }
