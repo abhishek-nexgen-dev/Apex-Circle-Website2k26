@@ -90,7 +90,7 @@ export default function Hero() {
   return (
     <section
       ref={container}
-      className="relative h-screen min-h-[700px] flex flex-col items-center justify-between pt-24 overflow-hidden bg-background"
+      className="relative h-screen min-h-[700px] flex flex-col items-center justify-between pt-36 sm:pt-44 md:pt-24 overflow-hidden bg-background"
     >
       {/* 3D Moving Perspective Grid Box */}
       <div
@@ -141,7 +141,7 @@ export default function Hero() {
           }}
         >
           <RiUserCommunityLine className="text-[#4F8EF7]" size={25} />
-          <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.18em] uppercase text-slate-200">
+          <span className="text-[10px] xs:text-[12px] sm:text-[16px] font-bold tracking-[0.1em] sm:tracking-[0.18em] uppercase text-slate-200">
             India&apos;s Leading Tech Community
           </span>
           <RiUserCommunityLine className="text-[#7C6FE0]" size={25} />
@@ -161,7 +161,7 @@ export default function Hero() {
           const badgeDelay = 1.1;
           const glossyStart = badgeDelay + 0.05 + (totalLetters - 1) * stagger + dropDuration;
           return (
-            <h1 className="relative text-4xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-brutal leading-none mb-8 uppercase tracking-wider drop-shadow-2xl flex flex-col md:flex-row gap-2 md:gap-6 justify-center items-center">
+            <h1 className="relative text-3xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-brutal leading-none mb-6 md:mb-8 uppercase tracking-wider drop-shadow-2xl flex flex-col md:flex-row gap-1.5 md:gap-6 justify-center items-center">
               {words.map((word) => (
                 <span key={word.text} className="inline-flex">
                   {word.text.split('').map((letter) => {
