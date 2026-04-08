@@ -109,7 +109,10 @@ const RoadmapInteractive = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="section-header roadmap-header mb-12 text-left">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
-            OUR <span className="text-[#facc15] drop-shadow-[0_0_25px_rgba(250,204,21,0.7)] animate-pulse">ROADMAP</span>
+            OUR{' '}
+            <span className="text-[#facc15] drop-shadow-[0_0_25px_rgba(250,204,21,0.7)] animate-pulse">
+              ROADMAP
+            </span>
           </h2>
         </div>
 
@@ -629,7 +632,7 @@ export default function Home() {
           <div className="w-[120%] bg-[#facc15] relative overflow-hidden border-y border-black rotate-[2deg] scale-[1.05] shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-20">
             {/* Top Stripes Border */}
             <div className="h-1 md:h-1.5 w-full caution-stripes border-b border-black/5" />
-            
+
             <div className="py-1 md:py-1.5 overflow-hidden flex items-center relative">
               <div className="flex gap-8 items-center whitespace-nowrap animate-marquee-slow">
                 {[...Array(10)].map((_, i) => (
@@ -637,19 +640,19 @@ export default function Home() {
                     key={i}
                     className="text-black text-base md:text-xl font-poppins font-black uppercase tracking-tighter flex items-center gap-8 select-none"
                   >
-                    BUILD IN PUBLIC 
-                    <Zap size={14} className="fill-black text-black" /> 
-                    LEARN IN COMMUNITY 
-                    <Zap size={14} className="fill-black text-black" /> 
-                    SHIP FAST 
-                    <Zap size={14} className="fill-black text-black" /> 
-                    SCALE TOGETHER 
-                    <Zap size={14} className="fill-black text-black" /> 
+                    BUILD IN PUBLIC
+                    <Zap size={14} className="fill-black text-black" />
+                    LEARN IN COMMUNITY
+                    <Zap size={14} className="fill-black text-black" />
+                    SHIP FAST
+                    <Zap size={14} className="fill-black text-black" />
+                    SCALE TOGETHER
+                    <Zap size={14} className="fill-black text-black" />
                     APEX CIRCLE
                   </span>
                 ))}
               </div>
-              
+
               <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
             </div>
 
