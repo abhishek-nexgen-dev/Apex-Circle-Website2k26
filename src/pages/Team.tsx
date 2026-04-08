@@ -287,11 +287,24 @@ export default function Team() {
         <section className="mb-32 md:mb-56">
           {/* 🔥 HEADER */}
           <div className="text-center mb-20 md:mb-28">
-            <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase">
+            <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase relative">
+              
               <span className="text-white">Mentors &</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600">
                 Advisors
               </span>
+
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.3) 50%, transparent 80%)',
+                  backgroundSize: '300% 100%',
+                  animation: 'glossySweep 3s ease-in-out infinite',
+                }}
+              />
+
+
             </h2>
 
             <p className="mt-6 text-slate-400 max-w-xl mx-auto text-sm md:text-base uppercase tracking-wide">
@@ -310,11 +323,11 @@ export default function Team() {
               </h3>
 
               <span className="text-xs text-slate-500 uppercase tracking-widest">
-                Strategic Layer
+                Guiding Our Growth
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12">
               {advisors.map((person, i) => (
                 <TeamCard
                   key={`advisor-${i}`}
@@ -342,11 +355,11 @@ export default function Team() {
               </h3>
 
               <span className="text-xs text-slate-500 uppercase tracking-widest">
-                Execution Layer
+               Helping You Grow
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12">
               {mentors.map((person, i) => (
                 <TeamCard
                   key={`mentor-${i}`}
