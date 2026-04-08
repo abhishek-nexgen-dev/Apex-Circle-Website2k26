@@ -154,7 +154,7 @@ export default function Team() {
   }, [activeDept]);
 
   return (
-    <div className="pt-32 md:pt-56 pb-32 md:pb-56 px-6 relative overflow-hidden">
+    <div className="pt-44 md:pt-56 pb-32 md:pb-56 px-6 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-tertiary/5 blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-1/4 h-1/2 bg-tertiary/5 blur-[120px] pointer-events-none" />

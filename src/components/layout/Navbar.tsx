@@ -44,16 +44,16 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-8',
-        scrolled ? 'py-4' : 'py-8',
+        'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4 sm:py-8',
+        scrolled ? 'py-2 sm:py-4' : 'py-4 sm:py-8',
       )}
     >
       <div
         className={cn(
-          'max-w-[98%] mx-auto flex items-center justify-between transition-all duration-700 px-4 sm:px-5 py-4 md:py-5 rounded-2xl relative overflow-hidden',
+          'max-w-[98%] mx-auto flex items-center justify-between transition-all duration-700 px-4 sm:px-5 py-3 md:py-5 rounded-2xl relative overflow-hidden',
           scrolled
             ? 'bg-black/60 backdrop-blur-3xl border border-white/[0.15] shadow-[0_0_30px_rgba(79,142,247,0.2)] before:absolute before:inset-x-0 before:bottom-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-primary/70 before:to-transparent'
-            : 'bg-transparent border border-transparent',
+            : 'bg-black/20 backdrop-blur-md border border-white/5 lg:bg-transparent lg:backdrop-blur-none lg:border-transparent',
         )}
       >
         <div
@@ -61,8 +61,8 @@ export default function Navbar() {
           style={{ opacity: scrolled ? 1 : 0 }}
         />
 
-        <Link to="/" className="flex items-center gap-3 group shrink-0 relative z-10">
-          <div className="relative w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+        <Link to="/" className="flex items-center gap-1.5 sm:gap-3 group shrink-0 relative z-10">
+          <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
             {/* Thick Glossy Rotating Border - Yellow Highlight */}
             <div className="absolute inset-0 rounded-full p-[4.5px] animate-[spin-slow_4s_linear_infinite] bg-gradient-to-r from-transparent via-[#FFD700] to-transparent shadow-[0_0_20px_rgba(255,215,0,0.4)]" />
             <div className="absolute inset-[4.5px] bg-black rounded-full" />
@@ -92,8 +92,8 @@ export default function Navbar() {
               </span>
             ))}
           </span>
-          <span className="text-[18px] uppercase tracking-widest sm:hidden flex text-white font-poppins font-bold">
-            {'APEX'.split('').map((char, i) => (char === ' ' ? '\u00A0' : char))}
+          <span className="text-[14px] uppercase tracking-wider sm:hidden flex text-white font-poppins font-black">
+            {'APEX CIRCLE'.split('').map((char, i) => (char === ' ' ? '\u00A0' : char))}
           </span>
         </Link>
 
@@ -136,10 +136,10 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 lg:hidden">
+        <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
           <Link
             to="/contact"
-            className="text-[12px] font-poppins font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-full hover:bg-primary hover:text-black transition-all shadow-[0_0_10px_rgba(79,142,247,0.2)]"
+            className="text-[10px] sm:text-[12px] font-poppins font-black uppercase tracking-widest text-primary border border-primary/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-primary hover:text-black transition-all shadow-[0_0_10px_rgba(79,142,247,0.2)]"
           >
             Join
           </Link>
