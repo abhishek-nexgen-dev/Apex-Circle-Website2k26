@@ -55,7 +55,7 @@ export default function Events() {
   const featuredEvent = eventsData.find((e) => e.status === 'Upcoming') || eventsData[0];
 
   return (
-    <div className="pt-32 md:pt-48 pb-24 md:pb-32 px-6 relative overflow-hidden">
+    <div className="pt-32 md:pt-48 pb-24 md:pb-32 px-6 relative overflow-hidden bg-[#00033d]">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-primary/5 blur-[120px] pointer-events-none" />

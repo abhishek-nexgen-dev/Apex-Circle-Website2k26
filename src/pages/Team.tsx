@@ -45,7 +45,6 @@ export default function Team() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-
             <h1 className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12">
               OUR <br /> <span className="text-slate-500">CREW</span>
             </h1>

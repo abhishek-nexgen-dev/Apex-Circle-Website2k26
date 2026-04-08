@@ -72,7 +72,9 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           <div className="flex items-center gap-2 font-montserrat font-black uppercase tracking-[0.1em] text-[8px]">
             <span className="text-slate-400">{testimonial.role}</span>
             <span className="text-tertiary/60">@</span>
-            <span className="text-tertiary/90 shadow-sm">{testimonial.company || "Collective"}</span>
+            <span className="text-tertiary/90 shadow-sm">
+              {testimonial.company || 'Collective'}
+            </span>
           </div>
         </div>
 

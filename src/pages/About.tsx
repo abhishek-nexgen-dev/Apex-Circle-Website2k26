@@ -58,7 +58,10 @@ export default function About() {
   const container = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="pt-24 md:pt-32 pb-16 md:pb-20 px-6 bg-background overflow-hidden relative" ref={container}>
+    <div
+      className="pt-24 md:pt-32 pb-16 md:pb-20 px-6 bg-background overflow-hidden relative"
+      ref={container}
+    >
       {/* Dynamic Background Depth */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[5%] left-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[160px] animate-pulse" />
@@ -78,7 +81,7 @@ export default function About() {
             let globalIdx = 0;
             const stagger = 0.12;
             const dropDuration = 1.4;
-            const badgeDelay = 0.5; 
+            const badgeDelay = 0.5;
             const totalLetters = 12; // APEX(4) + PROTOCOL(8)
             const glossyStart = badgeDelay + 0.05 + (totalLetters - 1) * stagger + dropDuration;
             return (
@@ -91,14 +94,18 @@ export default function About() {
                       return (
                         <span
                           key={idx}
-                          className={word.color === 'gradient-word'
-                            ? 'inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#4F8EF7] via-[#7C6FE0] to-[#38BDF8]'
-                            : 'inline-block text-white'}
+                          className={
+                            word.color === 'gradient-word'
+                              ? 'inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#4F8EF7] via-[#7C6FE0] to-[#38BDF8]'
+                              : 'inline-block text-white'
+                          }
                           style={{
                             animation: `letterDrop ${dropDuration}s cubic-bezier(0.22,1,0.36,1) both`,
                             animationDelay: `${badgeDelay + parseFloat(delay)}s`,
                           }}
-                        >{letter}</span>
+                        >
+                          {letter}
+                        </span>
                       );
                     })}
                   </span>
@@ -108,7 +115,8 @@ export default function About() {
                   aria-hidden
                   className="pointer-events-none absolute inset-0"
                   style={{
-                    background: 'linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%)',
+                    background:
+                      'linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%)',
                     backgroundSize: '250% 100%',
                     animation: `glossySweep 2.4s ease-in-out ${glossyStart.toFixed(2)}s infinite`,
                   }}
@@ -131,7 +139,7 @@ export default function About() {
               desc: 'Our mission is to empower individuals to build real-world solutions, learn new skills, and grow through a strong and supportive tech community.',
               color: 'text-[#FFD700]',
               glow: 'hover:shadow-[0_20px_50px_rgba(255,215,0,0.15)]',
-              border: 'border-yellow-500/20 hover:border-yellow-500/60'
+              border: 'border-yellow-500/20 hover:border-yellow-500/60',
             },
             {
               icon: Eye,
@@ -139,7 +147,7 @@ export default function About() {
               desc: 'Our vision is to create a world where everyone has control over their own data and can use technology freely and safely.',
               color: 'text-[#38BDF8]',
               glow: 'hover:shadow-[0_20px_50px_rgba(56,189,248,0.15)]',
-              border: 'border-cyan-500/20 hover:border-cyan-500/60'
+              border: 'border-cyan-500/20 hover:border-cyan-500/60',
             },
             {
               icon: Heart,
@@ -147,13 +155,16 @@ export default function About() {
               desc: 'Transparency, collaboration, and relentless pursuit of excellence.',
               color: 'text-[#A855F7]',
               glow: 'hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)]',
-              border: 'border-purple-500/20 hover:border-purple-500/60'
+              border: 'border-purple-500/20 hover:border-purple-500/60',
             },
           ].map((item, i) => (
             <div
               key={i}
               className={`relative bg-white/[0.03] backdrop-blur-3xl border ${item.border} p-10 md:p-14 overflow-hidden rounded-2xl transition-all duration-500 group flex flex-col items-center text-center hover:-translate-y-3 ${item.glow}`}
-              style={{ animation: 'badgeZoom 0.8s cubic-bezier(0.34,1.56,0.64,1) both', animationDelay: `${i * 0.2 + 0.2}s` }}
+              style={{
+                animation: 'badgeZoom 0.8s cubic-bezier(0.34,1.56,0.64,1) both',
+                animationDelay: `${i * 0.2 + 0.2}s`,
+              }}
             >
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 blur-3xl rounded-full" />
               <div
@@ -164,8 +175,10 @@ export default function About() {
               <h3 className="text-3xl md:text-4xl font-brutal tracking-tight mb-6 uppercase text-white group-hover:text-white transition-colors">
                 {item.title}
               </h3>
-              <p className="text-slate-400 leading-relaxed text-lg md:text-xl font-medium transition-colors group-hover:text-slate-200">{item.desc}</p>
-              
+              <p className="text-slate-400 leading-relaxed text-lg md:text-xl font-medium transition-colors group-hover:text-slate-200">
+                {item.desc}
+              </p>
+
               {/* Subtle spotlight highlight */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(255,255,255,0.06),transparent_60%)]" />
             </div>
@@ -218,14 +231,14 @@ export default function About() {
               ))}
             </div>
           </div>
-          
+
           {/* CALCUTTA HACKS SQUARE PHOTO — LIFTED TOP */}
           <div className="relative group w-full flex justify-center md:mt-[-48px]">
             <div className="relative aspect-square w-full max-w-md rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.6)] bg-black/40 group-hover:border-primary/30 transition-all duration-700 group-hover:translate-y-[-8px]">
-              <img 
-                src={calcuttaHacksImage} 
-                alt="Calcutta Hacks Event" 
-                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110" 
+              <img
+                src={calcuttaHacksImage}
+                alt="Calcutta Hacks Event"
+                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>

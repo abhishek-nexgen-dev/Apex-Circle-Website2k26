@@ -10,7 +10,7 @@
     "githubUrl": "https://github.com/arpankumarde/havoc-machine",
     "image": "https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fhackathons%2Fcalcutta-lesshacksgreater%2Fprojects%2F090fad7ff6fe4e21a1059ed47db281fb%2F3ce26300-9c0f-4423-bad8-64c897ef8590.png&w=1440&q=75",
     "featured": true,
-    "techStack": ["FastAPI", "LangChain", "MongoDB",  "PostgreSQL" , "React" , "Python"],
+    "techStack": ["FastAPI", "LangChain", "MongoDB", "PostgreSQL", "React", "Python"],
     "features": [
       "AI-Generated Adversarial Conversations",
       "Policy Vulnerability Detection",
@@ -66,5 +66,4 @@
       }
     ]
   }
- 
 ]
