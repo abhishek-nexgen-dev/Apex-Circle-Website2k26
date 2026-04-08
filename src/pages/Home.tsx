@@ -274,7 +274,8 @@ export default function Home() {
       name: 'Amit Barnawal',
       role: 'Commercial Manager',
       text: 'Our partnership with Apex Circle has been transformative. The technical expertise and community support provided here have been invaluable for our group growth.',
-      image: 'https://res.cloudinary.com/dz3cfmi5k/image/upload/c_fill,g_face,w_600,h_375,q_auto,f_auto/v1775635854/amit_wgfn1e.jpg',
+      image:
+        'https://res.cloudinary.com/dz3cfmi5k/image/upload/c_fill,g_face,w_600,h_375,q_auto,f_auto/v1775635854/amit_wgfn1e.jpg',
       linkedin: 'https://linkedin.com/in/amitbarnawal',
       website: 'https://thedrop.finance',
       company: 'The Drop Organization',

@@ -32,7 +32,7 @@ export default function TeamCard({ member, active = true, scale = 1 }: TeamCardP
         {/* Role Badge */}
         <div className="absolute top-4 right-4 z-20">
           <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-[8px] font-black uppercase tracking-[0.2em] text-tertiary rounded-full">
-            {member.department}
+            {Array.isArray(member.department) ? member.department.join(' & ') : member.department}
           </span>
         </div>
 
