@@ -108,7 +108,7 @@ const RoadmapInteractive = () => {
     <section ref={sectionRef} className="py-6 md:py-16 px-6 bg-surface relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="section-header roadmap-header mb-12 text-left">
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-black tracking-widest uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] relative">
             OUR{' '}
             <span className="text-[#facc15] drop-shadow-[0_0_25px_rgba(250,204,21,0.7)] animate-pulse">
               ROADMAP

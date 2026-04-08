@@ -73,7 +73,7 @@ export default function TeamCard({ member, active = true, scale = 1 }: TeamCardP
 
         <div className="p-6 relative z-10 flex-1 flex flex-col">
           <div className="flex flex-col gap-1">
-            <h3 className="text-2xl md:text-3xl font-montserrat font-black tracking-tighter uppercase text-flame transition-all duration-500">
+            <h3 className="text-xl md:text-2xl font-montserrat font-black tracking-tighter uppercase text-flame transition-all duration-500 leading-tight break-words">
               {member.name}
             </h3>
             <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-4">

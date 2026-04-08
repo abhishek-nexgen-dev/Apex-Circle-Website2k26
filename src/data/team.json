@@ -7,7 +7,7 @@
     "handle": "🧭 Strategy & Vision",
     "emoji": "🧭",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Soumodweep-ZJFwPoII.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775623070/soumodweep_wszhne.png",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/soumodweep-das/",
       "twitter": "#",
@@ -52,7 +52,7 @@
     "handle": "🎯 Aesthetics & Experience",
     "emoji": "🎯",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/yuvraj-CyJ9jIEw.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775623939/yuv_njuwxk.jpg",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/yuvrajprasad/",
       "twitter": "#",
@@ -60,14 +60,14 @@
     }
   },
   {
-    "id": "9",
+    "id": "5",
     "name": "Somnath Mukherjee",
     "role": "Chief Technology Officer",
     "department": "Leadership",
     "handle": "Development & Infrastructure",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Somnath-BFnST6cr.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775623441/Gemini_Generated_Image_e1h2i4e1h2i4e1h2_szwo5n.png",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/somnath-mukherjee-8b629b288/",
       "twitter": "#",
@@ -75,14 +75,14 @@
     }
   },
   {
-    "id": "10",
+    "id": "6",
     "name": "Naila Farooque",
     "role": "Web Lead",
     "department": "Leadership",
     "handle": "Frontend Integration & Support",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Naila-DyAHvO2X.webp",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775623902/naila_vthfo7.jpg",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/nailafarooque/",
       "twitter": "#",
@@ -90,7 +90,7 @@
     }
   },
   {
-    "id": "11",
+    "id": "7",
     "name": "Shantanu Mahato",
     "role": "Design Lead",
     "department": "Design",
@@ -105,7 +105,7 @@
     }
   },
   {
-    "id": "12",
+    "id": "8",
     "name": "Agnij Dutta",
     "role": "PR & Outreach Lead",
     "department": "PR & Outreach",
@@ -120,14 +120,14 @@
     }
   },
   {
-    "id": "14",
+    "id": "9",
     "name": "Shreyashi Debnath",
     "role": "Management Lead",
     "department": "Management",
     "handle": "Operations & Oversight",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "Shreyanshi",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630030/shreyashi_vqnwtn.jpg",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/shreyashi-debnath-aa73942b4/",
       "twitter": "#",
@@ -135,22 +135,7 @@
     }
   },
   {
-    "id": "15",
-    "name": "Rouson Das",
-    "role": "Management Lead",
-    "department": "Management",
-    "handle": "Planning & Coordination",
-    "emoji": "",
-    "color": "#3E2C1D",
-    "image": "https://calcuttahacks.xyz/assets/Rouson-lxqxgbtz.webp",
-    "socials": {
-      "linkedin": "https://www.linkedin.com/in/rouson-das-563b52284/",
-      "twitter": "#",
-      "github": "#"
-    }
-  },
-  {
-    "id": "16",
+    "id": "10",
     "name": "Shuvrajit Majhi",
     "role": "Social Media Lead",
     "department": "Social Media",
@@ -165,25 +150,29 @@
     }
   },
   {
-    "id": "17",
-    "name": "Pushkar Das",
-    "role": "Social Media Co-Lead",
-    "department": "Social Media",
-    "handle": "Content & Engagement",
+    "id": "11",
+    "name": "Rouson Das",
+    "role": "Management Lead",
+    "department": "Management",
+    "handle": "Planning & Coordination",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "Pushkar",
-    "socials": { "linkedin": "", "twitter": "#", "github": "#" }
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630029/rouson_ckgahv.jpg",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/rouson-das-563b52284/",
+      "twitter": "#",
+      "github": "#"
+    }
   },
   {
-    "id": "18",
+    "id": "12",
     "name": "Abhishek Kumar",
     "role": "Web Lead",
     "department": "Web",
     "handle": "Technical Implementation",
     "emoji": "",
     "color": "#3E2C1D",
-    "image": "https://avatars.githubusercontent.com/u/122656682?v=4",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775631523/abhishek_g5q4zh.jpg",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/abhishek-nexgen-dev",
       "twitter": "#",
@@ -191,7 +180,7 @@
     }
   },
   {
-    "id": "19",
+    "id": "13",
     "name": "Anjali Tomar",
     "role": "Web Associate",
     "department": "Web",
@@ -201,6 +190,142 @@
     "image": "https://avatars.githubusercontent.com/u/160884550?v=4",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/anjali-tomar713",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "14",
+    "name": "Arko Pal",
+    "role": "Chief Operations Lead",
+    "department": "Operations",
+    "handle": "Operations & Synergy",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630030/arko_pqqltc.jpg",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "15",
+    "name": "Subhamita Adhikari",
+    "role": "Design Team",
+    "department": "Design",
+    "handle": "Visual Identity",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630539/Subhamita_Adhikari_Graphics_-_Subhamita_Adhikari_okkxbh.jpg",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "16",
+    "name": "Sagnik Adhikary",
+    "role": "Design Team",
+    "department": "Design",
+    "handle": "Creative Assets",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630539/IMG_20260109_001351_-_Sagnik_qaeeoe.jpg",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "17",
+    "name": "Sourojit Banerjee",
+    "role": "Design Team",
+    "department": "Design",
+    "handle": "UI Development",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775631326/IMG-20260329-WA0000_-_Sourojit_qpqn1z.jpg",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "18",
+    "name": "Anurag Bannerjee",
+    "role": "Social Media Team",
+    "department": "Social Media",
+    "handle": "Content Strategy",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630538/-xv1vxk_-_Anurag_Banerjee_kfu9qc.jpg",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "19",
+    "name": "Vishal Mahato",
+    "role": "AI & ML Lead",
+    "department": "AI & ML",
+    "handle": "Intelligent Systems",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://avatars.githubusercontent.com/u/122656682?v=4",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "20",
+    "name": "Aishik Bandhyopadhyay",
+    "role": "PR & Outreach Team",
+    "department": "PR & Outreach",
+    "handle": "Network Expansion",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775633423/IMG-20251011-WA0050_-_Aishik_Bandyopadhyay_fsltrv.jpg",
+    "imagePosition": "top",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "21",
+    "name": "Aishik",
+    "role": "Web Team",
+    "department": "Web",
+    "handle": "Core Optimization",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://avatars.githubusercontent.com/u/160884550?v=4",
+    "socials": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": "22",
+    "name": "Anisha Kundu",
+    "role": "Management Team",
+    "department": "Management",
+    "handle": "Logistics & Support",
+    "emoji": "",
+    "color": "#3E2C1D",
+    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775630541/IMG20251110171810_-_ANISHA_KUNDU_skphzo.jpg",
+    "socials": {
+      "linkedin": "#",
       "twitter": "#",
       "github": "#"
     }
