@@ -146,7 +146,11 @@ export default function Team() {
 
   const filteredTeam = useMemo(() => {
     if (activeDept === 'All') return teamData;
-    return teamData.filter((member) => member.department === activeDept);
+    return teamData.filter((member) =>
+      Array.isArray(member.department)
+        ? member.department.includes(activeDept)
+        : member.department === activeDept
+    );
   }, [activeDept]);
 
   return (
@@ -162,11 +166,11 @@ export default function Team() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12">
-              APEX <br /> <span className="text-slate-500">BUILDERS</span>
+            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] font-poppins font-black tracking-tighter leading-none uppercase mb-12 animate-text-glow whitespace-nowrap">
+              <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">MEET</span> <span className="text-yellow-400 drop-shadow-[0_0_25px_rgba(250,204,21,0.5)]">OUR</span> <span className="text-tertiary drop-shadow-[0_0_25px_rgba(56,189,248,0.5)]">PILLARS</span>
             </h1>
 
-            <p className="text-slate-400 text-lg md:text-2xl max-w-2xl font-medium leading-relaxed uppercase tracking-tight">
+            <p className="text-slate-400 text-sm md:text-2xl max-w-5xl font-montserrat font-bold leading-relaxed uppercase tracking-tight opacity-80">
               APEX CIRCLE IS A COLLECTIVE OF LEADERS, DEVELOPERS, DESIGNERS, AND OPERATORS WORKING
               TOGETHER ACROSS TECHNOLOGY, CREATIVITY, AND COMMUNITY TO BUILD, GROW, AND CREATE REAL
               IMPACT.

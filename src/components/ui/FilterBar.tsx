@@ -27,10 +27,10 @@ export default function FilterBar({
           key={category}
           onClick={() => setActiveCategory(category)}
           className={cn(
-            'px-8 py-3 text-[10px] font-black rounded-md uppercase tracking-widest transition-all',
+            'px-12 py-5 text-[12px] font-black rounded-lg uppercase tracking-[0.2em] transition-all border-2 border-yellow-500/30 hover:border-yellow-400 bg-blue-950/40 backdrop-blur-md shadow-[0_0_20px_rgba(250,204,21,0.1)]',
             activeCategory === category
-              ? accentClasses[accentColor]
-              : 'bg-blue-950/90  text-slate-500 hover:text-white hover:bg-white/10',
+              ? cn(accentClasses[accentColor], 'border-yellow-400 border-2 shadow-[0_0_30px_rgba(250,204,21,0.5)] scale-105')
+              : 'text-slate-500 hover:text-white hover:bg-white/10 hover:shadow-[0_0_25px_rgba(250,204,21,0.2)]',
           )}
         >
           {category}

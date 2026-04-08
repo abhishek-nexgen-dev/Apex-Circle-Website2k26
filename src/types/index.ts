@@ -52,7 +52,7 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  department: string;
+  department: string | string[];
   image: string;
   imagePosition?: string; // e.g. "center top"
   socials: {
