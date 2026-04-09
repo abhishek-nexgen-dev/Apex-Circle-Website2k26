@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
 
 interface ImageCarouselProps {
   images: string[];
 }
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Duplicate images for seamless looping
   const duplicatedImages = [...images, ...images];
@@ -14,25 +13,14 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   return (
     <div
       className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl cursor-pointer group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsPaused(!isPaused)}
     >
       {/* Continuous Marquee Container */}
-      <motion.div
-        className="flex"
-        animate={{
-          x: isHovered ? undefined : ['0%', '-50%'],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: 20, // Adjust speed here (higher = slower)
-            ease: 'linear',
-          },
-        }}
+      <div
+        className={`flex animate-marquee-reverse hover:[animation-play-state:paused] ${isPaused ? '[animation-play-state:paused]' : ''}`}
         style={{
           width: `${duplicatedImages.length * 100}%`,
+          animationDuration: `${images.length * 5}s`, // Dynamic speed based on image count
         }}
       >
         {duplicatedImages.map((image, i) => (
@@ -51,12 +39,12 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             </div>
           </div>
         ))}
-      </motion.div>
+      </div>
 
       {/* Label Overlay */}
       <div className="absolute bottom-6 left-6 z-20">
         <span className="px-3 py-1 bg-tertiary text-black text-[10px] font-black uppercase tracking-widest rounded-full shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity">
-          Live_From_The_Field
+          Live_From_The_Field {isPaused ? '(PAUSED)' : ''}
         </span>
       </div>
     </div>

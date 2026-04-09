@@ -284,37 +284,8 @@
       "github": "#"
     }
   },
-  {
-    "id": "20",
-    "name": "Aishik Bandhyopadhyay",
-    "role": "PR & Outreach Team",
-    "department": "PR & Outreach",
-    "handle": "Network Expansion",
-    "emoji": "",
-    "color": "#3E2C1D",
-    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto,f_auto/v1775633423/IMG-20251011-WA0050_-_Aishik_Bandyopadhyay_fsltrv.jpg",
-    "imagePosition": "top",
-    "socials": {
-      "linkedin": "#",
-      "twitter": "#",
-      "github": "#"
-    }
-  },
-  {
-    "id": "21",
-    "name": "Aishik Mondal",
-    "role": "Web Team",
-    "department": "Web",
-    "handle": "Core Optimization",
-    "emoji": "",
-    "color": "#3E2C1D",
-    "image": "https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775660393/WhatsApp_Image_2026-04-08_at_3.10.20_PM_ezvsw2.jpg",
-    "socials": {
-      "linkedin": "#",
-      "twitter": "#",
-      "github": "#"
-    }
-  },
+
+
   {
     "id": "22",
     "name": "Anisha Kundu",
