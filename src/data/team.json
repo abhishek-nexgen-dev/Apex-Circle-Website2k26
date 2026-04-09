@@ -179,23 +179,9 @@
       "github": "#"
     }
   },
+
   {
     "id": "13",
-    "name": "Anjali Tomar",
-    "role": "Web Team",
-    "department": "Web",
-    "handle": "Backend & Content Management",
-    "emoji": "",
-    "color": "#3E2C1D",
-    "image": "https://avatars.githubusercontent.com/u/160884550?v=4",
-    "socials": {
-      "linkedin": "https://www.linkedin.com/in/anjali-tomar713",
-      "twitter": "#",
-      "github": "#"
-    }
-  },
-  {
-    "id": "14",
     "name": "Arko Pal",
     "role": "Chief Operations Lead",
     "department": "Operations",
@@ -210,7 +196,7 @@
     }
   },
   {
-    "id": "15",
+    "id": "14",
     "name": "Subhamita Adhikari",
     "role": "Design Team",
     "department": "Design",
@@ -225,7 +211,7 @@
     }
   },
   {
-    "id": "16",
+    "id": "15",
     "name": "Sagnik Adhikary",
     "role": "Design Team",
     "department": "Design",
@@ -240,7 +226,7 @@
     }
   },
   {
-    "id": "17",
+    "id": "16",
     "name": "Sourojit Banerjee",
     "role": "Design Team",
     "department": "Design",
@@ -255,7 +241,7 @@
     }
   },
   {
-    "id": "18",
+    "id": "17",
     "name": "Anurag Bannerjee",
     "role": "Social Media Team",
     "department": "Social Media",
@@ -270,7 +256,7 @@
     }
   },
   {
-    "id": "19",
+    "id": "18",
     "name": "Vishal Mahato",
     "role": "AI & ML Lead",
     "department": "AI & ML",
@@ -285,7 +271,7 @@
     }
   },
   {
-    "id": "20",
+    "id": "19",
     "name": "Aishik Bandhyopadhyay",
     "role": "PR & Outreach Team",
     "department": "PR & Outreach",
@@ -301,7 +287,7 @@
     }
   },
   {
-    "id": "21",
+    "id": "20",
     "name": "Aishik Mondal",
     "role": "Web Team",
     "department": "Web",
@@ -316,7 +302,7 @@
     }
   },
   {
-    "id": "22",
+    "id": "21",
     "name": "Anisha Kundu",
     "role": "Social Media Team",
     "department": "Social Media",
