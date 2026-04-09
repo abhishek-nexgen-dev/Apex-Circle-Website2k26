@@ -141,7 +141,6 @@ const mentors = [
   },
 ];
 
-
 export default function Team() {
   const [activeDept, setActiveDept] = useState('All');
 
@@ -168,7 +167,8 @@ export default function Team() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[9rem] font-poppins font-black tracking-tighter leading-none uppercase mb-12 animate-text-glow whitespace-nowrap">
-              <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">MEET</span>{' '} <br />
+              <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">MEET</span>{' '}
+              <br />
               <span className="text-yellow-400 drop-shadow-[0_0_25px_rgba(250,204,21,0.5)]">
                 OUR
               </span>{' '}
