@@ -154,7 +154,7 @@ export default function Team() {
   }, [activeDept]);
 
   return (
-    <div className="pt-32 md:pt-56 pb-32 md:pb-56 px-6 relative overflow-hidden">
+    <div className="pt-44 md:pt-56 pb-32 md:pb-56 px-6 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-tertiary/5 blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-1/4 h-1/2 bg-tertiary/5 blur-[120px] pointer-events-none" />
@@ -233,7 +233,7 @@ export default function Team() {
         {/* NEW SECTION: Our Culture */}
         <section className="mb-32 md:mb-56">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
-            <h2 className="relative text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
+            <h2 className="relative text-4xl sm:text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase overflow-hidden pb-4 inline-block">
               <span className="text-white">Our </span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
                 Culture
@@ -298,7 +298,7 @@ export default function Team() {
         <section className="mb-32 md:mb-56">
           {/* 🔥 HEADER */}
           <div className="text-center mb-20 md:mb-28">
-            <h2 className="text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase relative">
+            <h2 className="text-4xl sm:text-5xl md:text-8xl font-poppins font-black tracking-tight leading-[0.9] uppercase relative">
               <span className="text-white">Mentors &</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600">
                 Advisors
@@ -393,7 +393,7 @@ export default function Team() {
             <span className="text-tertiary font-mono text-sm mb-6 block tracking-widest uppercase">
               // Onboarding_Pipeline
             </span>
-            <h2 className="text-5xl md:text-8xl font-brutal tracking-tighter uppercase leading-none">
+            <h2 className="text-4xl sm:text-5xl md:text-8xl font-brutal tracking-tighter uppercase leading-none">
               Join the <br /> <span className="text-slate-500">Process</span>
             </h2>
           </div>

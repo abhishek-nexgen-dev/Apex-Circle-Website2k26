@@ -123,19 +123,7 @@ export default function Footer() {
               © 2026 APEX CIRCLE
             </span>
           </div>
-          <Link
-            to="/developed/by/abhishek"
-            className="text-[10px] font-black uppercase tracking-widest text-slate-700"
-          >
-            Developed with <span className="text-primary animate-pulse">❤️</span> by Abhishek
-            <span className="mx-4">|</span>
-            <a
-              href="https://github.com/NexGenStudioDev/Apex-Circle-Website"
-              className="hover:text-primary transition-colors underline underline-offset-4"
-            >
-              GitHub Contribution
-            </a>
-          </Link>
+
         </div>
       </div>
     </footer>
