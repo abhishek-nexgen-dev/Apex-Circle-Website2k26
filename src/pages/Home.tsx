@@ -152,15 +152,16 @@ const RoadmapInteractive = () => {
               <div className="relative w-full h-full animate-bounce">
                 <Rocket
                   size={45}
-                  className="absolute inset-0 m-auto text-yellow-400 rotate-45 transform"
+                  className="absolute inset-0 m-auto text-yellow-400 rotate-45 transform "
                 />
-                <div className="absolute inset-4 border-4 border-dashed border-yellow-400/30 rounded-full animate-[spin_6s_linear_infinite]" />
+                <div className="absolute inset-4 border-4 border-dashed border-yellow-400/30 rounded-full animate-[spin_8s_linear_infinite] ease-in-out" />
               </div>
             </div>
 
             {/* Content Nodes */}
             {roadmapData.map((item, index) => {
               const isActive = activePhase === index;
+
               return (
                 <div
                   key={index}
@@ -168,53 +169,78 @@ const RoadmapInteractive = () => {
                   style={{
                     left: item.x,
                     top: item.y,
+                    transform: 'translate(-50%, -50%)', // ✅ IMPORTANT
                   }}
-                  onMouseEnter={() => setActivePhase(index)}
+                  onClick={() => setActivePhase(index)} // ✅ mobile support
+                  onMouseEnter={() => window.innerWidth > 768 && setActivePhase(index)}
                 >
-                  {/* Node Dot */}
+                  {/* 🔥 NODE DOT */}
                   <div
-                    className={`absolute top-0 left-0 -ml-5 -mt-5 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-yellow-400 scale-125 shadow-[0_0_30px_rgba(234,179,8,0.6)]' : 'bg-[#0a1233] border-4 border-white/20 group-hover:border-yellow-400/50'}`}
+                    className={`w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center transition-all duration-500 ${
+                      isActive
+                        ? 'bg-yellow-400 scale-125 shadow-[0_0_25px_rgba(234,179,8,0.6)]'
+                        : 'bg-[#0a1233] border-2 border-white/20 group-hover:border-yellow-400/50'
+                    }`}
                   >
                     <div
-                      className={`w-3 h-3 rounded-full transition-colors duration-500 ${isActive ? 'bg-black' : 'bg-transparent'}`}
+                      className={`w-2 h-2 rounded-full ${isActive ? 'bg-black' : 'bg-transparent'}`}
                     />
                   </div>
 
-                  {/* Card Content Placeholder Area For Hover Hitbox Expansion */}
+                  {/* 🔥 HITBOX (smaller + responsive) */}
                   <div
-                    className={`absolute top-0 -translate-y-1/2 h-[200px] w-[350px] ${item.align === 'left' ? 'right-0' : 'left-0'}`}
+                    className={`absolute top-1/2 -translate-y-1/2 h-[140px] w-[220px] sm:w-[260px] ${
+                      item.align === 'left' ? 'right-0' : 'left-0'
+                    }`}
                   />
 
-                  {/* Card Content */}
+                  {/* 🔥 CARD */}
                   <div
-                    className={`absolute top-0 -mt-[140px] w-[320px] transition-all duration-700 pointer-events-none ${
-                      item.align === 'left'
-                        ? 'right-[40px] origin-right'
-                        : 'left-[40px] origin-left'
-                    } ${isActive ? 'opacity-100 scale-100' : 'opacity-30 scale-95 group-hover:opacity-60'}`}
+                    className={`absolute top-0 -translate-y-full mt-[-10px] w-[220px] sm:w-[260px] md:w-[300px] transition-all duration-500 pointer-events-none ${
+                      item.align === 'left' ? 'right-4 sm:right-6' : 'left-4 sm:left-6'
+                    } ${
+                      isActive
+                        ? 'opacity-100 scale-100'
+                        : 'opacity-40 scale-95 group-hover:opacity-70'
+                    }`}
                   >
                     <div
-                      className={`p-5 border rounded-2xl backdrop-blur-xl transition-colors duration-500 ${isActive ? 'bg-[#0a1233]/90 border-yellow-400 shadow-[0_0_40px_rgba(234,179,8,0.2)]' : 'bg-black/80 border-white/10'}`}
+                      className={`p-3 sm:p-4 md:p-5 border rounded-xl sm:rounded-2xl backdrop-blur-xl transition-all ${
+                        isActive
+                          ? 'bg-[#0a1233]/90 border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.2)]'
+                          : 'bg-black/80 border-white/10'
+                      }`}
                     >
-                      <div className="flex items-center gap-3 mb-4">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                         <span
-                          className={`text-4xl font-poppins font-black ${isActive ? 'text-yellow-400' : 'text-white/20'}`}
+                          className={`text-lg sm:text-2xl md:text-3xl font-black ${
+                            isActive ? 'text-yellow-400' : 'text-white/20'
+                          }`}
                         >
                           {item.phase}
                         </span>
+
                         <div>
-                          <h3 className="text-xl font-poppins font-black uppercase tracking-tight text-white mb-1">
+                          <h3 className="text-xs sm:text-sm md:text-lg font-black uppercase text-white leading-tight">
                             {item.title}
                           </h3>
+
                           <span
-                            className={`text-[9px] font-black px-2 py-0.5 border uppercase tracking-widest ${item.status === 'IN PROGRESS' ? 'bg-yellow-400 text-black border-yellow-400' : 'border-white/20 text-slate-400'}`}
+                            className={`text-[8px] sm:text-[10px] font-black px-2 py-[2px] border uppercase tracking-widest ${
+                              item.status === 'IN PROGRESS'
+                                ? 'bg-yellow-400 text-black border-yellow-400'
+                                : 'border-white/20 text-slate-400'
+                            }`}
                           >
                             {item.status}
                           </span>
                         </div>
                       </div>
+
                       <p
-                        className={`text-sm leading-relaxed font-medium ${isActive ? 'text-slate-300' : 'text-slate-500'}`}
+                        className={`text-[10px] sm:text-xs md:text-sm leading-relaxed ${
+                          isActive ? 'text-slate-300' : 'text-slate-500'
+                        }`}
                       >
                         {item.desc}
                       </p>

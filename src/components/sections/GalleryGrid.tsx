@@ -1,77 +1,69 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Maximize2, X } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Maximize2 } from 'lucide-react';
 import { GalleryItem } from '@/types';
+import ImageCarousel from '../ImageCarousel';
 
 interface GalleryGridProps {
   items: GalleryItem[];
 }
 
 export default function GalleryGrid({ items }: GalleryGridProps) {
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const visibleItems = items.slice(0, visibleCount);
 
   return (
-    <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {items.map((item) => (
-          <div
+    <div className="w-full">
+      {/* 🔥 MASONRY GRID */}
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        {visibleItems.map((item) => (
+          <motion.div
             key={item.id}
-            className="group relative bg-white/[0.02] border border-white/10 hover:border-primary transition-all duration-500 cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(item)}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-2xl"
           >
-            <div className="aspect-square overflow-hidden relative">
+            {/* IMAGE */}
+            <div className="relative overflow-hidden rounded-2xl">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <Maximize2 className="text-primary" size={32} />
+
+              {/* 🔥 HOVER OVERLAY */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                <div className="flex flex-col items-center gap-3">
+                  <Maximize2
+                    className="text-white bg-white/10 p-3 rounded-full backdrop-blur-md border border-white/20"
+                    size={36}
+                  />
+
+                  {/* Title appears on hover */}
+                  <span className="text-white text-sm font-semibold tracking-wide">
+                    {item.title}
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="p-6">
-              <span className="text-primary font-mono text-[10px] uppercase tracking-widest mb-2 block">
-                {item.category}
-              </span>
-              <h3 className="text-xl font-brutal tracking-tight mb-1 group-hover:text-primary transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                {item.date}
-              </p>
-            </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6 md:p-12"
-            onClick={() => setSelectedImage(null)}
+      {/* 🔥 VIEW MORE BUTTON */}
+      {visibleCount < items.length && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => setVisibleCount((prev) => prev + 6)}
+            className="px-8 py-3 rounded-full border border-white/20 text-white font-semibold tracking-wide hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
           >
-            <button
-              className="absolute top-8 right-8 text-white hover:text-primary transition-colors"
-              onClick={() => setSelectedImage(null)}
-            >
-              <X size={32} />
-            </button>
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              src={selectedImage.image}
-              alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain border border-white/10"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+            View More
+          </button>
+        </div>
+      )}
+    </div>
   );
 }

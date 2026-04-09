@@ -5,7 +5,7 @@ import FilterBar from '@/components/ui/FilterBar';
 import galleryData from '@/data/gallery.json';
 import { Play, Camera, Film, Image as ImageIcon } from 'lucide-react'; // Added more icons
 
-const categories = ['All', 'Hackathon', 'Workshop', 'Meetup', 'Community'];
+const categories = ['All', 'Hackathons', 'Workshops', 'Meetups', 'Community', 'Awards'];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -23,36 +23,60 @@ export default function Gallery() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section - Enhanced typography and motion */}
-        <header className="mb-24 md:mb-40">
+        <header className="mb-16 sm:mb-20 md:mb-28 lg:mb-36">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+            className="max-w-6xl"
           >
-            <span className="text-primary font-mono text-sm mb-6 block tracking-[0.3em] uppercase opacity-80">
-              // Visual_Logs
-            </span>
-            <h1 className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12 md:mb-20">
-              Protocol <br />
-              <span className="text-slate-500 inline-block hover:text-primary transition-colors duration-700 cursor-default">
-                Gallery
+            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] xl:text-[9rem] font-poppins font-black tracking-tighter leading-[0.9] uppercase mb-6 sm:mb-10 relative">
+              {/* 🔥 LINE 1 */}
+              <span className="block text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.5)]">
+                EXPLORE
               </span>
+
+              {/* 🔥 LINE 2 */}
+              <span className="block text-yellow-400 drop-shadow-[0_0_30px_rgba(250,204,21,0.7)] relative">
+                APEX
+                {/* subtle glow line */}
+              </span>
+
+              {/* 🔥 LINE 3 */}
+              <span className="block text-tertiary drop-shadow-[0_0_30px_rgba(56,189,248,0.7)]">
+                GALLERY
+              </span>
+
+              {/* 🔥 GLOSS SWEEP EFFECT */}
+              <span
+                className="absolute inset-0 pointer-events-none rounded-r-md"
+                style={{
+                  background:
+                    'linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.2) 50%, transparent 80%)',
+                  backgroundSize: '200% 100%',
+                  animation: 'glossySweep 4s ease-in-out infinite',
+                }}
+              />
             </h1>
+
+            {/* 🔥 DESCRIPTION */}
+            <p className="text-slate-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl font-medium leading-relaxed tracking-tight">
+              A curated showcase of hackathons, events, and community moments — capturing the energy
+              of builders shaping the Apex ecosystem.
+            </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-12 md:mt-20 overflow-x-auto pb-6 scrollbar-hide"
-          >
-            <FilterBar
-              categories={categories}
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-              accentColor="primary"
-            />
-          </motion.div>
+          {/* 🔥 FILTER BAR */}
+          <div className="mt-10 sm:mt-12 md:mt-16 overflow-x-auto pb-4 scrollbar-hide">
+            <div className="min-w-max">
+              <FilterBar
+                categories={categories}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
+                accentColor="tertiary"
+              />
+            </div>
+          </div>
         </header>
 
         {/* Gallery Grid - Logic preserved, UI enhanced in component */}
