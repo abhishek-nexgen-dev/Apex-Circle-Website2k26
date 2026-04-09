@@ -152,88 +152,81 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */} 
+      {/* Mobile Nav */}
 
       <AnimatePresence>
-  {isOpen && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden flex flex-col"
-    >
-      
-
-    
-
-      {/* 🔥 NAV LINKS */}
-      <div className="flex flex-col items-center  px-6 py-10 gap-6 flex-1 mt-28 overflow-y-auto scroll-smooth">
-        {navLinks.map((link, i) => (
+        {isOpen && (
           <motion.div
-            key={link.path}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08, ease: 'easeOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden flex flex-col"
           >
-            <Link
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                'flex items-center justify-between text-[22px] sm:text-[26px] font-semibold tracking-wide transition-all group',
-                location.pathname === link.path
-                  ? 'text-primary'
-                  : 'text-gray-400 hover:text-white'
-              )}
-            >
-              {link.name}
+            {/* 🔥 NAV LINKS */}
+            <div className="flex flex-col items-center  px-6 py-10 gap-6 flex-1 mt-28 overflow-y-auto scroll-smooth">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.path}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08, ease: 'easeOut' }}
+                >
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      'flex items-center justify-between text-[22px] sm:text-[26px] font-semibold tracking-wide transition-all group',
+                      location.pathname === link.path
+                        ? 'text-primary'
+                        : 'text-gray-400 hover:text-white',
+                    )}
+                  >
+                    {link.name}
 
-              {/* 👉 Arrow Animation */}
-              <span className="opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all">
-                →
-              </span>
-            </Link>
+                    {/* 👉 Arrow Animation */}
+                    <span className="opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all">
+                      →
+                    </span>
+                  </Link>
 
-            {/* Divider */}
-            <div className="mt-3 h-[1px] bg-white/5" />
+                  {/* Divider */}
+                  <div className="mt-3 h-[1px] bg-white/5" />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* 🔥 CTA SECTION */}
+            <div className="px-6 pb-6">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full text-center bg-gradient-to-r from-primary to-blue-500 text-black font-bold py-4 rounded-xl tracking-widest shadow-[0_0_25px_rgba(79,142,247,0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all"
+                >
+                  JOIN APEX CIRCLE
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* 🔥 FOOTER */}
+            <div className="px-6 py-4 border-t border-white/10 flex justify-between items-center text-xs text-gray-500">
+              <span>© 2026 APEX</span>
+
+              <div className="flex gap-4">
+                {['TW', 'GH', 'LI'].map((s) => (
+                  <span key={s} className="hover:text-primary cursor-pointer transition">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           </motion.div>
-        ))}
-      </div>
-
-      {/* 🔥 CTA SECTION */}
-      <div className="px-6 pb-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <Link
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className="block w-full text-center bg-gradient-to-r from-primary to-blue-500 text-black font-bold py-4 rounded-xl tracking-widest shadow-[0_0_25px_rgba(79,142,247,0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all"
-          >
-            JOIN APEX CIRCLE
-          </Link>
-        </motion.div>
-      </div>
-
-      {/* 🔥 FOOTER */}
-      <div className="px-6 py-4 border-t border-white/10 flex justify-between items-center text-xs text-gray-500">
-        <span>© 2026 APEX</span>
-
-        <div className="flex gap-4">
-          {['TW', 'GH', 'LI'].map((s) => (
-            <span
-              key={s}
-              className="hover:text-primary cursor-pointer transition"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
