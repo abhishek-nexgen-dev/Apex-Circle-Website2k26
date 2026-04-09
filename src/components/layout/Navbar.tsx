@@ -50,7 +50,7 @@ export default function Navbar() {
     >
       <div
         className={cn(
-          'max-w-[98%] mx-auto flex items-center justify-between transition-all duration-700 px-4 sm:px-5 py-4 md:py-5 rounded-2xl relative overflow-hidden',
+          ' max-w-[98%] mx-auto flex items-center justify-between transition-all duration-700 px-4 sm:px-5 py-4 md:py-5 rounded-2xl relative overflow-hidden z-50 lg:z-10',
           scrolled
             ? 'bg-black/60 backdrop-blur-3xl border border-white/[0.15] shadow-[0_0_30px_rgba(79,142,247,0.2)] before:absolute before:inset-x-0 before:bottom-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-primary/70 before:to-transparent'
             : 'bg-transparent border border-transparent',
@@ -136,7 +136,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 lg:hidden">
+        <div className="flex items-center gap-4 lg:hidden z-50 ">
           <Link
             to="/contact"
             className="text-[12px] font-poppins font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-full hover:bg-primary hover:text-black transition-all shadow-[0_0_10px_rgba(79,142,247,0.2)]"
@@ -144,77 +144,96 @@ export default function Navbar() {
             Join
           </Link>
           <button
-            className="text-white p-2 hover:bg-white/5 rounded-full transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
+            className="text-white p-2 hover:bg-white/5 rounded-full transition-colors "
+            onClick={() => setIsOpen((prev) => !prev)}
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[-1] bg-black/95 backdrop-blur-2xl lg:hidden flex flex-col pt-32 px-6 pb-12 overflow-y-auto"
-          >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.path}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <Link
-                    to={link.path}
-                    className={cn(
-                      'text-[38px] sm:text-[50px] font-poppins font-black uppercase tracking-tighter transition-all block py-2',
-                      location.pathname === link.path
-                        ? 'text-primary drop-shadow-[0_0_12px_rgba(79,142,247,0.6)]'
-                        : 'text-slate-700 hover:text-white',
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
-                className="mt-8 pt-8 border-t border-white/10"
-              >
-                <Link
-                  to="/contact"
-                  className="bg-primary text-black font-poppins font-black uppercase tracking-widest text-[16px] py-5 rounded-none text-center block hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_0_20px_rgba(79,142,247,0.3)]"
-                >
-                  Initialize Connection
-                </Link>
-              </motion.div>
-            </div>
+      {/* Mobile Nav */} 
 
-            <div className="mt-auto pt-12 flex justify-between items-center">
-              <div className="text-[12px] font-poppins font-black uppercase tracking-widest text-slate-500">
-                © 2026 APEX CIRCLE
-              </div>
-              <div className="flex gap-4">
-                {['TW', 'GH', 'LI'].map((s) => (
-                  <span
-                    key={s}
-                    className="text-[12px] font-poppins font-black uppercase tracking-widest text-slate-500 hover:text-primary cursor-pointer transition-colors"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
+      <AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden flex flex-col"
+    >
+      
+
+    
+
+      {/* 🔥 NAV LINKS */}
+      <div className="flex flex-col items-center  px-6 py-10 gap-6 flex-1 mt-28 overflow-y-auto scroll-smooth">
+        {navLinks.map((link, i) => (
+          <motion.div
+            key={link.path}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.08, ease: 'easeOut' }}
+          >
+            <Link
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                'flex items-center justify-between text-[22px] sm:text-[26px] font-semibold tracking-wide transition-all group',
+                location.pathname === link.path
+                  ? 'text-primary'
+                  : 'text-gray-400 hover:text-white'
+              )}
+            >
+              {link.name}
+
+              {/* 👉 Arrow Animation */}
+              <span className="opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all">
+                →
+              </span>
+            </Link>
+
+            {/* Divider */}
+            <div className="mt-3 h-[1px] bg-white/5" />
           </motion.div>
-        )}
-      </AnimatePresence>
+        ))}
+      </div>
+
+      {/* 🔥 CTA SECTION */}
+      <div className="px-6 pb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="block w-full text-center bg-gradient-to-r from-primary to-blue-500 text-black font-bold py-4 rounded-xl tracking-widest shadow-[0_0_25px_rgba(79,142,247,0.4)] hover:scale-[1.03] active:scale-[0.97] transition-all"
+          >
+            JOIN APEX CIRCLE
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* 🔥 FOOTER */}
+      <div className="px-6 py-4 border-t border-white/10 flex justify-between items-center text-xs text-gray-500">
+        <span>© 2026 APEX</span>
+
+        <div className="flex gap-4">
+          {['TW', 'GH', 'LI'].map((s) => (
+            <span
+              key={s}
+              className="hover:text-primary cursor-pointer transition"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 }

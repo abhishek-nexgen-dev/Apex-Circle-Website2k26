@@ -42,7 +42,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             style={{ width: `${100 / duplicatedImages.length}%` }}
           >
             <div className="h-[300px] md:h-[500px] px-2">
-               <img
+              <img
                 src={image}
                 alt={`Apex Scene ${i}`}
                 className="w-full h-full object-cover rounded-2xl border border-white/10 group-hover:border-tertiary transition-colors duration-500"
