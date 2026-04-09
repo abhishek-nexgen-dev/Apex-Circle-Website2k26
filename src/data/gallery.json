@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Global Hackathon 2024",
     "category": "Hackathons",
-    "image": "https://picsum.photos/seed/gallery1/1200/800"
+    "image": "https://img.freepik.com/free-photo/young-beautiful-girl-posing-black-leather-jacket-park_1153-8104.jpg?semt=ais_hybrid&w=740&q=80"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "id": "4",
     "title": "Annual Awards Gala",
     "category": "Awards",
-    "image": "https://picsum.photos/seed/gallery4/1200/800"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCbGlQTJQWc0OxLAoWrx7qiEjip5jm7fFmrw&s"
   },
   {
     "id": "5",
@@ -34,5 +34,306 @@
     "title": "Team Retreat",
     "category": "Community",
     "image": "https://picsum.photos/seed/gallery6/1200/800"
+  },
+
+  {
+    "id": "7",
+    "title": "Web3 Hack Night",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery7/1200/800"
+  },
+  {
+    "id": "8",
+    "title": "AI Builders Meetup",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery8/1200/800"
+  },
+  {
+    "id": "9",
+    "title": "Frontend Workshop",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery9/1200/800"
+  },
+  {
+    "id": "10",
+    "title": "Startup Pitch Day",
+    "category": "Events",
+    "image": "https://static.toiimg.com/thumb/122506570/122506570.jpg?height=746&width=420&resizemode=76&imgsize=1656856"
+  },
+  {
+    "id": "11",
+    "title": "Design Sprint Session",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery11/1200/800"
+  },
+  {
+    "id": "12",
+    "title": "Blockchain Summit",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery12/1200/800"
+  },
+  {
+    "id": "13",
+    "title": "Dev Meetup Bangalore",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery13/1200/800"
+  },
+  {
+    "id": "14",
+    "title": "Night Coding Jam",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery14/1200/800"
+  },
+  {
+    "id": "15",
+    "title": "UI/UX Masterclass",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery15/1200/800"
+  },
+  {
+    "id": "16",
+    "title": "Community Hangout",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery16/1200/800"
+  },
+  {
+    "id": "17",
+    "title": "Hackathon Finals",
+    "category": "Hackathons",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/063/049/367/small/a-young-woman-with-freckles-and-green-eyes-looks-directly-at-the-camera-photo.jpeg"
+  },
+  {
+    "id": "18",
+    "title": "AI Demo Day",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery18/1200/800"
+  },
+  {
+    "id": "19",
+    "title": "Team Collaboration Day",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery19/1200/800"
+  },
+  {
+    "id": "20",
+    "title": "Backend Bootcamp",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery20/1200/800"
+  },
+  {
+    "id": "21",
+    "title": "Open Source Sprint",
+    "category": "Hackathons",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmvQcEiKEG9UYT0jFK8Buido_9-4xKwAwYog&s"
+  },
+  {
+    "id": "22",
+    "title": "Tech Leaders Meetup",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery22/1200/800"
+  },
+  {
+    "id": "23",
+    "title": "Product Showcase",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery23/1200/800"
+  },
+  {
+    "id": "24",
+    "title": "Creative Jam",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery24/1200/800"
+  },
+  {
+    "id": "25",
+    "title": "Hackathon Kickoff",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery25/1200/800"
+  },
+  {
+    "id": "26",
+    "title": "Tech Talk Series",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery26/1200/800"
+  },
+  {
+    "id": "27",
+    "title": "Cloud Dev Workshop",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery27/1200/800"
+  },
+  {
+    "id": "28",
+    "title": "Innovation Day",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery28/1200/800"
+  },
+  {
+    "id": "29",
+    "title": "Design Meetup",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery29/1200/800"
+  },
+  {
+    "id": "30",
+    "title": "Hackathon Awards",
+    "category": "Awards",
+    "image": "https://images.pexels.com/photos/28118623/pexels-photo-28118623/free-photo-of-a-black-and-white-photo-of-a-girl-wearing-a-baseball-cap.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  },
+  {
+    "id": "31",
+    "title": "Community Build Day",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery31/1800/800"
+  },
+  {
+    "id": "32",
+    "title": "Startup Networking",
+    "category": "Events",
+    "image": "https://i.pinimg.com/736x/3a/1a/88/3a1a888dabed48402a7f5c7d2fb9a2e4.jpg"
+  },
+  {
+    "id": "33",
+    "title": "React Workshop",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery33/2400/800"
+  },
+  {
+    "id": "34",
+    "title": "AI Hackathon",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery34/1200/800"
+  },
+  {
+    "id": "35",
+    "title": "Team Meetup",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery35/1200/800"
+  },
+  {
+    "id": "36",
+    "title": "Developer Summit",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery36/1200/800"
+  },
+  {
+    "id": "37",
+    "title": "Fullstack Bootcamp",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery37/1200/800"
+  },
+  {
+    "id": "38",
+    "title": "Hackathon Night",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery38/1200/800"
+  },
+  {
+    "id": "39",
+    "title": "Community Awards",
+    "category": "Awards",
+    "image": "https://picsum.photos/seed/gallery39/1200/800"
+  },
+  {
+    "id": "40",
+    "title": "Design Review Session",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery40/1200/800"
+  },
+  {
+    "id": "41",
+    "title": "Builders Meetup",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery41/1200/800"
+  },
+  {
+    "id": "42",
+    "title": "Product Launch Event",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery42/1200/800"
+  },
+  {
+    "id": "43",
+    "title": "Code Sprint",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery43/1200/800"
+  },
+  {
+    "id": "44",
+    "title": "Tech Community Day",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery44/1200/800"
+  },
+  {
+    "id": "45",
+    "title": "Frontend Meetup",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery45/1200/800"
+  },
+  {
+    "id": "46",
+    "title": "Cloud Hackathon",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery46/1200/800"
+  },
+  {
+    "id": "47",
+    "title": "UI Workshop",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery47/1200/800"
+  },
+  {
+    "id": "48",
+    "title": "Team Building Camp",
+    "category": "Community",
+    "image": "https://picsum.photos/seed/gallery48/1200/800"
+  },
+  {
+    "id": "49",
+    "title": "Startup Hackathon",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery49/1200/800"
+  },
+  {
+    "id": "50",
+    "title": "DevOps Workshop",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery50/1200/800"
+  },
+  {
+    "id": "51",
+    "title": "Global Meetup",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery51/1200/800"
+  },
+  {
+    "id": "52",
+    "title": "Awards Ceremony",
+    "category": "Awards",
+    "image": "https://picsum.photos/seed/gallery52/1200/800"
+  },
+  {
+    "id": "53",
+    "title": "Innovation Hackathon",
+    "category": "Hackathons",
+    "image": "https://picsum.photos/seed/gallery53/1200/800"
+  },
+  {
+    "id": "54",
+    "title": "Tech Expo",
+    "category": "Events",
+    "image": "https://picsum.photos/seed/gallery54/1200/800"
+  },
+  {
+    "id": "55",
+    "title": "Community Meetup Delhi",
+    "category": "Meetups",
+    "image": "https://picsum.photos/seed/gallery55/1200/800"
+  },
+  {
+    "id": "56",
+    "title": "Workshop Series",
+    "category": "Workshops",
+    "image": "https://picsum.photos/seed/gallery56/1200/800"
   }
 ]
