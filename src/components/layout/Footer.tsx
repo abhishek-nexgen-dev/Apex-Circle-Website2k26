@@ -123,7 +123,6 @@ export default function Footer() {
               © 2026 APEX CIRCLE
             </span>
           </div>
-
         </div>
       </div>
     </footer>

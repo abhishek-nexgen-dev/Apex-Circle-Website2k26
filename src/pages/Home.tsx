@@ -261,6 +261,14 @@ export default function Home() {
 
   const testimonials = [
     {
+      name: 'Purnangshu Roy',
+      role: 'Sr. Business Analyst',
+      text: 'Apex Circle has been an incredible platform for networking and technical growth. The synergy between developers and analysts here is truly unique.',
+      image:
+        'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775709350/picture_193_of_317_1_kop9cd.jpg',
+      company: 'CSAR BOX',
+    },
+    {
       name: 'Abhishek Mahto',
       role: 'Founder & CEO',
       text: 'Apex Circle provided the infrastructure and community I needed to deploy my first L2 solution. The intensity is unmatched.',
@@ -305,15 +313,6 @@ export default function Home() {
       linkedin: 'https://linkedin.com/in/amitbarnawal',
       website: 'https://thedrop.finance',
       company: 'The Drop Organization',
-    },
-    {
-      name: 'Elena Vance',
-      role: 'UI Designer',
-      text: 'Merging brutalist aesthetics with high-performance UX is our signature. Apex Circle lets us break the standard patterns.',
-      image: 'https://images.unsplash.com/photo-1517841905240-472988bad1fa?w=400&h=500&fit=crop',
-      linkedin: 'https://linkedin.com/in/elenavance',
-      website: 'https://design.xyz',
-      company: 'Brutalist_UX',
     },
   ];
 
@@ -473,7 +472,17 @@ export default function Home() {
             </div>
           </div>
           <div className="relative w-full rounded-xl overflow-hidden border border-white/5 shadow-2xl bg-black/10 p-4">
-            <ImageCarousel images={[AboutImage, HackathonImage, CommunityImage, WorkshopsImage]} />
+            <ImageCarousel
+              images={[
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708589/DSC_0169_mpwjs4.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708593/DSC_0183_abzsv6.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708589/DSC_0199_ezgpgt.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708588/DSC_0240_naowtx.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708587/DSC_0254_zlrmwo.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708587/DSC_0276_hau6qi.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708587/DSC_0258_pchjht.jpg',
+              ]}
+            />
           </div>
         </div>
       </section>
