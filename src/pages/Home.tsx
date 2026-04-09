@@ -237,8 +237,9 @@ export default function Home() {
     {
       name: 'Purnangshu Roy',
       role: 'Sr. Business Analyst',
-      text: "Apex Circle has been an incredible platform for networking and technical growth. The synergy between developers and analysts here is truly unique.",
-      image: 'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775709350/picture_193_of_317_1_kop9cd.jpg',
+      text: 'Apex Circle has been an incredible platform for networking and technical growth. The synergy between developers and analysts here is truly unique.',
+      image:
+        'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775709350/picture_193_of_317_1_kop9cd.jpg',
       company: 'CSAR BOX',
     },
     {
