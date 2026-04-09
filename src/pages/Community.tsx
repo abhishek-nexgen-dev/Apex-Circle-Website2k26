@@ -95,7 +95,7 @@ export default function Community() {
             {paths.map((path, i) => (
               <div
                 key={i}
-                className="group p-8 md:p-12 border border-white/10 bg-[#060c37] hover:border-yellow-500 transition-all duration-500"
+                className="group p-8 md:p-6 border border-white/10 bg-[#060c37] hover:border-yellow-500 transition-all duration-500"
               >
                 <path.icon
                   className="text-primary mb-6 md:mb-8 group-hover:scale-110 transition-transform"
@@ -168,7 +168,7 @@ export default function Community() {
       {/* Guidelines Section */}
       <section className="mb-24 md:mb-48 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <Shield className="text-primary mx-auto mb-6 md:mb-8" size={32} md:size={48} />
+          <Shield className="text-primary mx-auto mb-6 md:mb-8" size={32} />
           <h2 className="text-3xl md:text-6xl font-brutal tracking-tighter uppercase mb-6 md:mb-8">
             Community <span className="text-slate-500">Guidelines</span>
           </h2>
