@@ -195,7 +195,7 @@ export default function Team() {
         </header>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-32 md:mb-56">
+        <div className="grid grid-cols-1 gap-[8vh] px-[3rem] lg:px-0 sm:grid-cols-2  lg:w-full md:grid-cols-4 gap-8 md:gap-12 mb-32 md:mb-56">
           {filteredTeam.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}
