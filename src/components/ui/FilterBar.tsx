@@ -21,7 +21,7 @@ export default function FilterBar({
   };
 
   return (
-    <div className="flex flex-nowrap lg:flex-wrap items-center gap-4 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide">
+    <div className="flex flex-wrap items-center gap-4 overflow-x-auto px-2 pb-4 lg:pb-0 scrollbar-hide">
       {categories.map((category) => (
         <button
           key={category}

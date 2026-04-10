@@ -184,7 +184,7 @@ export default function Team() {
             </p>
           </motion.div>
 
-          <div className="mt-16 md:mt-24 overflow-x-auto pb-6 scrollbar-hide">
+          <div className="mt-16 md:mt-24 overflow-x-auto pb-6 scrollbar-hide ">
             <FilterBar
               categories={departments}
               activeCategory={activeDept}
