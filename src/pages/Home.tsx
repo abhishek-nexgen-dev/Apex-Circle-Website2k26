@@ -474,13 +474,13 @@ export default function Home() {
           <div className="relative w-full rounded-xl overflow-hidden border border-white/5 shadow-2xl bg-black/10 p-4">
             <ImageCarousel
               images={[
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708589/DSC_0169_mpwjs4.jpg',
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708593/DSC_0183_abzsv6.jpg',
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708589/DSC_0199_ezgpgt.jpg',
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708588/DSC_0240_naowtx.jpg',
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708587/DSC_0254_zlrmwo.jpg',
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708587/DSC_0276_hau6qi.jpg',
-                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775708587/DSC_0258_pchjht.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775847468/DSC_0198_bynjo3.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775847469/DSC_0199_1_etjmoi.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775847469/DSC_0169_1_vsp52b.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775847535/picture_316_of_317_fxghvf.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775847533/picture_216_of_317_pqga3h.jpg',
+                'https://res.cloudinary.com/dz3cfmi5k/image/upload/q_auto/f_auto/v1775847539/picture_257_of_317_acawqz.jpg',
+              
               ]}
             />
           </div>

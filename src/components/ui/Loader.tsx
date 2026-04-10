@@ -16,7 +16,7 @@ export default function Loader({ onComplete }: LoaderProps) {
           clearInterval(timer);
           setTimeout(() => {
             setComplete(true);
-            setTimeout(onComplete, 1000);
+            setTimeout(onComplete, 5000);
           }, 500);
           return 100;
         }
