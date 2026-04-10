@@ -665,7 +665,7 @@ export default function Home() {
       {/* Manifesto Marquee (Caution Tape Design) */}
       <div className="w-full relative py-8 md:py-12 overflow-hidden">
         <div className="absolute inset-0 bg-transparent flex items-center justify-center">
-          <div className="w-[120%] bg-[#facc15] relative overflow-hidden border-y border-black rotate-[2deg] scale-[1.05] shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-20">
+          <div className="w-[120%] bg-blue-800 relative overflow-hidden border-y border-black  scale-[1.05] shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-20">
             {/* Top Stripes Border */}
             <div className="h-1 md:h-1.5 w-full caution-stripes border-b border-black/5" />
 
@@ -674,16 +674,16 @@ export default function Home() {
                 {[...Array(10)].map((_, i) => (
                   <span
                     key={i}
-                    className="text-black text-base md:text-xl font-poppins font-black uppercase tracking-tighter flex items-center gap-8 select-none"
+                    className="text-white  text-base md:text-xl font-poppins font-black uppercase tracking-tighter flex items-center gap-8 select-none"
                   >
                     BUILD IN PUBLIC
-                    <Zap size={14} className="fill-black text-black" />
+                    <Zap size={14} className="fill-black text-white" />
                     LEARN IN COMMUNITY
-                    <Zap size={14} className="fill-black text-black" />
+                    <Zap size={14} className="fill-black text-white" />
                     SHIP FAST
-                    <Zap size={14} className="fill-black text-black" />
+                    <Zap size={14} className="fill-black text-white" />
                     SCALE TOGETHER
-                    <Zap size={14} className="fill-black text-black" />
+                    <Zap size={14} className="fill-black text-white" />
                     APEX CIRCLE
                   </span>
                 ))}
