@@ -109,7 +109,7 @@ export default function Hero() {
 
       {/* Moving Retro Creature */}
       <div
-        className="absolute bottom-10 left-0 z-[100]"
+        className="absolute bottom-10 left-0 z-20"
         style={{ animation: 'walkAcross 20s linear infinite' }}
       >
         <div className="relative">
@@ -161,7 +161,7 @@ export default function Hero() {
           const badgeDelay = 1.1;
           const glossyStart = badgeDelay + 0.05 + (totalLetters - 1) * stagger + dropDuration;
           return (
-            <h1 className="relative text-3xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-brutal leading-none mb-6 md:mb-8 uppercase tracking-wider drop-shadow-2xl flex flex-col md:flex-row gap-1.5 md:gap-6 justify-center items-center">
+            <h1 className="relative text-[14vw] sm:text-7xl md:text-8xl lg:text-[9.5rem] font-brutal leading-none mb-6 md:mb-8 uppercase tracking-wider drop-shadow-2xl flex flex-col md:flex-row gap-1.5 md:gap-6 justify-center items-center">
               {words.map((word) => (
                 <span key={word.text} className="inline-flex">
                   {word.text.split('').map((letter) => {

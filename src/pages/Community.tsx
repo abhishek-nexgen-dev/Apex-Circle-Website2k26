@@ -138,7 +138,7 @@ export default function Community() {
               />
             </h2>
 
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-6 md:space-y-4">
               {[
                 'Learn and grow with a strong community',
                 'Build real projects, not just practice',
@@ -146,9 +146,20 @@ export default function Community() {
                 'Join exciting hackathons and events',
                 'Get opportunities for internships and jobs',
               ].map((benefit, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <CheckCircle2 className="text-primary shrink-0 mt-1" size={18} />
-                  <p className="text-lg md:text-xl text-slate-300 font-medium">{benefit}</p>
+                <div
+                  key={i}
+                  className="group relative flex items-start gap-4 p-3 rounded-lg overflow-hidden transition-all duration-300 hover:bg-white/5"
+                >
+                  <span className="absolute left-0 top-0 h-full w-[2px] bg-primary scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100"></span>
+
+                  <CheckCircle2
+                    size={18}
+                    className="text-primary shrink-0 mt-1 transition-transform duration-300 group-hover:scale-110"
+                  />
+
+                  <p className="text-base md:text-lg text-slate-300 font-medium leading-relaxed tracking-wide">
+                    {benefit}
+                  </p>
                 </div>
               ))}
             </div>

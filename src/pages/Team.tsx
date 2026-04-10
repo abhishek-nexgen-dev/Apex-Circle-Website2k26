@@ -166,7 +166,7 @@ export default function Team() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[9rem] font-poppins font-black tracking-tighter leading-none uppercase mb-12 animate-text-glow whitespace-nowrap">
+            <h1 className="text-[11vw] sm:text-5xl md:text-7xl lg:text-[9rem] font-poppins font-black tracking-tighter leading-none uppercase mb-12 animate-text-glow whitespace-nowrap">
               <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">MEET</span>{' '}
               <br />
               <span className="text-yellow-400 drop-shadow-[0_0_25px_rgba(250,204,21,0.5)]">
@@ -184,7 +184,7 @@ export default function Team() {
             </p>
           </motion.div>
 
-          <div className="mt-16 md:mt-24 overflow-x-auto pb-6 scrollbar-hide">
+          <div className="mt-16 md:mt-24 overflow-x-auto pb-6 scrollbar-hide ">
             <FilterBar
               categories={departments}
               activeCategory={activeDept}
@@ -195,7 +195,7 @@ export default function Team() {
         </header>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-32 md:mb-56">
+        <div className="grid grid-cols-1 gap-[8vh] px-[3rem] lg:px-0 sm:grid-cols-2  lg:w-full md:grid-cols-4 gap-8 md:gap-12 mb-32 md:mb-56">
           {filteredTeam.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}

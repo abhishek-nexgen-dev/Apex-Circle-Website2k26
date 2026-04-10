@@ -30,7 +30,7 @@ export default function Gallery() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="max-w-6xl"
           >
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] xl:text-[9rem] font-poppins font-black tracking-tighter leading-[0.9] uppercase mb-6 sm:mb-10 relative">
+            <h1 className="text-[12vw] sm:text-5xl md:text-7xl lg:text-[8rem] xl:text-[9rem] font-poppins font-black tracking-tighter leading-[0.9] uppercase mb-6 sm:mb-10 relative ">
               {/* 🔥 LINE 1 */}
               <span className="block text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.5)]">
                 EXPLORE
@@ -60,23 +60,20 @@ export default function Gallery() {
             </h1>
 
             {/* 🔥 DESCRIPTION */}
-            <p className="text-slate-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl font-medium leading-relaxed tracking-tight">
+            <p className="text-slate-400 text-lg mb-[5vh] sm:text-base md:text-lg lg:text-xl max-w-2xl font-medium leading-relaxed tracking-tight ">
               A curated showcase of hackathons, events, and community moments — capturing the energy
               of builders shaping the Apex ecosystem.
             </p>
           </motion.div>
 
           {/* 🔥 FILTER BAR */}
-          <div className="mt-10 sm:mt-12 md:mt-16 overflow-x-auto pb-4 scrollbar-hide">
-            <div className="min-w-max">
-              <FilterBar
-                categories={categories}
-                activeCategory={activeCategory}
-                setActiveCategory={setActiveCategory}
-                accentColor="tertiary"
-              />
-            </div>
-          </div>
+
+          <FilterBar
+            categories={categories}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+            accentColor="tertiary"
+          />
         </header>
 
         {/* Gallery Grid - Logic preserved, UI enhanced in component */}
