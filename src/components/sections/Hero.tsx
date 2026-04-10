@@ -109,7 +109,7 @@ export default function Hero() {
 
       {/* Moving Retro Creature */}
       <div
-        className="absolute bottom-10 left-0 z-[100]"
+        className="absolute bottom-10 left-0 z-20"
         style={{ animation: 'walkAcross 20s linear infinite' }}
       >
         <div className="relative">

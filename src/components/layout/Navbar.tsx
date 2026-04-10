@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Hexagon, Zap, Send } from 'lucide-react';
 import { IoIosGitNetwork } from 'react-icons/io';
 import { cn } from '@/lib/utils';
+import gsap from 'gsap';
+
+gsap.registerPlugin();
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -41,23 +44,41 @@ export default function Navbar() {
     setIsOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (isOpen) {
+      gsap.fromTo(
+        '.Mobile-menu',
+        { height: 0, opacity: 0, duration: 0.5, ease: 'power2.in' },
+        { height: '105vh', opacity: 1, duration: 0.5, ease: 'power2.out' },
+      );
+    }
+
+    return () => {
+      gsap.fromTo(
+        '.Mobile-menu',
+        { height: '105vh', opacity: 1, duration: 0.5, ease: 'power2.out' },
+        { opacity: 0, duration: 0.5, height: 0, ease: 'power2.in' },
+      );
+    };
+  }, [isOpen]);
+
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4 sm:py-8',
+        'fixed top-0 w-full  transition-all duration-500 md:py-8 z-9999 ',
         scrolled ? 'py-2 sm:py-4' : 'py-4 sm:py-8',
       )}
     >
       <div
         className={cn(
-          'max-w-[98%] mx-auto flex items-center justify-between transition-all duration-700 px-4 sm:px-5 py-3 md:py-5 rounded-2xl relative overflow-hidden',
+          'max-w-[98%] mx-auto flex items-center justify-between transition-all  duration-700 px-4 sm:px-5 py-3 md:py-5 rounded-2xl relative overflow-hidden z-9999',
           scrolled
             ? 'bg-black/60 backdrop-blur-3xl border border-white/[0.15] shadow-[0_0_30px_rgba(79,142,247,0.2)] before:absolute before:inset-x-0 before:bottom-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-primary/70 before:to-transparent'
             : 'bg-black/20 backdrop-blur-md border border-white/5 lg:bg-transparent lg:backdrop-blur-none lg:border-transparent',
         )}
       >
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.12),transparent_70%)] opacity-0 transition-opacity duration-700"
+          className="absolute  inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.12),transparent_70%)] opacity-0 transition-opacity duration-700"
           style={{ opacity: scrolled ? 1 : 0 }}
         />
 
@@ -136,7 +157,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 lg:hidden z-50 ">
+        <div className="relative flex items-center gap-4 lg:hidden  z-999">
           <Link
             to="/contact"
             className="text-[10px] sm:text-[12px] font-poppins font-black uppercase tracking-widest text-primary border border-primary/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-primary hover:text-black transition-all shadow-[0_0_10px_rgba(79,142,247,0.2)]"
@@ -160,10 +181,10 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden flex flex-col"
+            className="Mobile-menu relative  w-full z-40 bg-black/60 backdrop-blur-3xl lg:hidden flex flex-col h-[105vh] -mt-23 inset-x-0 over-flow-hidden"
           >
             {/* 🔥 NAV LINKS */}
-            <div className="flex flex-col items-center  px-6 py-10 gap-6 flex-1 mt-28 overflow-y-auto scroll-smooth">
+            <div className=" flex flex-col items-center  px-6 py-10 gap-6 flex-1 mt-28 overflow-y-auto scroll-smooth">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}
@@ -213,7 +234,7 @@ export default function Navbar() {
             </div>
 
             {/* 🔥 FOOTER */}
-            <div className="px-6 py-4 border-t border-white/10 flex justify-between items-center text-xs text-gray-500">
+            <div className="px-6 py-4 border-t border-white/10 flex justify-between items-center text-xs text-gray-500 mb-12">
               <span>© 2026 APEX</span>
 
               <div className="flex gap-4">
