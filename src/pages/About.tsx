@@ -60,6 +60,56 @@ const partners = [
   },
 ];
 
+const Journey_Image = [
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+];
+
 const stats = [
   { label: 'Community', value: '10K+', icon: Users },
   { label: 'Projects', value: '500+', icon: Rocket },
@@ -89,10 +139,11 @@ export default function About() {
       });
 
       // ================= CARDS =================
-      gsap.from('.Box', {
+      gsap.to('.Box', {
         scrollTrigger: {
           trigger: '.Box',
           start: 'top 85%',
+          end: 'bottom 60%',
           markers: true,
         },
         y: 80,
@@ -106,61 +157,15 @@ export default function About() {
       gsap.from('.timeline-item', {
         scrollTrigger: {
           trigger: '.timeline',
-          start: 'top 80%',
+          start: 'top 90%',
+          scrub: true,
+          toggleActions: 'play reverse play reverse',
         },
         x: -60,
+        stagger: 1,
         opacity: 0,
         duration: 1,
-        stagger: 0.25,
-        ease: 'power3.out',
-      });
-
-      // ================= IMAGE PARALLAX =================
-      gsap.to('.parallax-img', {
-        scrollTrigger: {
-          trigger: '.parallax-img',
-          scrub: true,
-        },
-        y: -60,
-        ease: 'none',
-      });
-
-      // ================= STATS =================
-      gsap.from('.stat-card', {
-        scrollTrigger: {
-          trigger: '.stat-card',
-          start: 'top 85%',
-        },
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'back.out(1.7)',
-      });
-
-      // ================= PARTNERS =================
-      gsap.from('.partner-logo', {
-        scrollTrigger: {
-          trigger: '.partner-logo',
-          start: 'top 90%',
-        },
-        opacity: 0,
-        scale: 0.6,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out',
-      });
-
-      // ================= CTA =================
-      gsap.from('.cta', {
-        scrollTrigger: {
-          trigger: '.cta',
-          start: 'top 85%',
-        },
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: 'power4.out',
+        ease: 'power3.inOut',
       });
     }, container);
 
@@ -324,15 +329,41 @@ export default function About() {
           </div>
 
           {/* CALCUTTA HACKS SQUARE PHOTO — LIFTED TOP */}
-          <div className="relative group w-full flex justify-center md:mt-[-48px]">
-            <div className="relative aspect-square w-full max-w-md rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.6)] bg-black/40 group-hover:border-primary/30 transition-all duration-700 group-hover:translate-y-[-8px]">
-              <img
-                src={calcuttaHacksImage}
-                alt="Calcutta Hacks Event"
-                className="parallax-img w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
+          <div className="Image_Top-Container relative w-full flex flex-col items-center justify-start gap-12 md:gap-16 py-10 md:mt-[-48px] h-[60vh] overflow-y-auto snap-y snap-mandatory rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            {Journey_Image.map((item, i) => (
+              <div
+                key={i}
+                className={`
+        Image_Hold_Container relative w-[85%] sm:w-[75%] md:w-[70%] h-[22vh]
+        ${i % 2 === 0 ? 'self-start' : 'self-end'}
+        rounded-3xl overflow-hidden snap-center
+        border border-white/10 bg-black/40
+        shadow-[0_25px_120px_rgba(0,0,0,0.7)]
+        transition-all duration-700 ease-out
+        group hover:scale-[1.02] hover:-translate-y-3 hover:border-primary/40
+      `}
+              >
+                {/* IMAGE */}
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="parallax-img w-full h-full object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                />
+
+                {/* DARK GRADIENT OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+
+                {/* TEXT CONTENT (NEW 🔥) */}
+                <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
+                    {item.name}
+                  </h3>
+                </div>
+
+                {/* SOFT GLOW */}
+                <div className="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition duration-700 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
+              </div>
+            ))}
           </div>
         </div>
 
