@@ -47,7 +47,7 @@ export default function Gallery() {
     return imagePool.map((item: PublicImage, index: number) => ({
       id: String(index + 1),
       title: formatTitle(item.filename) || `Gallery Image ${index + 1}`,
-      category: 'Community',
+      category: 'Hackathons',
       image: item.url,
       date: 'Recent',
     }));
