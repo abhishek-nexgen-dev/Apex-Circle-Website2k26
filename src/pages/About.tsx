@@ -169,6 +169,31 @@ export default function About() {
       });
     }, container);
 
+
+    gsap.to('.Image_Top-Container', {
+      scrollTrigger: {
+        trigger: '.Image_Top-Container',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+      pin: true,
+      y: (i) => (i % 2 === 0 ? -50 : 50),
+      ease: 'none',
+    });
+
+    gsap.to('.parallax-img', {
+      scrollTrigger: {
+        trigger: '.Image_Top-Container',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+        pin: true,
+      },
+      scale: 1.1,
+      ease: 'none',
+    });
+
     return () => ctx.revert();
   }, []);
 
@@ -329,16 +354,16 @@ export default function About() {
           </div>
 
           {/* CALCUTTA HACKS SQUARE PHOTO — LIFTED TOP */}
-          <div className="Image_Top-Container relative w-full flex flex-col items-center justify-start gap-12 md:gap-16 py-10 md:mt-[-48px] h-[60vh] overflow-y-auto snap-y snap-mandatory rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+          <div className="Image_Top-Container relative group w-full flex flex-col items-center justify-start gap-[12vh] py-[10vh] md:mt-[-48px]  overflow-hidden">
             {Journey_Image.map((item, i) => (
               <div
                 key={i}
                 className={`
-        Image_Hold_Container relative w-[85%] sm:w-[75%] md:w-[70%] h-[22vh]
-        ${i % 2 === 0 ? 'self-start' : 'self-end'}
-        rounded-3xl overflow-hidden snap-center
-        border border-white/10 bg-black/40
-        shadow-[0_25px_120px_rgba(0,0,0,0.7)]
+        Image_Hold_Container h-[400px] relative w-full 
+        ${i % 2 === 0 ? 'max-w-2xl' : 'max-w-xl'} 
+        aspect-[4/5] rounded-3xl overflow-hidden
+        border border-white/10 bg-black/40 
+        shadow-[0_20px_100px_rgba(0,0,0,0.7)]
         transition-all duration-700 ease-out
         group hover:scale-[1.02] hover:-translate-y-3 hover:border-primary/40
       `}
