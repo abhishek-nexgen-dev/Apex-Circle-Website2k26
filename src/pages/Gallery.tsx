@@ -1,19 +1,76 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react'; // Added motion for animations
 import GalleryGrid from '@/components/sections/GalleryGrid';
 import FilterBar from '@/components/ui/FilterBar';
-import galleryData from '@/data/gallery.json';
-import { Play, Camera, Film, Image as ImageIcon } from 'lucide-react'; // Added more icons
+import { Play, Film, Image as ImageIcon } from 'lucide-react'; // Added more icons
+import type { GalleryItem } from '@/types';
+
+interface PublicImage {
+  filename: string;
+  url: string;
+  public_id: string;
+  width: number;
+  height: number;
+}
 
 const categories = ['All', 'Hackathons', 'Workshops', 'Meetups', 'Community', 'Awards'];
 
+function formatTitle(filename: string) {
+  return filename
+    .replace(/\.[^/.]+$/, '')
+    .replace(/[-_]+/g, ' ')
+    .trim();
+}
+
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [imagePool, setImagePool] = useState<PublicImage[]>([]);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const response = await fetch('/images.json');
+        if (!response.ok) {
+          throw new Error('Failed to load images.json');
+        }
+        const data = (await response.json()) as PublicImage[];
+        setImagePool(data);
+      } catch {
+        setImagePool([]);
+      }
+    };
+
+    void loadImages();
+  }, []);
+
+  const galleryData = useMemo<GalleryItem[]>(() => {
+    return imagePool.map((item: PublicImage, index: number) => ({
+      id: String(index + 1),
+      title: formatTitle(item.filename) || `Gallery Image ${index + 1}`,
+      category: 'Community',
+      image: item.url,
+      date: 'Recent',
+    }));
+  }, [imagePool]);
 
   const filteredGallery = useMemo(() => {
     if (activeCategory === 'All') return galleryData;
-    return galleryData.filter((item) => item.category === activeCategory);
-  }, [activeCategory]);
+    return galleryData.filter((item: GalleryItem) => item.category === activeCategory);
+  }, [activeCategory, galleryData]);
+
+  const videoHighlights = useMemo(() => {
+    const durations = ['03:45', '02:12'];
+    return imagePool.slice(0, 2).map((image: PublicImage, index: number) => ({
+      title: formatTitle(image.filename) || `Highlight ${index + 1}`,
+      duration: durations[index] ?? '02:30',
+      thumb: image.url,
+    }));
+  }, [imagePool]);
+
+  const behindTheScenes = useMemo(() => {
+    const source = imagePool.length > 4 ? imagePool.slice(2, 6) : imagePool;
+    return source.slice(0, 4);
+  }, [imagePool]);
 
   return (
     <div className="pt-32 md:pt-56 pb-32 md:pb-56 px-6 relative overflow-hidden">
@@ -98,18 +155,7 @@ export default function Gallery() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {[
-              {
-                title: 'Global Hackathon 2025',
-                duration: '03:45',
-                thumb: 'https://picsum.photos/seed/vid1/800/450',
-              },
-              {
-                title: 'Protocol Launch Event',
-                duration: '02:12',
-                thumb: 'https://picsum.photos/seed/vid2/800/450',
-              },
-            ].map((video, i) => (
+            {videoHighlights.map((video: { title: string; duration: string; thumb: string }, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -156,6 +202,10 @@ export default function Gallery() {
               </motion.div>
             ))}
           </div>
+
+          {videoHighlights.length === 0 && (
+            <p className="text-center text-slate-500 mt-10">No highlight media available yet.</p>
+          )}
         </section>
 
         {/* Behind the Scenes - Improved grid and interactions */}
@@ -179,9 +229,9 @@ export default function Gallery() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 relative z-10">
-            {[...Array(4)].map((_, i) => (
+            {behindTheScenes.map((image: PublicImage, i: number) => (
               <motion.div
-                key={i}
+                key={image.public_id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -190,8 +240,8 @@ export default function Gallery() {
                 className="aspect-square bg-black border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden group shadow-xl hover:shadow-primary/10 hover:border-primary/30"
               >
                 <img
-                  src={`https://picsum.photos/seed/bts${i + 10}/600/600`}
-                  alt="BTS"
+                  src={image.url}
+                  alt={formatTitle(image.filename) || 'BTS'}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   referrerPolicy="no-referrer"
                 />
@@ -199,6 +249,10 @@ export default function Gallery() {
               </motion.div>
             ))}
           </div>
+
+          {behindTheScenes.length === 0 && (
+            <p className="text-center text-slate-500 mt-10">No behind-the-scenes media available yet.</p>
+          )}
         </section>
 
         {/* Empty State - Enhanced UI */}
