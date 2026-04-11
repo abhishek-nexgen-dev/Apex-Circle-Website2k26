@@ -161,6 +161,7 @@ export default function About() {
           scrub: true,
           toggleActions: 'play reverse play reverse',
         },
+        
         x: -60,
         stagger: 1,
         opacity: 0,
@@ -169,15 +170,18 @@ export default function About() {
       });
     }, container);
 
-
     gsap.to('.Image_Top-Container', {
       scrollTrigger: {
         trigger: '.Image_Top-Container',
         start: 'top bottom',
         end: 'bottom top',
         scrub: true,
+      
       },
-      pin: true,
+
+      
+     pin: true, 
+   
       y: (i) => (i % 2 === 0 ? -50 : 50),
       ease: 'none',
     });
@@ -188,7 +192,7 @@ export default function About() {
         start: 'top bottom',
         end: 'bottom top',
         scrub: true,
-        pin: true,
+      
       },
       scale: 1.1,
       ease: 'none',
