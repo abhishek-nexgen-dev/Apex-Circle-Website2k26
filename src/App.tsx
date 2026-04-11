@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -16,12 +16,21 @@ import Legal from '@/pages/Legal';
 import CustomCursor from '@/components/ui/CustomCursor';
 import { AnimatePresence, motion } from 'motion/react';
 import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Developer from './pages/Developer';
 
+gsap.registerPlugin(ScrollTrigger);
+
 // Scroll to top on route change
-function ScrollToTop() {
+function ScrollToTop({ lenis }: { lenis?: Lenis | null }) {
   const { pathname } = useLocation();
   useEffect(() => {
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+      return;
+    }
+
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
@@ -44,6 +53,7 @@ import Loader from '@/components/ui/Loader';
 
 function AppContent() {
   const [isLoading, setIsLoading] = useState(true);
+  const lenisRef = useRef<Lenis | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -62,15 +72,25 @@ function AppContent() {
       smoothWheel: true,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    lenisRef.current = lenis;
+    lenis.on('scroll', ScrollTrigger.update);
 
-    requestAnimationFrame(raf);
+    const ticker = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(ticker);
+    gsap.ticker.lagSmoothing(0);
+
+    const handleRefresh = () => lenis.resize();
+    ScrollTrigger.addEventListener('refresh', handleRefresh);
+    ScrollTrigger.refresh();
 
     return () => {
+      ScrollTrigger.removeEventListener('refresh', handleRefresh);
+      gsap.ticker.remove(ticker);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
@@ -84,7 +104,7 @@ function AppContent() {
         className={`min-h-screen bg-background text-white selection:bg-primary selection:text-black transition-all duration-1000 ${isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
       >
         <Navbar />
-        <ScrollToTop />
+        <ScrollToTop lenis={lenisRef.current} />
         <main>
           <AnimatePresence mode="wait">
             <Routes location={location}>

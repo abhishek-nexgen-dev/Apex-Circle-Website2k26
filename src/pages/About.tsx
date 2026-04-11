@@ -3,6 +3,11 @@ import { motion } from 'motion/react';
 import { Target, Eye, Heart, ArrowRight } from 'lucide-react';
 import { Users, Rocket, Trophy, Handshake } from 'lucide-react';
 import calcuttaHacksImage from '@/assets/Image/CalCuttaHacks.jpg';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const partners = [
   {
@@ -55,6 +60,56 @@ const partners = [
   },
 ];
 
+const Journey_Image = [
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+
+  {
+    name: 'Calcutta Hacks',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGtdtibstB6p2O5DLSwm_nxYJfr1SEIVP8A&s',
+  },
+];
+
 const stats = [
   { label: 'Community', value: '10K+', icon: Users },
   { label: 'Projects', value: '500+', icon: Rocket },
@@ -65,9 +120,90 @@ const stats = [
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
 
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      // ================= HERO =================
+      gsap.from('.hero-title', {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power4.out',
+      });
+
+      gsap.from('.hero-sub', {
+        y: 40,
+        opacity: 0,
+        delay: 0.3,
+        duration: 1,
+        ease: 'power3.out',
+      });
+
+      // ================= CARDS =================
+      gsap.to('.Box', {
+        scrollTrigger: {
+          trigger: '.Box',
+          start: 'top 85%',
+          end: 'bottom 60%',
+          markers: true,
+        },
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+      });
+
+      // ================= JOURNEY TIMELINE =================
+      gsap.from('.timeline-item', {
+        scrollTrigger: {
+          trigger: '.timeline',
+          start: 'top 90%',
+          scrub: true,
+          toggleActions: 'play reverse play reverse',
+        },
+        
+        x: -60,
+        stagger: 1,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.inOut',
+      });
+    }, container);
+
+    gsap.to('.Image_Top-Container', {
+      scrollTrigger: {
+        trigger: '.Image_Top-Container',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      
+      },
+
+      
+     pin: true, 
+   
+      y: (i) => (i % 2 === 0 ? -50 : 50),
+      ease: 'none',
+    });
+
+    gsap.to('.parallax-img', {
+      scrollTrigger: {
+        trigger: '.Image_Top-Container',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      
+      },
+      scale: 1.1,
+      ease: 'none',
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div
-      className="pt-24 md:pt-32 pb-16 md:pb-20 px-6 bg-background overflow-hidden relative"
+      className="About sec pt-24 md:pt-32 pb-16 md:pb-20 px-6 bg-background overflow-hidden relative"
       ref={container}
     >
       {/* Dynamic Background Depth */}
@@ -86,7 +222,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12 relative">
+            <h1 className="hero-title text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem] font-brutal tracking-tighter leading-[0.8] uppercase mb-12 relative">
               APEX <br /> <span className="text-slate-500">BUILDERS</span>
               <div
                 className="absolute inset-0 pointer-events-none"
@@ -99,7 +235,7 @@ export default function About() {
               />
             </h1>
 
-            <p className="text-slate-400 text-center  text-lg md:text-2xl max-w-2xl font-medium leading-relaxed uppercase tracking-tight">
+            <p className="hero-sub text-slate-400 text-center text-lg md:text-2xl max-w-2xl font-medium leading-relaxed uppercase tracking-tight">
               APEX CIRCLE IS A COLLECTIVE OF LEADERS, DEVELOPERS, DESIGNERS, AND OPERATORS WORKING
               TOGETHER ACROSS TECHNOLOGY, CREATIVITY, AND COMMUNITY TO BUILD, GROW, AND CREATE REAL
               IMPACT.
@@ -137,7 +273,7 @@ export default function About() {
           ].map((item, i) => (
             <div
               key={i}
-              className={`relative bg-white/[0.03] backdrop-blur-3xl border ${item.border} p-10 md:p-14 overflow-hidden rounded-2xl transition-all duration-500 group flex flex-col items-center text-center hover:-translate-y-3 ${item.glow}`}
+              className={`Box relative bg-white/[0.03] backdrop-blur-3xl border ${item.border} p-10 md:p-14 overflow-hidden rounded-2xl transition-all duration-500 group flex flex-col items-center text-center hover:-translate-y-3 ${item.glow}`}
               style={{
                 animation: 'badgeZoom 0.8s cubic-bezier(0.34,1.56,0.64,1) both',
                 animationDelay: `${i * 0.2 + 0.2}s`,
@@ -180,7 +316,7 @@ export default function About() {
               />
             </h2>
 
-            <div className="space-y-10 md:space-y-16">
+            <div className="timeline space-y-10 md:space-y-16">
               {[
                 {
                   year: '2021',
@@ -203,7 +339,7 @@ export default function About() {
                   desc: 'Pioneering the future of decentralized community building.',
                 },
               ].map((step, i) => (
-                <div key={i} className="flex gap-8 md:gap-12 group relative">
+                <div key={i} className="timeline-item flex gap-8 md:gap-12 group relative">
                   <div className="absolute left-[-20px] top-0 h-full w-[1px] bg-white/10 group-hover:bg-primary transition-colors" />
                   <span className="text-primary font-mono text-xl md:text-2xl pt-1">
                     [{step.year}]
@@ -222,27 +358,53 @@ export default function About() {
           </div>
 
           {/* CALCUTTA HACKS SQUARE PHOTO — LIFTED TOP */}
-          <div className="relative group w-full flex justify-center md:mt-[-48px]">
-            <div className="relative aspect-square w-full max-w-md rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.6)] bg-black/40 group-hover:border-primary/30 transition-all duration-700 group-hover:translate-y-[-8px]">
-              <img
-                src={calcuttaHacksImage}
-                alt="Calcutta Hacks Event"
-                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
+          <div className="Image_Top-Container relative group w-full flex flex-col items-center justify-start gap-[12vh] py-[10vh] md:mt-[-48px]  overflow-hidden">
+            {Journey_Image.map((item, i) => (
+              <div
+                key={i}
+                className={`
+        Image_Hold_Container h-[400px] relative w-full 
+        ${i % 2 === 0 ? 'max-w-2xl' : 'max-w-xl'} 
+        aspect-[4/5] rounded-3xl overflow-hidden
+        border border-white/10 bg-black/40 
+        shadow-[0_20px_100px_rgba(0,0,0,0.7)]
+        transition-all duration-700 ease-out
+        group hover:scale-[1.02] hover:-translate-y-3 hover:border-primary/40
+      `}
+              >
+                {/* IMAGE */}
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="parallax-img w-full h-full object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                />
+
+                {/* DARK GRADIENT OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+
+                {/* TEXT CONTENT (NEW 🔥) */}
+                <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
+                    {item.name}
+                  </h3>
+                </div>
+
+                {/* SOFT GLOW */}
+                <div className="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition duration-700 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Impact Section */}
-        <section className="mb-16 md:mb-32 py-16 md:py-24 border-y border-white/10 bg-gradient-to-b from-black/60 to-black/30 rounded-3xl">
+        <section className="mb-16 md:mb-32 py-16 md:py-24 border-y border-white/10 bg-gradient-to-b from-black/35 to-black/20 rounded-3xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 px-4 md:px-8">
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
                 <div
                   key={i}
-                  className="group relative flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,140,0,0.15)]"
+                  className="stat-card group relative flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,140,0,0.15)]"
                 >
                   {/* Icon */}
                   <div className="mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
@@ -291,7 +453,7 @@ export default function About() {
             {partners.map((partner, i) => (
               <div
                 key={i}
-                className="group h-16 border  border-white/10 flex items-center justify-center bg-blue-900/10 hover:bg-white/[0.15] transition-all duration-500 rounded-lg"
+                className="partner-logo group h-16 border border-white/10 flex items-center justify-center bg-blue-900/10 hover:bg-white/[0.15] transition-all duration-500 rounded-lg"
               >
                 <img
                   src={partner.logo}
@@ -303,7 +465,7 @@ export default function About() {
           </div>
         </section>
 
-        <div className="bg-primary text-black p-8 md:p-24 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
+        <div className="cta bg-primary text-black p-8 md:p-24 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
           <h2 className="text-4xl md:text-7xl font-brutal tracking-tighter uppercase leading-none text-center md:text-left">
             Ready to <br /> <span className="text-black/50">Contribute?</span>
           </h2>
