@@ -70,105 +70,102 @@ const stats = [
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
 
- useGSAP(() => {
-  const ctx = gsap.context(() => {
-    // ================= HERO =================
-    gsap.from('.hero-title', {
-      y: 100,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power4.out',
-    });
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      // ================= HERO =================
+      gsap.from('.hero-title', {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power4.out',
+      });
 
-    gsap.from('.hero-sub', {
-      y: 40,
-      opacity: 0,
-      delay: 0.3,
-      duration: 1,
-      ease: 'power3.out',
-    });
+      gsap.from('.hero-sub', {
+        y: 40,
+        opacity: 0,
+        delay: 0.3,
+        duration: 1,
+        ease: 'power3.out',
+      });
 
-    // ================= CARDS =================
-    gsap.from('.Box', {
-      scrollTrigger: {
-        trigger: '.Box',
-        start: 'top 85%',
-        markers: true,
-      },
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power3.out',
-    });
+      // ================= CARDS =================
+      gsap.from('.Box', {
+        scrollTrigger: {
+          trigger: '.Box',
+          start: 'top 85%',
+          markers: true,
+        },
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+      });
 
+      // ================= JOURNEY TIMELINE =================
+      gsap.from('.timeline-item', {
+        scrollTrigger: {
+          trigger: '.timeline',
+          start: 'top 80%',
+        },
+        x: -60,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.25,
+        ease: 'power3.out',
+      });
 
+      // ================= IMAGE PARALLAX =================
+      gsap.to('.parallax-img', {
+        scrollTrigger: {
+          trigger: '.parallax-img',
+          scrub: true,
+        },
+        y: -60,
+        ease: 'none',
+      });
 
-    // ================= JOURNEY TIMELINE =================
-    gsap.from('.timeline-item', {
-      scrollTrigger: {
-        trigger: '.timeline',
-        start: 'top 80%',
-      },
-      x: -60,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.25,
-      ease: 'power3.out',
-    });
+      // ================= STATS =================
+      gsap.from('.stat-card', {
+        scrollTrigger: {
+          trigger: '.stat-card',
+          start: 'top 85%',
+        },
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'back.out(1.7)',
+      });
 
-    // ================= IMAGE PARALLAX =================
-    gsap.to('.parallax-img', {
-      scrollTrigger: {
-        trigger: '.parallax-img',
-        scrub: true,
-      },
-      y: -60,
-      ease: 'none',
-    });
+      // ================= PARTNERS =================
+      gsap.from('.partner-logo', {
+        scrollTrigger: {
+          trigger: '.partner-logo',
+          start: 'top 90%',
+        },
+        opacity: 0,
+        scale: 0.6,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
+      });
 
-    // ================= STATS =================
-    gsap.from('.stat-card', {
-      scrollTrigger: {
-        trigger: '.stat-card',
-        start: 'top 85%',
-      },
-      scale: 0.8,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'back.out(1.7)',
-    });
+      // ================= CTA =================
+      gsap.from('.cta', {
+        scrollTrigger: {
+          trigger: '.cta',
+          start: 'top 85%',
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: 'power4.out',
+      });
+    }, container);
 
-    // ================= PARTNERS =================
-    gsap.from('.partner-logo', {
-      scrollTrigger: {
-        trigger: '.partner-logo',
-        start: 'top 90%',
-      },
-      opacity: 0,
-      scale: 0.6,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power2.out',
-    });
-
-    // ================= CTA =================
-    gsap.from('.cta', {
-      scrollTrigger: {
-        trigger: '.cta',
-        start: 'top 85%',
-      },
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      ease: 'power4.out',
-    });
-  }, container);
-
-  return () => ctx.revert();
-}, []);
-
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div
